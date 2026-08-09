@@ -76,12 +76,12 @@
         }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
         .card {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: transform 0.2s, box-shadow 0.2s;
@@ -93,12 +93,25 @@
         .card h3 {
             margin-top: 0;
             color: #b76e79;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #f3e1e4;
+            padding-bottom: 10px;
         }
         .card p {
             color: #666;
             font-size: 0.95rem;
-            margin-bottom: 0;
+            line-height: 1.7;
+        }
+        .highlight-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #ffffff, #fff9f9);
+            border-left: 5px solid #b76e79;
+        }
+        .signature {
+            margin-top: 20px;
+            font-weight: 600;
+            color: #b76e79;
+            text-align: right;
         }
     </style>
 </head>
@@ -127,10 +140,25 @@
         <!-- Partners & Seniors -->
         <div class="category-title">Partners & Seniors</div>
         <div class="cards-grid">
-            <div class="card">
+            
+            <!-- CA Jitesh Sir Featured Card with your exact letter -->
+            <div class="card highlight-card">
                 <h3>CA Jitesh Sir ❤️</h3>
-                <p>Calm, respectful, motivating. Encouraged reading without compromise and gave us a wonderful office environment.</p>
+                <p>
+                    Dear Jitesh Sir,<br><br>
+                    When I think about my two years of Articleship, there are many things I will remember, but one of the biggest things I will always remember about you is the way you treated everyone around you.<br><br>
+                    You were always so calm, respectful, and understanding. I have hardly ever seen you getting angry, and even when things were difficult, you handled them so patiently. Your behaviour always made the office feel comfortable.<br><br>
+                    One thing I really appreciated was that you never made me feel that there was a big difference between a Partner and an Article. You always treated us with respect and made us feel like a part of the team. That meant a lot to me.<br><br>
+                    You also always encouraged me to keep reading and learning. You used to tell me not to compromise on reading, and honestly, those words will stay with me even after my Articleship is over. Sometimes a small piece of advice from the right person stays with us for a very long time.<br><br>
+                    And of course, I can never forget the fun moments too — especially your “Mass Bunk” joke and the way you used to bring humour into the office environment. 😄 These small moments may look simple, but they became a part of my Articleship memories.<br><br>
+                    Sir, I have learned many professional things during these two years, but along with that, I have also learned something very important from you — how to remain calm, respectful, and grounded while working with people.<br><br>
+                    Thank you for all the support, guidance, respect, and all those little moments that made my Articleship journey special.<br><br>
+                    My Articleship may have ended, but the respect I have for you and the memories I have of these two years will always remain with me.<br>
+                    Thank you, Jitesh Sir. ❤️
+                </p>
+                <div class="signature">— Jitu</div>
             </div>
+
             <div class="card">
                 <h3>CA Prakash Sir ❤️</h3>
                 <p>Humorous, fluent in English, and deeply inspired me with his dedication and daily routine.</p>
