@@ -11,15 +11,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fff5ee);
             color: #4a4a4a;
+            scroll-behavior: smooth;
+        }
+        .hero {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
+            padding: 20px;
         }
         .container {
             max-width: 600px;
-            padding: 40px 20px;
         }
         h1 {
             font-size: 2.5rem;
@@ -53,21 +56,146 @@
             background-color: #a35d68;
             transform: translateY(-2px);
         }
+        .memories-section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #b76e79;
+            margin-bottom: 40px;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            color: #7a4f57;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px solid #e8c5cb;
+            padding-bottom: 5px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(183, 110, 121, 0.15);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #b76e79;
+            font-size: 1.2rem;
+        }
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>My Articleship Memories ❤️</h1>
-        <div class="dates">August 2024 — August 2026</div>
-        
-        <p class="tagline">
-            Two years.<br>
-            So many people.<br>
-            So many memories. ❤️
-        </p>
+    <!-- Landing Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>My Articleship Memories ❤️</h1>
+            <div class="dates">August 2024 — August 2026</div>
+            
+            <p class="tagline">
+                Two years.<br>
+                So many people.<br>
+                So many memories. ❤️
+            </p>
 
-        <a href="#memories" class="btn">Open My Memories →</a>
+            <a href="#memories" class="btn">Open My Memories →</a>
+        </div>
+    </div>
+
+    <!-- Memories Section -->
+    <div id="memories" class="memories-section">
+        <h2 class="section-title">The People Who Made It Special ❤️</h2>
+
+        <!-- Partners & Seniors -->
+        <div class="category-title">Partners & Seniors</div>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>CA Jitesh Sir ❤️</h3>
+                <p>Calm, respectful, motivating. Encouraged reading without compromise and gave us a wonderful office environment.</p>
+            </div>
+            <div class="card">
+                <h3>CA Prakash Sir ❤️</h3>
+                <p>Humorous, fluent in English, and deeply inspired me with his dedication and daily routine.</p>
+            </div>
+        </div>
+
+        <!-- Ma'ams / Teachers -->
+        <div class="category-title">Ma'ams / Teachers</div>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>CA Neha Ma’am ❤️</h3>
+                <p>Mother-like, kind, and emotional support who guided me patiently through every audit.</p>
+            </div>
+            <div class="card">
+                <h3>CA Barkha Ma’am ❤️</h3>
+                <p>Jovial, full of energy, one-liner jokes, and a calming guide for TDS work.</p>
+            </div>
+            <div class="card">
+                <h3>CA Rangoli Ma’am ❤️</h3>
+                <p>Income Tax expert, my Principal, and a key mentor who encouraged deep reading of Bare Acts.</p>
+            </div>
+        </div>
+
+        <!-- Bhai / Di & Office Team -->
+        <div class="category-title">Bhai / Di & Office Team</div>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>CA Vivek Bhai ❤️</h3>
+                <p>GST expert who always remained calm and focused on work.</p>
+            </div>
+            <div class="card">
+                <h3>Dhruvesh Bhai ❤️</h3>
+                <p>Like an elder brother, anime fan, and the master of the running joke about never teaching TDS!</p>
+            </div>
+            <div class="card">
+                <h3>Prachi Di ❤️</h3>
+                <p>Sister-like HR who took care of us and organized amazing festival games.</p>
+            </div>
+            <div class="card">
+                <h3>Rashmika Di ❤️</h3>
+                <p>Handled books, HR, picnics, and high-value IPO calls with pure energy.</p>
+            </div>
+            <div class="card">
+                <h3>Sachin Bhai ❤️</h3>
+                <p>Our comedic "mota bhai", cricket lover, and tea master.</p>
+            </div>
+            <div class="card">
+                <h3>Bhavesh Bhai ❤️</h3>
+                <p>Kept us on track, shared snack parties, and made sure we learned from our mistakes.</p>
+            </div>
+            <div class="card">
+                <h3>Dileep Bhai ❤️</h3>
+                <p>Fun-loving, helpful, and brewed the best tea without ever getting angry.</p>
+            </div>
+        </div>
+
+        <!-- Friends / Colleagues / Juniors -->
+        <div class="category-title">Friends / Colleagues / Juniors</div>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Colleagues & Friends ❤️</h3>
+                <p>Gaurav, Parth, Pranshu, Hetvi, Krupali, Pranjal, Richa, Vrunda, Shweni, and many more who shared this incredible journey.</p>
+            </div>
+        </div>
+
     </div>
 
 </body>
