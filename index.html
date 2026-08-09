@@ -3,228 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Articleship Memories ❤️</title>
+
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fff5ee);
-            color: #4a4a4a;
-            scroll-behavior: smooth;
         }
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
             min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
+            color: #333;
+            overflow-x: hidden;
         }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
         .container {
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #b76e79;
-            margin-bottom: 10px;
-        }
-        .dates {
-            font-size: 1.1rem;
-            color: #888;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        .tagline {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #555;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #b76e79;
-            color: white;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(183, 110, 121, 0.3);
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .btn:hover {
-            background-color: #a35d68;
-            transform: translateY(-2px);
-        }
-        .memories-section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .section-title {
+            width: 100%;
+            max-width: 850px;
             text-align: center;
-            font-size: 2rem;
-            color: #b76e79;
-            margin-bottom: 40px;
+            padding: 50px 30px;
+            background: rgba(255, 255, 255, 0.72);
+            border-radius: 28px;
+            box-shadow: 0 15px 50px rgba(80, 60, 80, 0.12);
+            backdrop-filter: blur(8px);
+            animation: appear 1.2s ease;
         }
-        .category-title {
-            font-size: 1.5rem;
-            color: #7a4f57;
-            margin: 40px 0 20px 0;
-            border-bottom: 2px solid #e8c5cb;
-            padding-bottom: 5px;
+
+        .small-title {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8a6878;
+            margin-bottom: 18px;
         }
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+
+        h1 {
+            font-size: clamp(38px, 8vw, 72px);
+            line-height: 1.1;
+            color: #4b3541;
+            margin-bottom: 18px;
         }
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+
+        .heart {
+            display: inline-block;
+            animation: heartbeat 1.8s infinite;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(183, 110, 121, 0.15);
+
+        .dates {
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+            color: #806674;
+            margin-bottom: 35px;
         }
-        .card h3 {
-            margin-top: 0;
-            color: #b76e79;
-            font-size: 1.3rem;
-            border-bottom: 1px solid #f3e1e4;
-            padding-bottom: 10px;
+
+        .line {
+            width: 70px;
+            height: 2px;
+            margin: 0 auto 32px;
+            background: #b997a7;
         }
-        .card p {
-            color: #666;
-            font-size: 0.95rem;
+
+        .intro {
+            max-width: 650px;
+            margin: auto;
+            font-size: 19px;
+            line-height: 1.9;
+            color: #51474c;
+        }
+
+        .highlight {
+            margin: 30px auto;
+            font-size: 22px;
+            line-height: 1.7;
+            color: #493842;
+            font-style: italic;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            background: #5a4050;
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 22px rgba(90, 64, 80, 0.25);
+            transition: 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(90, 64, 80, 0.32);
+        }
+
+        .note {
+            margin-top: 35px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #8b7c83;
             line-height: 1.7;
         }
-        .highlight-card {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, #ffffff, #fff9f9);
-            border-left: 5px solid #b76e79;
+
+        .floating-heart {
+            position: fixed;
+            font-size: 20px;
+            opacity: 0.25;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
         }
-        .signature {
-            margin-top: 20px;
-            font-weight: 600;
-            color: #b76e79;
-            text-align: right;
+
+        .heart-one {
+            top: 12%;
+            left: 8%;
+        }
+
+        .heart-two {
+            top: 25%;
+            right: 9%;
+            animation-delay: 1s;
+        }
+
+        .heart-three {
+            bottom: 15%;
+            left: 13%;
+            animation-delay: 2s;
+        }
+
+        .heart-four {
+            bottom: 10%;
+            right: 12%;
+            animation-delay: 3s;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 18px 12px;
+            }
+
+            .container {
+                padding: 40px 20px;
+                border-radius: 22px;
+            }
+
+            .small-title {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .dates {
+                font-size: 14px;
+            }
+
+            .intro {
+                font-size: 17px;
+                line-height: 1.8;
+            }
+
+            .highlight {
+                font-size: 19px;
+            }
+
+            .button {
+                padding: 14px 26px;
+                font-size: 15px;
+            }
+
+            .floating-heart {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Landing Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <h1>My Articleship Memories ❤️</h1>
-            <div class="dates">August 2024 — August 2026</div>
-            
-            <p class="tagline">
-                Two years.<br>
-                So many people.<br>
-                So many memories. ❤️
+    <div class="floating-heart heart-one">❤️</div>
+    <div class="floating-heart heart-two">♡</div>
+    <div class="floating-heart heart-three">❤️</div>
+    <div class="floating-heart heart-four">♡</div>
+
+    <main class="page">
+
+        <section class="container">
+
+            <div class="small-title">
+                A small collection of big memories
+            </div>
+
+            <h1>
+                My Articleship<br>
+                Memories <span class="heart">❤️</span>
+            </h1>
+
+            <div class="dates">
+                August 2024 — August 2026
+            </div>
+
+            <div class="line"></div>
+
+            <p class="intro">
+                Two years of Articleship are finally coming to an end.
+                But when I look back, I don't just remember the work,
+                audits, deadlines and busy days.
             </p>
 
-            <a href="#memories" class="btn">Open My Memories →</a>
-        </div>
-    </div>
+            <p class="highlight">
+                I remember the people who made these two years
+                special. ❤️
+            </p>
 
-    <!-- Memories Section -->
-    <div id="memories" class="memories-section">
-        <h2 class="section-title">The People Who Made It Special ❤️</h2>
+            <p class="intro">
+                Every person I met here gave me something —
+                a lesson, a laugh, a memory, a little support,
+                or simply a reason to enjoy coming to the office.
+            </p>
 
-        <!-- Partners & Seniors -->
-        <div class="category-title">Partners & Seniors</div>
-        <div class="cards-grid">
-            
-            <!-- CA Jitesh Sir Featured Card with your exact letter -->
-            <div class="card highlight-card">
-                <h3>CA Jitesh Sir ❤️</h3>
-                <p>
-                    Dear Jitesh Sir,<br><br>
-                    When I think about my two years of Articleship, there are many things I will remember, but one of the biggest things I will always remember about you is the way you treated everyone around you.<br><br>
-                    You were always so calm, respectful, and understanding. I have hardly ever seen you getting angry, and even when things were difficult, you handled them so patiently. Your behaviour always made the office feel comfortable.<br><br>
-                    One thing I really appreciated was that you never made me feel that there was a big difference between a Partner and an Article. You always treated us with respect and made us feel like a part of the team. That meant a lot to me.<br><br>
-                    You also always encouraged me to keep reading and learning. You used to tell me not to compromise on reading, and honestly, those words will stay with me even after my Articleship is over. Sometimes a small piece of advice from the right person stays with us for a very long time.<br><br>
-                    And of course, I can never forget the fun moments too — especially your “Mass Bunk” joke and the way you used to bring humour into the office environment. 😄 These small moments may look simple, but they became a part of my Articleship memories.<br><br>
-                    Sir, I have learned many professional things during these two years, but along with that, I have also learned something very important from you — how to remain calm, respectful, and grounded while working with people.<br><br>
-                    Thank you for all the support, guidance, respect, and all those little moments that made my Articleship journey special.<br><br>
-                    My Articleship may have ended, but the respect I have for you and the memories I have of these two years will always remain with me.<br>
-                    Thank you, Jitesh Sir. ❤️
-                </p>
-                <div class="signature">— Jitu</div>
-            </div>
+            <p class="intro" style="margin-top: 20px;">
+                So before moving ahead, I wanted to take a moment
+                to say something to each one of you.
+            </p>
 
-            <div class="card">
-                <h3>CA Prakash Sir ❤️</h3>
-                <p>Humorous, fluent in English, and deeply inspired me with his dedication and daily routine.</p>
-            </div>
-        </div>
+            <a href="#memories" class="button">
+                Open My Memories →
+            </a>
 
-        <!-- Ma'ams / Teachers -->
-        <div class="category-title">Ma'ams / Teachers</div>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>CA Neha Ma’am ❤️</h3>
-                <p>Mother-like, kind, and emotional support who guided me patiently through every audit.</p>
-            </div>
-            <div class="card">
-                <h3>CA Barkha Ma’am ❤️</h3>
-                <p>Jovial, full of energy, one-liner jokes, and a calming guide for TDS work.</p>
-            </div>
-            <div class="card">
-                <h3>CA Rangoli Ma’am ❤️</h3>
-                <p>Income Tax expert, my Principal, and a key mentor who encouraged deep reading of Bare Acts.</p>
-            </div>
-        </div>
+            <p class="note">
+                This is not just a farewell.<br>
+                These are the memories I will carry with me.
+            </p>
 
-        <!-- Bhai / Di & Office Team -->
-        <div class="category-title">Bhai / Di & Office Team</div>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>CA Vivek Bhai ❤️</h3>
-                <p>GST expert who always remained calm and focused on work.</p>
-            </div>
-            <div class="card">
-                <h3>Dhruvesh Bhai ❤️</h3>
-                <p>Like an elder brother, anime fan, and the master of the running joke about never teaching TDS!</p>
-            </div>
-            <div class="card">
-                <h3>Prachi Di ❤️</h3>
-                <p>Sister-like HR who took care of us and organized amazing festival games.</p>
-            </div>
-            <div class="card">
-                <h3>Rashmika Di ❤️</h3>
-                <p>Handled books, HR, picnics, and high-value IPO calls with pure energy.</p>
-            </div>
-            <div class="card">
-                <h3>Sachin Bhai ❤️</h3>
-                <p>Our comedic "mota bhai", cricket lover, and tea master.</p>
-            </div>
-            <div class="card">
-                <h3>Bhavesh Bhai ❤️</h3>
-                <p>Kept us on track, shared snack parties, and made sure we learned from our mistakes.</p>
-            </div>
-            <div class="card">
-                <h3>Dileep Bhai ❤️</h3>
-                <p>Fun-loving, helpful, and brewed the best tea without ever getting angry.</p>
-            </div>
-        </div>
+        </section>
 
-        <!-- Friends / Colleagues / Juniors -->
-        <div class="category-title">Friends / Colleagues / Juniors</div>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Colleagues & Friends ❤️</h3>
-                <p>Gaurav, Parth, Pranshu, Hetvi, Krupali, Pranjal, Richa, Vrunda, Shweni, and many more who shared this incredible journey.</p>
-            </div>
-        </div>
+    </main>
 
-    </div>
+    <!--
+        MEMORY SECTION WILL BE ADDED HERE LATER.
+
+        We will eventually connect this button
+        to the individual messages and QR-code pages.
+    -->
 
 </body>
 </html>
