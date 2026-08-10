@@ -113,6 +113,27 @@
             }
         }
     </style>
+    /* HOME BUTTON - FINAL POSITION */
+.home-btn {
+    position: fixed !important;
+    bottom: 25px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 9999 !important;
+
+    padding: 12px 28px !important;
+    border-radius: 30px !important;
+    border: none !important;
+
+    background: #6b465c !important;
+    color: white !important;
+
+    font-size: 16px !important;
+    font-family: inherit !important;
+    text-decoration: none !important;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important;
+}
 </head>
 
 <body>
@@ -168,7 +189,7 @@
         </a>
 
     </div>
-<button onclick="goHome()">🏠 Home</button>
+<a href="index.html" class="home-btn">🏠 Home</a>
 
 <script src="script.js"></script>
 </body>
