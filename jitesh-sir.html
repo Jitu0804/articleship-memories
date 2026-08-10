@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +58,37 @@
       width: 95px;
       height: 4px;
       background: #b997a9;
-      margin: 35px auto 45px;
+      margin: 35px auto 30px;
+    }
+
+    /* LANGUAGE BUTTONS */
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: 0.2s;
+    }
+
+    .language-buttons button:hover {
+      opacity: 0.85;
+    }
+
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
     }
 
     .message {
@@ -89,10 +120,6 @@
       font-size: 16px;
     }
 
-    .back-btn:hover {
-      opacity: 0.9;
-    }
-
     /* HOME BUTTON */
     .home-btn {
       position: fixed;
@@ -119,7 +146,7 @@
       opacity: 0.9;
     }
 
-    /* PHONE SCREEN */
+    /* PHONE */
     @media (max-width: 600px) {
 
       body {
@@ -148,6 +175,7 @@
   </style>
 </head>
 
+
 <body>
 
   <div class="message-card">
@@ -156,45 +184,184 @@
       A PERSONAL MESSAGE ❤️
     </div>
 
-    <h1>CA Jitesh Sir ❤️</h1>
+    <h1 id="personName">CA Jitesh Sir ❤️</h1>
 
-    <div class="subtitle">
+    <div class="subtitle" id="subtitle">
       My Articleship Memories
     </div>
 
     <div class="divider"></div>
 
+
+    <!-- LANGUAGE BUTTONS -->
+    <div class="language-buttons">
+
+      <button id="englishBtn"
+              class="active"
+              onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
+
+      <button id="hindiBtn"
+              onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
+
+      <button id="gujaratiBtn"
+              onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
+
+    </div>
+
+
+    <!-- MESSAGE -->
     <div class="message">
 
-      <p>Dear Jitesh Sir,</p>
+      <p id="greeting">
+        Dear Jitesh Sir,
+      </p>
 
-      <p>
+      <p id="message1">
         This is just a trial message for now.
         The final message will be added here later.
       </p>
 
-      <p>
+      <p id="message2">
         Thank you for being a part of my two years
         of Articleship and for giving me memories
         that I will always remember.
       </p>
 
-      <p class="ending">
+      <p class="ending" id="ending">
         Thank you for everything. ❤️
       </p>
 
     </div>
 
-    <a href="index.html" class="back-btn">
+
+    <a href="index.html" class="back-btn" id="backBtn">
       ← Back to Memories
     </a>
 
   </div>
+
 
   <!-- HOME BUTTON -->
   <a href="index.html" class="home-btn">
     🏠 Home
   </a>
 
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const translations = {
+
+      english: {
+        greeting: "Dear Jitesh Sir,",
+
+        message1:
+          "This is just a trial message for now. The final message will be added here later.",
+
+        message2:
+          "Thank you for being a part of my two years of Articleship and for giving me memories that I will always remember.",
+
+        ending:
+          "Thank you for everything. ❤️",
+
+        back:
+          "← Back to Memories"
+      },
+
+
+      hindi: {
+        greeting: "प्रिय जितेश सर,",
+
+        message1:
+          "फिलहाल यह सिर्फ एक ट्रायल मैसेज है। फाइनल मैसेज बाद में यहाँ जोड़ा जाएगा।",
+
+        message2:
+          "मेरी दो साल की आर्टिकलशिप का हिस्सा बनने और मुझे ऐसी यादें देने के लिए धन्यवाद, जिन्हें मैं हमेशा याद रखूँगा।",
+
+        ending:
+          "हर चीज़ के लिए दिल से धन्यवाद। ❤️",
+
+        back:
+          "← यादों पर वापस जाएँ"
+      },
+
+
+      gujarati: {
+        greeting: "પ્રિય જિતેશ સર,",
+
+        message1:
+          "હાલ માટે આ માત્ર એક ટ્રાયલ મેસેજ છે. ફાઇનલ મેસેજ પછી અહીં ઉમેરવામાં આવશે.",
+
+        message2:
+          "મારી બે વર્ષની આર્ટિકલશિપનો એક મહત્વનો ભાગ બનવા બદલ અને મને એવી યાદો આપવા બદલ ખૂબ ખૂબ આભાર, જેને હું હંમેશા યાદ રાખીશ.",
+
+        ending:
+          "દરેક વસ્તુ માટે દિલથી આભાર. ❤️",
+
+        back:
+          "← યાદો પર પાછા જાઓ"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const text = translations[language];
+
+      document.getElementById("greeting").textContent =
+        text.greeting;
+
+      document.getElementById("message1").textContent =
+        text.message1;
+
+      document.getElementById("message2").textContent =
+        text.message2;
+
+      document.getElementById("ending").textContent =
+        text.ending;
+
+      document.getElementById("backBtn").textContent =
+        text.back;
+
+
+      /* Active button */
+
+      document.getElementById("englishBtn")
+        .classList.remove("active");
+
+      document.getElementById("hindiBtn")
+        .classList.remove("active");
+
+      document.getElementById("gujaratiBtn")
+        .classList.remove("active");
+
+
+      if (language === "english") {
+        document.getElementById("englishBtn")
+          .classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn")
+          .classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn")
+          .classList.add("active");
+      }
+
+    }
+
+  </script>
+
 </body>
+
 </html>
