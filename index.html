@@ -1,209 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>My Articleship Memories ❤️</title>
 
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
             font-family: Georgia, "Times New Roman", serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        .page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
-            position: relative;
+            background: linear-gradient(135deg, #fff8f5, #f8eef2);
+            color: #4b3541;
         }
 
         .container {
             width: 100%;
-            max-width: 850px;
+            max-width: 950px;
+            margin: auto;
+            padding: 25px 20px 60px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 50px 30px;
-            background: rgba(255, 255, 255, 0.72);
-            border-radius: 28px;
-            box-shadow: 0 15px 50px rgba(80, 60, 80, 0.12);
-            backdrop-filter: blur(8px);
-            animation: appear 1.2s ease;
         }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #8a6878;
-            margin-bottom: 18px;
-        }
-
-        h1 {
-            font-size: clamp(38px, 8vw, 72px);
-            line-height: 1.1;
-            color: #4b3541;
-            margin-bottom: 18px;
+        .hero-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 50px 25px;
         }
 
         .heart {
-            display: inline-block;
-            animation: heartbeat 1.8s infinite;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(38px, 7vw, 68px);
+            line-height: 1.15;
+            color: #4b3541;
+        }
+
+        .subtitle {
+            margin-top: 20px;
+            font-size: clamp(18px, 3vw, 24px);
+            line-height: 1.6;
+            color: #6f6268;
         }
 
         .dates {
-            font-family: Arial, sans-serif;
+            margin-top: 20px;
             font-size: 17px;
-            letter-spacing: 2px;
-            color: #806674;
-            margin-bottom: 35px;
-        }
-
-        .line {
-            width: 70px;
-            height: 2px;
-            margin: 0 auto 32px;
-            background: #b997a7;
+            letter-spacing: 1px;
+            color: #8a6978;
         }
 
         .intro {
-            max-width: 650px;
-            margin: auto;
-            font-size: 19px;
+            margin-top: 55px;
+            font-size: 18px;
             line-height: 1.9;
-            color: #51474c;
+            color: #5e5157;
         }
 
-        .highlight {
-            margin: 30px auto;
-            font-size: 22px;
-            line-height: 1.7;
-            color: #493842;
-            font-style: italic;
+        .intro p {
+            margin: 20px 0;
         }
 
-        .button {
+        .open-button {
             display: inline-block;
             margin-top: 25px;
-            padding: 16px 32px;
-            border-radius: 50px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            background: #5a4050;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.25s ease;
+            box-shadow: 0 6px 18px rgba(90, 64, 80, 0.18);
+        }
+
+        .open-button:hover {
+            transform: translateY(-2px);
+            background: #704f63;
+        }
+
+        /* Memories */
+
+        #memories {
+            margin-top: 30px;
+            text-align: center;
+            padding: 45px 0 20px;
+        }
+
+        #memories h2 {
+            margin: 0;
+            font-size: clamp(30px, 5vw, 42px);
+            color: #4b3541;
+        }
+
+        .memory-intro {
+            margin: 15px auto 0;
+            max-width: 650px;
+            line-height: 1.7;
+            color: #6f6268;
+            font-size: 17px;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 850px;
+            margin: 35px auto 0;
+            padding: 0 10px;
+        }
+
+        .memory-card {
+            display: block;
+            padding: 20px 16px;
+            border-radius: 20px;
             background: #5a4050;
             color: white;
             text-decoration: none;
             font-family: Arial, sans-serif;
             font-size: 16px;
             font-weight: bold;
-            letter-spacing: 0.5px;
-            box-shadow: 0 8px 22px rgba(90, 64, 80, 0.25);
-            transition: 0.3s ease;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
+            transition: 0.25s ease;
         }
 
-        .button:hover {
+        .memory-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(90, 64, 80, 0.32);
+            background: #704f63;
         }
 
-        .note {
-            margin-top: 35px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: #8b7c83;
-            line-height: 1.7;
+        .ending {
+            margin-top: 45px;
+            text-align: center;
+            line-height: 1.8;
+            color: #6f6268;
         }
 
-        .floating-heart {
-            position: fixed;
-            font-size: 20px;
-            opacity: 0.25;
-            animation: float 6s ease-in-out infinite;
-            pointer-events: none;
+        .footer-heart {
+            margin-top: 15px;
+            font-size: 24px;
         }
 
-        .heart-one {
-            top: 12%;
-            left: 8%;
-        }
-
-        .heart-two {
-            top: 25%;
-            right: 9%;
-            animation-delay: 1s;
-        }
-
-        .heart-three {
-            bottom: 15%;
-            left: 13%;
-            animation-delay: 2s;
-        }
-
-        .heart-four {
-            bottom: 10%;
-            right: 12%;
-            animation-delay: 3s;
-        }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.15);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
+        /* Mobile */
 
         @media (max-width: 600px) {
 
-            .page {
-                padding: 18px 12px;
-            }
-
             .container {
-                padding: 40px 20px;
-                border-radius: 22px;
+                padding-left: 15px;
+                padding-right: 15px;
             }
 
-            .small-title {
-                font-size: 11px;
-                letter-spacing: 2px;
+            .hero {
+                min-height: auto;
+                padding-top: 45px;
+                padding-bottom: 45px;
             }
 
-            .dates {
-                font-size: 14px;
+            .hero-content {
+                padding: 30px 10px;
+            }
+
+            .heart {
+                font-size: 34px;
             }
 
             .intro {
@@ -211,119 +192,131 @@
                 line-height: 1.8;
             }
 
-            .highlight {
-                font-size: 19px;
+            .memory-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 5px;
             }
 
-            .button {
-                padding: 14px 26px;
-                font-size: 15px;
-            }
-
-            .floating-heart {
-                display: none;
+            .memory-card {
+                width: 100%;
+                padding: 18px 14px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <div class="floating-heart heart-one">❤️</div>
-    <div class="floating-heart heart-two">♡</div>
-    <div class="floating-heart heart-three">❤️</div>
-    <div class="floating-heart heart-four">♡</div>
+    <div class="container">
 
-    <main class="page">
+        <!-- HERO / HOME SECTION -->
 
-        <section class="container">
+        <section class="hero">
 
-            <div class="small-title">
-                A small collection of big memories
+            <div class="hero-content">
+
+                <div class="heart">❤️</div>
+
+                <h1>
+                    My Articleship Memories
+                </h1>
+
+                <div class="dates">
+                    August 2024 — August 2026
+                </div>
+
+                <div class="subtitle">
+                    Two years. So many people.<br>
+                    So many memories.
+                </div>
+
+                <div class="intro">
+
+                    <p>
+                        When I think about my Articleship,
+                        I don't just remember the work,
+                        audits, deadlines and busy days.
+                    </p>
+
+                    <p>
+                        I remember the people who made these
+                        two years special. ❤️
+                    </p>
+
+                    <p>
+                        Every person I met here gave me something —
+                        a lesson, a laugh, a memory, a little support,
+                        or simply a reason to enjoy coming to the office.
+                    </p>
+
+                    <p>
+                        So before moving ahead, I wanted to take
+                        a moment to say something to each one of you.
+                    </p>
+
+                    <a href="#memories" class="open-button">
+                        Open My Memories →
+                    </a>
+
+                </div>
+
             </div>
-
-            <h1>
-                My Articleship<br>
-                Memories <span class="heart">❤️</span>
-            </h1>
-
-            <div class="dates">
-                August 2024 — August 2026
-            </div>
-
-            <div class="line"></div>
-
-            <p class="intro">
-                Two years of Articleship are finally coming to an end.
-                But when I look back, I don't just remember the work,
-                audits, deadlines and busy days.
-            </p>
-
-            <p class="highlight">
-                I remember the people who made these two years
-                special. ❤️
-            </p>
-
-            <p class="intro">
-                Every person I met here gave me something —
-                a lesson, a laugh, a memory, a little support,
-                or simply a reason to enjoy coming to the office.
-            </p>
-
-            <p class="intro" style="margin-top: 20px;">
-                So before moving ahead, I wanted to take a moment
-                to say something to each one of you.
-            </p>
-
-            <a href="#memories" class="button">
-                Open My Memories →
-            </a>
-
-            <p class="note">
-                This is not just a farewell.<br>
-                These are the memories I will carry with me.
-            </p>
 
         </section>
 
-    </main>
 
-<section id="memories" style="margin-top: 45px; text-align: center;">
+        <!-- MY MEMORIES SECTION -->
 
-    <h2 style="color: #4b3541; font-size: 30px;">
-        My Memories ❤️
-    </h2>
+        <section id="memories">
 
-    <p style="margin-top: 15px; color: #6f6268;">
-        A small message for someone who made my Articleship special.
-    </p>
+            <h2>
+                My Memories ❤️
+            </h2>
 
-    <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 18px;
-        max-width: 850px;
-        margin: 30px auto;
-        padding: 0 20px;
-    ">
+            <p class="memory-intro">
+                A small message for everyone who made
+                my Articleship special.
+            </p>
 
-        <a href="jitesh-sir.html"
-           style="
-           display: block;
-           padding: 18px 15px;
-           border-radius: 18px;
-           background: #5a4050;
-           color: white;
-           text-decoration: none;
-           font-family: Arial, sans-serif;
-           font-weight: bold;
-           box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-           ">
-            ❤️ CA Jitesh Sir
-        </a>
+
+            <div class="memory-grid">
+
+                <!-- Trial message -->
+
+                <a href="jitesh-sir.html" class="memory-card">
+                    ❤️ CA Jitesh Sir
+                </a>
+
+            </div>
+
+
+            <div class="ending">
+
+                <p>
+                    This is not just a farewell.
+                </p>
+
+                <p>
+                    These are the memories I will carry with me.
+                </p>
+
+                <div class="footer-heart">
+                    ❤️
+                </div>
+
+            </div>
+
+        </section>
 
     </div>
 
-</section>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
