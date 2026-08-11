@@ -1,173 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Vivek Bhai ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .message p:nth-child(1) { animation-delay: 0.1s; }
+    .message p:nth-child(2) { animation-delay: 0.2s; }
+    .message p:nth-child(3) { animation-delay: 0.3s; }
+    .message p:nth-child(4) { animation-delay: 0.4s; }
+    .message p:nth-child(5) { animation-delay: 0.5s; }
+    .message p:nth-child(6) { animation-delay: 0.6s; }
+    .message p:nth-child(7) { animation-delay: 0.7s; }
+    .message p:nth-child(8) { animation-delay: 0.8s; }
+    .message p:nth-child(9) { animation-delay: 0.9s; }
+    .message p:nth-child(10) { animation-delay: 1s; }
+    .message p:nth-child(11) { animation-delay: 1.1s; }
+    .message p:nth-child(12) { animation-delay: 1.2s; }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-            h1 {
-                font-size: 30px;
-            }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
+
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      The GST Guide I Always Wanted to Learn From ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>CA Vivek Bhai ❤️</h1>
+    <div class="subtitle">
+      Vivek Bhai ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Vivek Bhai,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        Dear Vivek Bhai,
+      </p>
+
+      <p id="message2">
+        Vivek Bhai, you handle all the <strong>GST-related work</strong> in our office, and you are honestly one of the calmest people I have met. You mostly keep yourself focused on your work, but whenever I have asked you any doubt, you have always explained it to me very nicely, with proper examples, so that I could actually understand it.
+      </p>
+
+      <p id="message3">
+        I have personally liked <strong>GST</strong> from the beginning, so from Day 1 I used to tell you,
+        <strong>“Vivek Bhai, mane GST sikhvadjo hhh, and mane kaam pan aapjo.”</strong> 😂
+        And you would always say,
+        <strong>“Are jaroor, tu free thaine keh, to tane mota mota client nu kaam sikhvadi dav.”</strong>
+      </p>
+
+      <p id="message4">
+        But honestly, I never really became free from my Audit work. 😂 So even though I couldn't work with you as much as I wanted to, you did show me some work and taught me things in the beginning.
+      </p>
+
+      <p id="message5">
+        Still, there is one wish that I have —
+        <strong>I genuinely want to learn GST from you someday. ❤️</strong>
+      </p>
+
+      <p id="message6">
+        I have a lot of respect for you, not just because of your knowledge, but also because of your nature. You are a very good and calm person.
+      </p>
+
+      <p id="message7">
+        And it wasn't only office work. Sometimes I would even call you regarding some
+        <strong>personal client-related work</strong> to ask for information, and you would always explain everything to me properly and patiently.
+      </p>
+
+      <p id="message8">
+        There is also one recent memory that I definitely have to mention. 😂 A few days ago, you and I had a debate about one <strong>section</strong>, and the result came right there —
+        <strong>I lost!</strong> 😂😂
+      </p>
+
+      <p id="message9">
+        And then you jokingly said,
+        <strong>“Are nah, aapto party!”</strong> 😂😂
+      </p>
+
+      <p id="message10">
+        But Vivek Bhai, even though I lost that debate,
+        <strong>I will definitely give you a party one day!</strong> 😂❤️
+      </p>
+
+      <p id="message11">
+        Vivek Bhai, thank you so much for always helping me, explaining my doubts, and supporting me whenever I needed your help.
+      </p>
+
+      <p id="message12">
+        And if during these two years I have made any mistake, said something wrong, or unintentionally hurt you in any way,
+        <strong>I am genuinely sorry from my heart.</strong> 🙏
+      </p>
+
+      <p id="message13">
+        Thank you so much, Vivek Bhai. ❤️
+      </p>
+
+      <p id="message14">
+        <strong>And yes… one day, I will definitely learn GST properly from you! 😂❤️</strong>
+      </p>
+
+      <p style="text-align: right; margin-top: 45px;">
+        — Jitu Suthar
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "Dear Vivek Bhai,",
+
+        message2: "Vivek Bhai, you handle all the <strong>GST-related work</strong> in our office, and you are honestly one of the calmest people I have met. You mostly keep yourself focused on your work, but whenever I have asked you any doubt, you have always explained it to me very nicely, with proper examples, so that I could actually understand it.",
+
+        message3: "I have personally liked <strong>GST</strong> from the beginning, so from Day 1 I used to tell you, <strong>“Vivek Bhai, mane GST sikhvadjo hhh, and mane kaam pan aapjo.”</strong> 😂 And you would always say, <strong>“Are jaroor, tu free thaine keh, to tane mota mota client nu kaam sikhvadi dav.”</strong>",
+
+        message4: "But honestly, I never really became free from my Audit work. 😂 So even though I couldn't work with you as much as I wanted to, you did show me some work and taught me things in the beginning.",
+
+        message5: "Still, there is one wish that I have — <strong>I genuinely want to learn GST from you someday. ❤️</strong>",
+
+        message6: "I have a lot of respect for you, not just because of your knowledge, but also because of your nature. You are a very good and calm person.",
+
+        message7: "And it wasn't only office work. Sometimes I would even call you regarding some <strong>personal client-related work</strong> to ask for information, and you would always explain everything to me properly and patiently.",
+
+        message8: "There is also one recent memory that I definitely have to mention. 😂 A few days ago, you and I had a debate about one <strong>section</strong>, and the result came right there — <strong>I lost!</strong> 😂😂",
+
+        message9: "And then you jokingly said, <strong>“Are nah, aapto party!”</strong> 😂😂",
+
+        message10: "But Vivek Bhai, even though I lost that debate, <strong>I will definitely give you a party one day!</strong> 😂❤️",
+
+        message11: "Vivek Bhai, thank you so much for always helping me, explaining my doubts, and supporting me whenever I needed your help.",
+
+        message12: "And if during these two years I have made any mistake, said something wrong, or unintentionally hurt you in any way, <strong>I am genuinely sorry from my heart.</strong> 🙏",
+
+        message13: "Thank you so much, Vivek Bhai. ❤️",
+
+        message14: "<strong>And yes… one day, I will definitely learn GST properly from you! 😂❤️</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "Dear Vivek Bhai,",
+
+        message2: "Vivek Bhai, आप हमारे office में <strong>GST-related work</strong> संभालते हैं और honestly आप सबसे calm लोगों में से एक हैं जिन्हें मैंने जाना है। आप mostly अपने काम पर focused रहते हैं, लेकिन जब भी मैंने आपसे कोई doubt पूछा है, आपने हमेशा proper examples के साथ मुझे बहुत अच्छे से समझाया है।",
+
+        message3: "मुझे शुरुआत से ही <strong>GST</strong> personally बहुत पसंद है, इसलिए Day 1 से मैं आपको कहता था, <strong>“Vivek Bhai, mane GST sikhvadjo hhh, and mane kaam pan aapjo.”</strong> 😂 और आप हमेशा कहते थे, <strong>“Are jaroor, tu free thaine keh, to tane mota mota client nu kaam sikhvadi dav.”</strong>",
+
+        message4: "लेकिन honestly, मैं अपने Audit work से कभी properly free हो ही नहीं पाया। 😂 इसलिए जितना मैं आपके साथ काम करना चाहता था उतना नहीं कर पाया, लेकिन शुरुआत में आपने मुझे कुछ काम दिखाया और सिखाया जरूर।",
+
+        message5: "फिर भी मेरी एक इच्छा अभी भी है — <strong>मैं genuinely एक दिन आपसे GST properly सीखना चाहता हूँ। ❤️</strong>",
+
+        message6: "मुझे आपके knowledge के साथ-साथ आपके nature के लिए भी बहुत respect है। आप बहुत अच्छे और calm इंसान हैं।",
+
+        message7: "और यह सिर्फ office work तक ही limited नहीं था। कभी-कभी मैं किसी <strong>personal client-related work</strong> के लिए भी आपको call करके information पूछता था और आप हमेशा मुझे बहुत अच्छे से और patiently समझाते थे।",
+
+        message8: "एक recent memory भी definitely mention करनी है। 😂 कुछ दिन पहले आप और मेरे बीच एक <strong>section</strong> को लेकर debate हुई थी और उसका result वहीं आ गया था — <strong>मैं हार गया!</strong> 😂😂",
+
+        message9: "और फिर आपने मज़ाक में कहा था, <strong>“Are nah, aapto party!”</strong> 😂😂",
+
+        message10: "लेकिन Vivek Bhai, भले ही उस debate में मैं हार गया, <strong>एक दिन मैं आपको party जरूर दूँगा!</strong> 😂❤️",
+
+        message11: "Vivek Bhai, हमेशा मेरी help करने, मेरे doubts समझाने और जब भी मुझे जरूरत हुई तब support करने के लिए बहुत-बहुत thank you।",
+
+        message12: "और अगर इन दो सालों में मुझसे कोई mistake हुई हो, मैंने कुछ गलत कहा हो या अनजाने में आपको किसी भी तरह hurt किया हो, तो <strong>मैं दिल से genuinely sorry हूँ।</strong> 🙏",
+
+        message13: "Thank you so much, Vivek Bhai. ❤️",
+
+        message14: "<strong>And yes… एक दिन मैं आपसे GST properly जरूर सीखूँगा! 😂❤️</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "Dear Vivek Bhai,",
+
+        message2: "Vivek Bhai, તમે અમારી officeમાં <strong>GST-related work</strong> જુઓ છો અને honestly તમે સૌથી calm માણસોમાંથી એક છો જેને મેં જોયા છે. તમે mostly તમારા કામ પર focused રહો છો, પરંતુ જ્યારે પણ મેં તમને કોઈ doubt પૂછ્યો છે ત્યારે તમે proper examples સાથે મને ખૂબ સારી રીતે સમજાવ્યો છે.",
+
+        message3: "મને શરૂઆતથી જ <strong>GST</strong> personally ખૂબ ગમે છે, એટલે Day 1થી હું તમને કહેતો હતો, <strong>“Vivek Bhai, mane GST sikhvadjo hhh, and mane kaam pan aapjo.”</strong> 😂 અને તમે હંમેશા કહેતા, <strong>“Are jaroor, tu free thaine keh, to tane mota mota client nu kaam sikhvadi dav.”</strong>",
+
+        message4: "પરંતુ honestly, હું મારા Auditના કામમાંથી ક્યારેય properly free થયો જ નહીં. 😂 એટલે તમારી સાથે જેટલું કામ કરવું હતું એટલું કરી શક્યો નહીં, પરંતુ શરૂઆતમાં તમે મને થોડું કામ બતાવ્યું અને શીખવ્યું હતું.",
+
+        message5: "તેમ છતાં મારી એક ઈચ્છા હજુ પણ છે — <strong>મારે એક દિવસ તમારી પાસેથી GST properly શીખવું છે. ❤️</strong>",
+
+        message6: "તમારા knowledgeની સાથે સાથે તમારા nature માટે પણ મને ખૂબ respect છે. તમે ખૂબ સારા અને calm માણસ છો.",
+
+        message7: "અને આ માત્ર office work પૂરતું જ નહોતું. ઘણી વાર કોઈ <strong>personal client-related work</strong> માટે પણ હું તમને call કરીને information પૂછતો હતો અને તમે હંમેશા મને ખૂબ સારી રીતે અને patiently સમજાવતા હતા.",
+
+        message8: "એક recent memory પણ definitely mention કરવી છે. 😂 થોડા દિવસ પહેલા તમારી અને મારી વચ્ચે એક <strong>section</strong>ને લઈને debate થઈ હતી અને તેનું result ત્યાં જ આવી ગયું હતું — <strong>હું હારી ગયો!</strong> 😂😂",
+
+        message9: "અને પછી તમે મજાકમાં કહ્યું હતું, <strong>“Are nah, aapto party!”</strong> 😂😂",
+
+        message10: "પણ Vivek Bhai, ભલે એ debateમાં હું હારી ગયો, <strong>એક દિવસ હું તમને party જરૂર આપીશ!</strong> 😂❤️",
+
+        message11: "Vivek Bhai, હંમેશા મારી help કરવા, મારા doubts સમજાવવા અને જ્યારે પણ મને જરૂર પડી ત્યારે support કરવા માટે ખૂબ ખૂબ thank you.",
+
+        message12: "અને જો આ બે વર્ષમાં મારાથી કોઈ mistake થઈ હોય, મેં કંઈ ખોટું કહ્યું હોય અથવા અજાણતા તમને કોઈપણ રીતે hurt કર્યા હોય તો <strong>હું દિલથી genuinely sorry છું.</strong> 🙏",
+
+        message13: "Thank you so much, Vivek Bhai. ❤️",
+
+        message14: "<strong>And yes… એક દિવસ હું તમારી પાસેથી GST properly જરૂર શીખીશ! 😂❤️</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 14; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
