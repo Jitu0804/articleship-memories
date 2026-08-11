@@ -1,173 +1,812 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>CA Barkha Ma'am ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .top {
-            text-align: center;
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    /* =========================
+       LANGUAGE BUTTONS
+    ========================= */
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
 
-            h1 {
-                font-size: 30px;
-            }
+    /* =========================
+       MESSAGE
+    ========================= */
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
+
+    .message p {
+      margin-bottom: 28px;
+    }
+
+
+    /* =========================
+       OPENING ANIMATION
+    ========================= */
+
+    .message p {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
+
+    .message p:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .message p:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .message p:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .message p:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .message p:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .message p:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    .message p:nth-child(7) {
+      animation-delay: 0.7s;
+    }
+
+    .message p:nth-child(8) {
+      animation-delay: 0.8s;
+    }
+
+    .message p:nth-child(9) {
+      animation-delay: 0.9s;
+    }
+
+    .message p:nth-child(10) {
+      animation-delay: 1s;
+    }
+
+    .message p:nth-child(11) {
+      animation-delay: 1.1s;
+    }
+
+    .message p:nth-child(12) {
+      animation-delay: 1.2s;
+    }
+
+    .message p:nth-child(13) {
+      animation-delay: 1.3s;
+    }
+
+    .message p:nth-child(14) {
+      animation-delay: 1.4s;
+    }
+
+    .message p:nth-child(15) {
+      animation-delay: 1.5s;
+    }
+
+
+    @keyframes messageAppear {
+
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* =========================
+       LANGUAGE CHANGE ANIMATION
+    ========================= */
+
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
+
+    @keyframes languageFade {
+
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* =========================
+       ENDING
+    ========================= */
+
+    .ending {
+      text-align: center;
+      font-style: italic;
+      font-size: 25px;
+      margin-top: 40px;
+    }
+
+
+    /* =========================
+       BACK BUTTON
+    ========================= */
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+
+    /* =========================
+       HOME BUTTON
+    ========================= */
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: none;
+
+      background: #6b465c;
+      color: white;
+
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+
+    /* =========================
+       PHONE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-    <div class="card">
 
-        <div class="top">
-
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
-
-            <!-- CHANGE THE NAME HERE -->
-            <h1>CA Barkha Ma'am ❤️</h1>
-
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
-
-            <div class="line"></div>
-
-        </div>
+  <div class="message-card">
 
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Barkha Ma'am,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
 
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
+    <h1>
+      More Than a Teacher, One of the Most Fun-Loving People in My Articleship ❤️
+    </h1>
 
 
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+    <div class="subtitle">
+      CA Barkha Ma'am ❤️
+    </div>
+
+
+    <div class="divider"></div>
+
+
+    <!-- LANGUAGE BUTTONS -->
+
+    <div class="language-buttons">
+
+      <button
+        id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+
+        🇬🇧 English
+
+      </button>
+
+
+      <button
+        id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+
+        🇮🇳 हिन्दी
+
+      </button>
+
+
+      <button
+        id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+
+        🇮🇳 ગુજરાતી
+
+      </button>
 
     </div>
 
+
+    <!-- MESSAGE -->
+
+    <div class="message">
+
+
+      <p id="greeting">
+        Dear Barkha Ma’am,
+      </p>
+
+
+      <p id="message1">
+        When I think about these two years of Articleship, there are many people and memories that come to my mind, but your presence has a very special place in those memories.
+      </p>
+
+
+      <p id="message2">
+        Barkha Ma’am, you are <strong>truly one of the most comedy-loving and cheerful people</strong> I have ever seen. Honestly, I don't think there is anyone else in our office as hasmukh as you. 😄 Whenever you sit with us and work, somehow the work itself becomes more enjoyable because of your <strong>one-liner jokes</strong>. Your sense of humour is just too good, and the way you make everyone laugh is something I will genuinely miss. 😂❤️
+      </p>
+
+
+      <p id="message3">
+        Whenever I had any doubt related to <strong>TDS</strong>, you always explained it to me very nicely. You never showed anger or irritation while explaining anything to me. Even today, I can honestly say that I have never seen you getting angry at anyone. That is something I really admire about you.
+      </p>
+
+
+      <p id="message4">
+        We didn't get many opportunities to sit and work for a long time in your cabin, but Ma’am, if I had been given the option to <strong>choose my sitting place anywhere in the entire office</strong>, I would definitely have chosen your cabin. 😂❤️ Because I genuinely enjoy sitting with you, talking with you and working around you.
+      </p>
+
+
+      <p id="message5">
+        And Ma’am, whenever there was <strong>any party, farewell or games in the basement</strong>, your presence gave a completely different energy to the whole thing. You always participated so actively and made everyone laugh. Whether it was a celebration or just some masti, your presence always made it more enjoyable.
+      </p>
+
+
+      <p id="message6">
+        One thing I really like about you is that even though you are a senior and a teacher to us, your nature is still <strong>just like ours — full of masti, jokes and fun</strong>. And whenever there is a chance to make fun of someone or enjoy a joke together, you are always there with us. 😂❤️ That is what makes you so different and so easy to connect with.
+      </p>
+
+
+      <p id="message7">
+        And Ma’am, I also want to say something from my heart about <strong>that WhatsApp group message</strong>. I am genuinely sorry that the joke we made hurt you. 🙏 There was absolutely no intention from our side to hurt you or make you feel bad. When you said, <strong>“Chalya kare, aavu toh, chinta nai karvani,”</strong> it showed me again how pure-hearted you really are. ❤️ The way you handled that situation without holding it against us is something I will always remember.
+      </p>
+
+
+      <p id="message8">
+        Honestly, Ma’am, <strong>you are a very pure-hearted person</strong>. I have never seen you getting angry with anyone, and even after being our senior, you always remained connected with us through the same masti, jokes and fun.
+      </p>
+
+
+      <p id="message9">
+        Thank you so much, Ma’am, for <strong>teaching me, explaining my TDS doubts, always supporting me and making the office environment so much more fun</strong>. ❤️
+      </p>
+
+
+      <p id="message10">
+        These two years would definitely not have been the same without your jokes, your laughter, your participation in every celebration and all those small moments with you.
+      </p>
+
+
+      <p id="message11">
+        And Ma’am, if during these two years I have ever made any mistake, said something wrong, or unintentionally hurt you in any way, <strong>I am genuinely sorry from my heart.</strong> 🙏❤️
+      </p>
+
+
+      <p id="message12">
+        I will genuinely miss the office, the people, the masti, the jokes, the celebrations and especially people like you who made this place feel so special.
+      </p>
+
+
+      <p class="ending" id="ending">
+        The Articleship may be over, but the memories, respect and relationships I made here will always remain with me. ❤️
+      </p>
+
+
+      <p id="message13">
+        Thank you for everything, Barkha Ma’am. ❤️
+      </p>
+
+
+      <p style="text-align: right; margin-top: 45px;">
+        — Jitu Suthar
+      </p>
+
+
+    </div>
+
+
+    <a
+      href="index.html"
+      class="back-btn"
+      id="backBtn">
+
+      ← Back to Memories
+
+    </a>
+
+
+  </div>
+
+
+  <!-- HOME BUTTON -->
+
+  <a
+    href="index.html"
+    class="home-btn">
+
+    🏠 Home
+
+  </a>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+
+    const translations = {
+
+
+      /* =======================
+         ENGLISH
+      ======================= */
+
+      english: {
+
+        greeting:
+          "Dear Barkha Ma’am,",
+
+
+        message1:
+          "When I think about these two years of Articleship, there are many people and memories that come to my mind, but your presence has a very special place in those memories.",
+
+
+        message2:
+          "Barkha Ma’am, you are truly one of the most comedy-loving and cheerful people I have ever seen. Honestly, I don't think there is anyone else in our office as hasmukh as you. 😄 Whenever you sit with us and work, somehow the work itself becomes more enjoyable because of your one-liner jokes. Your sense of humour is just too good, and the way you make everyone laugh is something I will genuinely miss. 😂❤️",
+
+
+        message3:
+          "Whenever I had any doubt related to TDS, you always explained it to me very nicely. You never showed anger or irritation while explaining anything to me. Even today, I can honestly say that I have never seen you getting angry at anyone. That is something I really admire about you.",
+
+
+        message4:
+          "We didn't get many opportunities to sit and work for a long time in your cabin, but Ma’am, if I had been given the option to choose my sitting place anywhere in the entire office, I would definitely have chosen your cabin. 😂❤️ Because I genuinely enjoy sitting with you, talking with you and working around you.",
+
+
+        message5:
+          "And Ma’am, whenever there was any party, farewell or games in the basement, your presence gave a completely different energy to the whole thing. You always participated so actively and made everyone laugh. Whether it was a celebration or just some masti, your presence always made it more enjoyable.",
+
+
+        message6:
+          "One thing I really like about you is that even though you are a senior and a teacher to us, your nature is still just like ours — full of masti, jokes and fun. And whenever there is a chance to make fun of someone or enjoy a joke together, you are always there with us. 😂❤️ That is what makes you so different and so easy to connect with.",
+
+
+        message7:
+          "And Ma’am, I also want to say something from my heart about that WhatsApp group message. I am genuinely sorry that the joke we made hurt you. 🙏 There was absolutely no intention from our side to hurt you or make you feel bad. When you said, “Chalya kare, aavu toh, chinta nai karvani,” it showed me again how pure-hearted you really are. ❤️ The way you handled that situation without holding it against us is something I will always remember.",
+
+
+        message8:
+          "Honestly, Ma’am, you are a very pure-hearted person. I have never seen you getting angry with anyone, and even after being our senior, you always remained connected with us through the same masti, jokes and fun.",
+
+
+        message9:
+          "Thank you so much, Ma’am, for teaching me, explaining my TDS doubts, always supporting me and making the office environment so much more fun. ❤️",
+
+
+        message10:
+          "These two years would definitely not have been the same without your jokes, your laughter, your participation in every celebration and all those small moments with you.",
+
+
+        message11:
+          "And Ma’am, if during these two years I have ever made any mistake, said something wrong, or unintentionally hurt you in any way, I am genuinely sorry from my heart. 🙏❤️",
+
+
+        message12:
+          "I will genuinely miss the office, the people, the masti, the jokes, the celebrations and especially people like you who made this place feel so special.",
+
+
+        ending:
+          "The Articleship may be over, but the memories, respect and relationships I made here will always remain with me. ❤️",
+
+
+        message13:
+          "Thank you for everything, Barkha Ma’am. ❤️",
+
+
+        back:
+          "← Back to Memories"
+
+      },
+
+
+      /* =======================
+         HINDI
+      ======================= */
+
+      hindi: {
+
+        greeting:
+          "प्रिय बरखा मैम,",
+
+
+        message1:
+          "जब मैं अपनी इन दो साल की Articleship के बारे में सोचता हूँ, तो मेरे मन में बहुत सारे लोग और memories आती हैं, लेकिन उन memories में आपकी presence की एक बहुत special जगह है।",
+
+
+        message2:
+          "बरखा मैम, आप सच में मेरे देखे हुए सबसे ज्यादा comedy-loving और cheerful लोगों में से एक हैं। Honestly, मुझे नहीं लगता कि हमारे office में आपके जितना hasmukh कोई और है। 😄 जब भी आप हमारे साथ बैठकर काम करती हैं, तो आपके one-liner jokes की वजह से काम भी somehow ज्यादा enjoyable लगने लगता है। आपका sense of humour बहुत ही अच्छा है और जिस तरह आप सबको हँसाती हैं, उसे मैं genuinely miss करूँगा। 😂❤️",
+
+
+        message3:
+          "जब भी मुझे TDS से related कोई doubt होता था, आप हमेशा मुझे बहुत अच्छे से समझाती थीं। कुछ समझाते समय आपने कभी गुस्सा या irritation नहीं दिखाया। आज भी मैं honestly कह सकता हूँ कि मैंने आपको कभी किसी पर गुस्सा करते हुए नहीं देखा। आपकी यह बात मुझे बहुत अच्छी लगती है।",
+
+
+        message4:
+          "हमें आपकी cabin में लंबे समय तक बैठकर काम करने के ज्यादा मौके नहीं मिले, लेकिन मैम, अगर मुझे पूरे office में कहीं भी अपनी sitting place चुनने का option मिलता, तो मैं definitely आपकी cabin ही choose करता। 😂❤️ क्योंकि मुझे सच में आपके साथ बैठना, आपसे बातें करना और आपके आसपास काम करना बहुत अच्छा लगता है।",
+
+
+        message5:
+          "और मैम, जब भी कोई party, farewell या basement में games होते थे, तो आपकी presence से पूरे माहौल में एक अलग ही energy आ जाती थी। आप हमेशा बहुत actively participate करती थीं और सबको हँसाती थीं। चाहे कोई celebration हो या सिर्फ थोड़ी masti, आपकी presence उसे और enjoyable बना देती थी।",
+
+
+        message6:
+          "आपके बारे में मुझे एक चीज़ बहुत अच्छी लगती है कि आप हमारी senior और teacher होने के बावजूद nature से बिल्कुल हमारे जैसी हैं — पूरी तरह masti, jokes और fun से भरी हुई। और जब भी किसी की थोड़ी मज़ाक करने या साथ में कोई joke enjoy करने का मौका होता है, तो आप हमेशा हमारे साथ होती हैं। 😂❤️ यही बात आपको इतना अलग और हमसे इतना आसानी से connect होने वाला बनाती है।",
+
+
+        message7:
+          "और मैम, मैं उस WhatsApp group message के बारे में भी दिल से कुछ कहना चाहता हूँ। उस joke की वजह से आपको hurt हुआ, उसके लिए मैं genuinely sorry हूँ। 🙏 हमारी तरफ से आपको hurt करने या बुरा feel कराने का बिल्कुल भी intention नहीं था। जब आपने कहा, “Chalya kare, aavu toh, chinta nai karvani,” तब फिर से लगा कि आप सच में कितनी pure-hearted हैं। ❤️ आपने उस situation को जिस तरह से लिया और उसे अपने मन में नहीं रखा, वह बात मुझे हमेशा याद रहेगी।",
+
+
+        message8:
+          "Honestly, मैम, आप बहुत pure-hearted person हैं। मैंने आपको आज तक किसी पर गुस्सा करते हुए नहीं देखा और हमारी senior होने के बावजूद आप हमेशा उसी masti, jokes और fun के साथ हमसे connected रहीं।",
+
+
+        message9:
+          "मैम, मुझे सिखाने के लिए, मेरे TDS doubts समझाने के लिए, हमेशा support करने के लिए और office environment को इतना ज्यादा fun बनाने के लिए आपका बहुत-बहुत धन्यवाद। ❤️",
+
+
+        message10:
+          "आपके jokes, आपकी laughter, हर celebration में आपका participation और आपके साथ बिताए ये छोटे-छोटे moments न होते तो ये दो साल definitely ऐसे नहीं होते।",
+
+
+        message11:
+          "और मैम, इन दो सालों के दौरान अगर मुझसे कभी कोई mistake हुई हो, मैंने कुछ गलत कहा हो या अनजाने में आपको किसी भी तरह hurt किया हो, तो मैं दिल से genuinely sorry हूँ। 🙏❤️",
+
+
+        message12:
+          "मैं सच में office, यहाँ के लोग, masti, jokes, celebrations और खासकर आप जैसे लोगों को बहुत miss करूँगा, जिन्होंने इस जगह को इतना special बनाया।",
+
+
+        ending:
+          "Articleship खत्म हो सकती है, लेकिन यहाँ की memories, respect और relationships हमेशा मेरे साथ रहेंगी। ❤️",
+
+
+        message13:
+          "हर चीज़ के लिए धन्यवाद, Barkha Ma’am. ❤️",
+
+
+        back:
+          "← यादों पर वापस जाएँ"
+
+      },
+
+
+      /* =======================
+         GUJARATI
+      ======================= */
+
+      gujarati: {
+
+        greeting:
+          "પ્રિય બરખા મેમ,",
+
+
+        message1:
+          "જ્યારે હું મારી આ બે વર્ષની Articleship વિશે વિચારું છું, ત્યારે મારા મનમાં ઘણા બધા લોકો અને memories આવે છે, પરંતુ એ memoriesમાં તમારી presenceની એક ખાસ જગ્યા છે.",
+
+
+        message2:
+          "બરખા મેમ, તમે ખરેખર મેં જોયેલા સૌથી વધારે comedy-loving અને cheerful લોકોમાંથી એક છો. Honestly, મને નથી લાગતું કે આપણા officeમાં તમારા જેટલું hasmukh કોઈ બીજું છે. 😄 જ્યારે પણ તમે અમારી સાથે બેસીને કામ કરો છો, ત્યારે તમારા one-liner jokesના કારણે કામ પણ somehow વધારે enjoyable બની જાય છે. તમારો sense of humour ખરેખર ખૂબ જ સરસ છે અને જે રીતે તમે બધાને હસાવો છો, એ હું genuinely miss કરીશ. 😂❤️",
+
+
+        message3:
+          "જ્યારે પણ મને TDS related કોઈ doubt હોય, ત્યારે તમે હંમેશા મને ખૂબ સારી રીતે સમજાવતા હતા. કંઈ સમજાવતી વખતે તમે ક્યારેય ગુસ્સો કે irritation બતાવ્યો નથી. આજ સુધી હું honestly કહી શકું છું કે મેં તમને ક્યારેય કોઈ પર ગુસ્સો કરતા જોયા નથી. તમારી આ વાત મને ખૂબ ગમે છે.",
+
+
+        message4:
+          "તમારી cabinમાં લાંબો સમય બેસીને કામ કરવાની અમને વધારે તક મળી નથી, પરંતુ મેમ, જો મને આખા officeમાં કોઈપણ જગ્યાએ મારી sitting place select કરવાનો option મળતો, તો હું definitely તમારી cabin જ select કરતો. 😂❤️ કારણ કે મને ખરેખર તમારી સાથે બેસવું, તમારી સાથે વાતો કરવી અને તમારી આસપાસ કામ કરવું ખૂબ ગમે છે.",
+
+
+        message5:
+          "અને મેમ, જ્યારે પણ કોઈ party, farewell કે basementમાં games રમતા હોઈએ, ત્યારે તમારી presenceથી આખા વાતાવરણમાં એક અલગ જ energy આવી જતી. તમે હંમેશા ખૂબ actively participate કરતા અને બધાને હસાવતા. કોઈ celebration હોય કે માત્ર થોડી masti, તમારી presence તેને વધારે enjoyable બનાવી દેતી.",
+
+
+        message6:
+          "તમારા વિશે મને એક વાત ખૂબ ગમે છે કે તમે અમારી senior અને teacher હોવા છતાં તમારો સ્વભાવ હજુ પણ એકદમ અમારા જેવો જ છે — આખો masti, jokes અને funથી ભરેલો. અને જ્યારે પણ કોઈની થોડી મજાક ઉડાવવાની કે સાથે joke enjoy કરવાની તક હોય, ત્યારે તમે હંમેશા અમારી સાથે હો. 😂❤️ આ જ વાત તમને અલગ બનાવે છે અને અમારી સાથે તમને connect કરવું આટલું સરળ બનાવે છે.",
+
+
+        message7:
+          "અને મેમ, હું એ WhatsApp group message વિશે પણ દિલથી કંઈક કહેવા માંગું છું. એ jokeના કારણે તમને hurt થયું હતું, તેના માટે હું genuinely sorry છું. 🙏 અમારી તરફથી તમને hurt કરવાનો કે તમને ખરાબ feel કરાવવાનો બિલકુલ કોઈ intention નહોતો. જ્યારે તમે કહ્યું હતું, “Chalya kare, aavu toh, chinta nai karvani,” ત્યારે ફરીથી મને લાગ્યું કે તમે ખરેખર કેટલા pure-hearted છો. ❤️ તમે એ situationને જે રીતે handle કરી અને તેને મનમાં ન રાખી, એ વાત હું હંમેશા યાદ રાખીશ.",
+
+
+        message8:
+          "Honestly, મેમ, તમે ખૂબ pure-hearted person છો. મેં આજ સુધી તમને ક્યારેય કોઈ પર ગુસ્સો કરતા જોયા નથી અને અમારી senior હોવા છતાં તમે હંમેશા એ જ masti, jokes અને fun સાથે અમારી સાથે connected રહ્યા છો.",
+
+
+        message9:
+          "મેમ, મને શીખવવા માટે, મારા TDS doubts સમજાવવા માટે, હંમેશા support કરવા માટે અને officeનું environment આટલું વધારે fun બનાવવા માટે તમારો ખૂબ ખૂબ આભાર. ❤️",
+
+
+        message10:
+          "તમારા jokes, તમારું હસવું, દરેક celebrationમાં તમારું participation અને તમારી સાથે વિતાવેલા આ નાના-નાના moments વગર આ બે વર્ષ ચોક્કસપણે આવા ન હોત.",
+
+
+        message11:
+          "અને મેમ, આ બે વર્ષ દરમિયાન મારાથી ક્યારેય કોઈ mistake થઈ હોય, મેં કંઈ ખોટું કહ્યું હોય અથવા અજાણતા તમને કોઈ પણ રીતે hurt કર્યા હોય તો હું દિલથી genuinely sorry છું. 🙏❤️",
+
+
+        message12:
+          "હું ખરેખર office, અહીંના લોકો, masti, jokes, celebrations અને ખાસ કરીને તમારા જેવા લોકોને ખૂબ miss કરીશ, જેમણે આ જગ્યાને આટલી special બનાવી.",
+
+
+        ending:
+          "Articleship પૂરી થઈ શકે છે, પરંતુ અહીંની memories, respect અને relationships હંમેશા મારી સાથે રહેશે. ❤️",
+
+
+        message13:
+          "દરેક વસ્તુ માટે આભાર, Barkha Ma’am. ❤️",
+
+
+        back:
+          "← યાદો પર પાછા જાઓ"
+
+      }
+
+    };
+
+
+    /* =========================
+       CHANGE LANGUAGE
+    ========================= */
+
+    function changeLanguage(language) {
+
+      const messageBox =
+        document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+
+      document.getElementById("greeting").textContent =
+        text.greeting;
+
+
+      for (let i = 1; i <= 13; i++) {
+
+        document.getElementById("message" + i).textContent =
+          text["message" + i];
+
+      }
+
+
+      document.getElementById("ending").textContent =
+        text.ending;
+
+
+      document.getElementById("backBtn").textContent =
+        text.back;
+
+
+      document.getElementById("englishBtn")
+        .classList.remove("active");
+
+      document.getElementById("hindiBtn")
+        .classList.remove("active");
+
+      document.getElementById("gujaratiBtn")
+        .classList.remove("active");
+
+
+      if (language === "english") {
+
+        document.getElementById("englishBtn")
+          .classList.add("active");
+
+      }
+
+
+      if (language === "hindi") {
+
+        document.getElementById("hindiBtn")
+          .classList.add("active");
+
+      }
+
+
+      if (language === "gujarati") {
+
+        document.getElementById("gujaratiBtn")
+          .classList.add("active");
+
+      }
+
+
+      setTimeout(function () {
+
+        messageBox.classList.add("language-change");
+
+      }, 20);
+
+    }
+
+  </script>
+
+
 </body>
+
 </html>
