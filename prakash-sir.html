@@ -1,173 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>CA Prakash Sir ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .top {
-            text-align: center;
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    /* LANGUAGE BUTTONS */
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
 
-            h1 {
-                font-size: 30px;
-            }
+    /* MESSAGE */
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
+
+    .message p {
+      margin-bottom: 28px;
+    }
+
+
+    /* OPENING ANIMATION */
+
+    .message p {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
+
+    .message p:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .message p:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .message p:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .message p:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .message p:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .message p:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    .message p:nth-child(7) {
+      animation-delay: 0.7s;
+    }
+
+    .message p:nth-child(8) {
+      animation-delay: 0.8s;
+    }
+
+    .message p:nth-child(9) {
+      animation-delay: 0.9s;
+    }
+
+    .message p:nth-child(10) {
+      animation-delay: 1s;
+    }
+
+    .message p:nth-child(11) {
+      animation-delay: 1.1s;
+    }
+
+    .message p:nth-child(12) {
+      animation-delay: 1.2s;
+    }
+
+    .message p:nth-child(13) {
+      animation-delay: 1.3s;
+    }
+
+    .message p:nth-child(14) {
+      animation-delay: 1.4s;
+    }
+
+    .message p:nth-child(15) {
+      animation-delay: 1.5s;
+    }
+
+    .message p:nth-child(16) {
+      animation-delay: 1.6s;
+    }
+
+    .message p:nth-child(17) {
+      animation-delay: 1.7s;
+    }
+
+    .message p:nth-child(18) {
+      animation-delay: 1.8s;
+    }
+
+
+    @keyframes messageAppear {
+
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* LANGUAGE CHANGE ANIMATION */
+
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
+
+    @keyframes languageFade {
+
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* ENDING */
+
+    .ending {
+      text-align: center;
+      font-style: italic;
+      font-size: 25px;
+      margin-top: 40px;
+    }
+
+
+    /* BACK BUTTON */
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+
+    /* HOME BUTTON */
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: none;
+
+      background: #6b465c;
+      color: white;
+
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+
+    /* PHONE */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-    <div class="card">
 
-        <div class="top">
-
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
-
-            <!-- CHANGE THE NAME HERE -->
-            <h1>CA Prakash Sir ❤️</h1>
-
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
-
-            <div class="line"></div>
-
-        </div>
+  <div class="message-card">
 
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Prakash Sir,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
 
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
+    <h1>
+      More Than a Senior, A Person I Will Always Remember ❤️
+    </h1>
 
 
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+    <div class="subtitle">
+      CA Prakash Sir ❤️
+    </div>
+
+
+    <div class="divider"></div>
+
+
+    <!-- LANGUAGE BUTTONS -->
+
+    <div class="language-buttons">
+
+      <button
+        id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+
+        🇬🇧 English
+
+      </button>
+
+
+      <button
+        id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+
+        🇮🇳 हिन्दी
+
+      </button>
+
+
+      <button
+        id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+
+        🇮🇳 ગુજરાતી
+
+      </button>
 
     </div>
 
+
+    <!-- MESSAGE -->
+
+    <div class="message">
+
+      <p id="greeting">
+        Dear Prakash Sir,
+      </p>
+
+
+      <p id="message1">
+        When I think about these two years of Articleship, there are many people and many memories that come to my mind. You are definitely one of the people who made this journey special for me.
+      </p>
+
+
+      <p id="message2">
+        One thing I really like about you is your sense of humour. You are a very humorous person, and your jokes and way of talking always made the office environment more enjoyable. 😄
+      </p>
+
+
+      <p id="message3">
+        Another thing I have noticed about you is that even when there is a lot of workload, you never get angry with us because of it. You always handle things calmly, and I really respect that quality of yours.
+      </p>
+
+
+      <p id="message4">
+        Sir, there is one thing that I genuinely admire about you — your English. The way you speak English so fluently has always impressed me. Whenever I heard you speaking, I used to think that I also want to speak English this fluently and confidently. In a way, you inspired me to work on my English and become more confident while speaking. ❤️
+      </p>
+
+
+      <p id="message5">
+        There is also one small thing that I always noticed and really liked about you. In the morning, you keep the photo of your Guru and do Aarti. 🙏 I always found that habit very beautiful, and I genuinely respected that connection with your Guru and your faith.
+      </p>
+
+
+      <p id="message6">
+        These may look like small things, but during these two years, these are the little things that I noticed and will remember about you.
+      </p>
+
+
+      <p id="message7">
+        When I joined as an Article, I never thought that these two years would give me so many memories and relationships. But today, when my Articleship is over, I realise that the journey was not only about work. It was also about the people around me and the things I learned from them.
+      </p>
+
+
+      <p id="message8">
+        And Sir, from you, I will always remember your humour, your calm nature, your fluent English and the small things that showed your values.
+      </p>
+
+
+      <p id="message9">
+        Thank you, Prakash Sir, for being a part of my Articleship journey and for all the memories. ❤️
+      </p>
+
+
+      <p id="message10">
+        And Sir, if during these two years I ever made any mistake, said something wrong, or unintentionally hurt you in any way, I am genuinely sorry from my heart. It was never my intention to hurt you.
+      </p>
+
+
+      <p id="message11">
+        I will genuinely miss the office, the people, the conversations, the jokes and this whole environment. ❤️
+      </p>
+
+
+      <p class="ending" id="ending">
+        The Articleship may be over, but the respect, memories and relationships I made here will always remain with me.
+      </p>
+
+
+      <p id="message12">
+        Thank you for everything, Sir. ❤️
+      </p>
+
+
+      <p style="text-align: right; margin-top: 45px;">
+        — Jitu Suthar
+      </p>
+
+    </div>
+
+
+    <a
+      href="index.html"
+      class="back-btn"
+      id="backBtn">
+
+      ← Back to Memories
+
+    </a>
+
+
+  </div>
+
+
+  <!-- HOME BUTTON -->
+
+  <a
+    href="index.html"
+    class="home-btn">
+
+    🏠 Home
+
+  </a>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const translations = {
+
+      /* =======================
+         ENGLISH
+      ======================= */
+
+      english: {
+
+        greeting:
+          "Dear Prakash Sir,",
+
+        message1:
+          "When I think about these two years of Articleship, there are many people and many memories that come to my mind. You are definitely one of the people who made this journey special for me.",
+
+        message2:
+          "One thing I really like about you is your sense of humour. You are a very humorous person, and your jokes and way of talking always made the office environment more enjoyable. 😄",
+
+        message3:
+          "Another thing I have noticed about you is that even when there is a lot of workload, you never get angry with us because of it. You always handle things calmly, and I really respect that quality of yours.",
+
+        message4:
+          "Sir, there is one thing that I genuinely admire about you — your English. The way you speak English so fluently has always impressed me. Whenever I heard you speaking, I used to think that I also want to speak English this fluently and confidently. In a way, you inspired me to work on my English and become more confident while speaking. ❤️",
+
+        message5:
+          "There is also one small thing that I always noticed and really liked about you. In the morning, you keep the photo of your Guru and do Aarti. 🙏 I always found that habit very beautiful, and I genuinely respected that connection with your Guru and your faith.",
+
+        message6:
+          "These may look like small things, but during these two years, these are the little things that I noticed and will remember about you.",
+
+        message7:
+          "When I joined as an Article, I never thought that these two years would give me so many memories and relationships. But today, when my Articleship is over, I realise that the journey was not only about work. It was also about the people around me and the things I learned from them.",
+
+        message8:
+          "And Sir, from you, I will always remember your humour, your calm nature, your fluent English and the small things that showed your values.",
+
+        message9:
+          "Thank you, Prakash Sir, for being a part of my Articleship journey and for all the memories. ❤️",
+
+        message10:
+          "And Sir, if during these two years I ever made any mistake, said something wrong, or unintentionally hurt you in any way, I am genuinely sorry from my heart. It was never my intention to hurt you.",
+
+        message11:
+          "I will genuinely miss the office, the people, the conversations, the jokes and this whole environment. ❤️",
+
+        ending:
+          "The Articleship may be over, but the respect, memories and relationships I made here will always remain with me.",
+
+        message12:
+          "Thank you for everything, Sir. ❤️",
+
+        back:
+          "← Back to Memories"
+      },
+
+
+      /* =======================
+         HINDI
+      ======================= */
+
+      hindi: {
+
+        greeting:
+          "प्रिय प्रकाश सर,",
+
+        message1:
+          "जब मैं अपनी इन दो साल की Articleship के बारे में सोचता हूँ, तो मेरे मन में बहुत सारे लोग और बहुत सारी memories आती हैं। आप निश्चित रूप से उन लोगों में से एक हैं जिन्होंने मेरी इस journey को special बनाया।",
+
+        message2:
+          "आपके बारे में मुझे सबसे अच्छी लगने वाली चीज़ों में से एक है आपका sense of humour। आप बहुत humorous person हैं, और आपके jokes और बात करने के तरीके ने हमेशा office के environment को और enjoyable बनाया। 😄",
+
+        message3:
+          "आपके बारे में मैंने एक और चीज़ notice की है कि जब भी बहुत ज्यादा workload होता है, तब भी आप हमारे साथ उस वजह से कभी गुस्सा नहीं होते। आप हमेशा चीज़ों को calmly handle करते हैं, और मैं आपकी इस quality की बहुत respect करता हूँ।",
+
+        message4:
+          "सर, एक चीज़ जो मैं आपके अंदर genuinely admire करता हूँ — वह है आपकी English। जिस तरह से आप इतनी fluently English बोलते हैं, वह मुझे हमेशा impress करता है। जब भी मैं आपको English बोलते हुए सुनता था, तो मैं सोचता था कि मुझे भी इतनी fluently और confidently English बोलना सीखना है। एक तरह से आपने मुझे अपनी English improve करने और बोलते समय confidence बढ़ाने के लिए inspire किया। ❤️",
+
+        message5:
+          "एक छोटी सी चीज़ जो मैंने हमेशा notice की और मुझे बहुत अच्छी लगी, वह है आपकी सुबह की routine। आप अपने Guru की photo रखते हैं और Aarti करते हैं। 🙏 मुझे यह habit हमेशा बहुत beautiful लगी और मैंने आपके अपने Guru और faith के साथ इस connection की genuinely respect की।",
+
+        message6:
+          "ये बातें शायद छोटी लग सकती हैं, लेकिन इन दो सालों के दौरान मैंने आपके बारे में जो छोटी-छोटी चीज़ें notice कीं, वही चीज़ें मुझे हमेशा याद रहेंगी।",
+
+        message7:
+          "जब मैंने Article के रूप में join किया था, तब मैंने कभी नहीं सोचा था कि ये दो साल मुझे इतनी सारी memories और relationships देंगे। लेकिन आज जब मेरी Articleship खत्म हो रही है, तब मुझे realise होता है कि यह journey सिर्फ work के बारे में नहीं थी। यह मेरे आसपास के लोगों और उनसे सीखी हुई चीज़ों के बारे में भी थी।",
+
+        message8:
+          "और सर, आपसे मैं हमेशा आपका humour, आपका calm nature, आपकी fluent English और आपकी values को दिखाने वाली ये छोटी-छोटी बातें याद रखूँगा।",
+
+        message9:
+          "Thank you, Prakash Sir, मेरी Articleship journey का हिस्सा बनने और मुझे इतनी सारी memories देने के लिए। ❤️",
+
+        message10:
+          "और सर, इन दो सालों के दौरान अगर मुझसे कभी कोई mistake हुई हो, मैंने कुछ गलत कहा हो या अनजाने में आपको किसी भी तरह hurt किया हो, तो मैं दिल से sorry कहता हूँ। मेरा intention कभी भी आपको hurt करने का नहीं था।",
+
+        message11:
+          "मैं सच में office, यहाँ के लोग, conversations, jokes और इस पूरे environment को बहुत miss करूँगा। ❤️",
+
+        ending:
+          "Articleship खत्म हो सकती है, लेकिन यहाँ बनाई हुई respect, memories और relationships हमेशा मेरे साथ रहेंगी।",
+
+        message12:
+          "हर चीज़ के लिए धन्यवाद, सर। ❤️",
+
+        back:
+          "← यादों पर वापस जाएँ"
+      },
+
+
+      /* =======================
+         GUJARATI
+      ======================= */
+
+      gujarati: {
+
+        greeting:
+          "પ્રિય પ્રકાશ સર,",
+
+        message1:
+          "જ્યારે હું મારી આ બે વર્ષની Articleship વિશે વિચારું છું, ત્યારે મારા મનમાં ઘણા બધા લોકો અને ઘણી બધી memories આવે છે. તમે ચોક્કસપણે એ લોકોમાંથી એક છો જેમણે મારી આ journeyને special બનાવી છે.",
+
+        message2:
+          "તમારા વિશે મને સૌથી વધુ ગમતી વાતોમાંથી એક છે તમારો sense of humour. તમે ખૂબ humorous person છો અને તમારા jokes અને વાત કરવાની રીતથી officeનું environment હંમેશા વધુ enjoyable બની જતું હતું. 😄",
+
+        message3:
+          "તમારા વિશે મેં એક બીજી વાત notice કરી છે કે જ્યારે પણ ખૂબ વધારે workload હોય ત્યારે પણ તમે અમારી સાથે એના કારણે ક્યારેય ગુસ્સો કરતા નથી. તમે હંમેશા વસ્તુઓને calmly handle કરો છો અને હું તમારી આ qualityની ખૂબ respect કરું છું.",
+
+        message4:
+          "સર, તમારા વિશે એક એવી વાત છે જેને હું genuinely admire કરું છું — તમારી English. તમે જે રીતે ખૂબ fluently English બોલો છો તે મને હંમેશા impress કરે છે. જ્યારે પણ હું તમને English બોલતા સાંભળતો ત્યારે હું વિચારતો કે મારે પણ આટલી fluently અને confidently English બોલતા શીખવું છે. એક રીતે તમે મને મારી English improve કરવા અને બોલતી વખતે confidence વધારવા માટે inspire કર્યા છે. ❤️",
+
+        message5:
+          "એક નાની વાત જે મેં હંમેશા notice કરી છે અને મને ખૂબ ગમે છે, તે તમારી morning routine છે. તમે તમારા Guruનો photo રાખો છો અને Aarti કરો છો. 🙏 મને તમારી આ habit હંમેશા ખૂબ beautiful લાગી છે અને તમારા Guru અને faith સાથેના આ connectionની મેં દિલથી respect કરી છે.",
+
+        message6:
+          "આ વાતો કદાચ નાની લાગતી હશે, પરંતુ આ બે વર્ષ દરમિયાન મેં તમારા વિશે જે નાની-નાની વસ્તુઓ notice કરી છે, એ જ વસ્તુઓ મને હંમેશા યાદ રહેશે.",
+
+        message7:
+          "જ્યારે મેં Article તરીકે join કર્યું હતું ત્યારે મેં ક્યારેય વિચાર્યું નહોતું કે આ બે વર્ષ મને આટલી બધી memories અને relationships આપશે. પરંતુ આજે જ્યારે મારી Articleship પૂરી થઈ રહી છે ત્યારે મને realise થાય છે કે આ journey માત્ર work વિશે નહોતી. આ મારા આસપાસના લોકો અને તેમની પાસેથી મેં શીખેલી વસ્તુઓ વિશે પણ હતી.",
+
+        message8:
+          "અને સર, તમારી પાસેથી હું હંમેશા તમારો humour, તમારો calm nature, તમારી fluent English અને તમારી values બતાવતી આ નાની-નાની વાતોને યાદ રાખીશ.",
+
+        message9:
+          "Thank you, Prakash Sir, મારી Articleship journeyનો ભાગ બનવા માટે અને મને આટલી બધી memories આપવા માટે. ❤️",
+
+        message10:
+          "અને સર, આ બે વર્ષ દરમિયાન મારાથી ક્યારેય કોઈ mistake થઈ હોય, મેં કંઈ ખોટું કહ્યું હોય અથવા અજાણતા તમને કોઈ પણ રીતે hurt કર્યા હોય તો હું દિલથી sorry કહું છું. મારો intention ક્યારેય તમને hurt કરવાનો નહોતો.",
+
+        message11:
+          "હું ખરેખર office, અહીંના લોકો, conversations, jokes અને આ આખા environmentને ખૂબ miss કરીશ. ❤️",
+
+        ending:
+          "Articleship પૂરી થઈ શકે છે, પરંતુ અહીં બનાવેલો respect, memories અને relationships હંમેશા મારી સાથે રહેશે.",
+
+        message12:
+          "દરેક વસ્તુ માટે આભાર, સર. ❤️",
+
+        back:
+          "← યાદો પર પાછા જાઓ"
+      }
+
+    };
+
+
+    /* CHANGE LANGUAGE */
+
+    function changeLanguage(language) {
+
+      const messageBox =
+        document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+
+      document.getElementById("greeting").textContent =
+        text.greeting;
+
+
+      for (let i = 1; i <= 12; i++) {
+
+        if (i === 12) continue;
+
+        document.getElementById("message" + i).textContent =
+          text["message" + i];
+
+      }
+
+
+      document.getElementById("ending").textContent =
+        text.ending;
+
+
+      document.getElementById("backBtn").textContent =
+        text.back;
+
+
+      document.getElementById("englishBtn")
+        .classList.remove("active");
+
+      document.getElementById("hindiBtn")
+        .classList.remove("active");
+
+      document.getElementById("gujaratiBtn")
+        .classList.remove("active");
+
+
+      if (language === "english") {
+
+        document.getElementById("englishBtn")
+          .classList.add("active");
+
+      }
+
+
+      if (language === "hindi") {
+
+        document.getElementById("hindiBtn")
+          .classList.add("active");
+
+      }
+
+
+      if (language === "gujarati") {
+
+        document.getElementById("gujaratiBtn")
+          .classList.add("active");
+
+      }
+
+
+      setTimeout(function () {
+
+        messageBox.classList.add("language-change");
+
+      }, 20);
+
+    }
+
+  </script>
+
+
 </body>
+
 </html>
