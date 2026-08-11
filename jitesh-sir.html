@@ -8,6 +8,7 @@
   <title>CA Jitesh Sir ❤️ | My Articleship Memories</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -62,7 +63,10 @@
       margin: 35px auto 30px;
     }
 
-    /* LANGUAGE BUTTONS */
+
+    /* =========================
+       LANGUAGE BUTTONS
+    ========================= */
 
     .language-buttons {
       display: flex;
@@ -81,11 +85,12 @@
       font-size: 14px;
       cursor: pointer;
       font-family: Arial, sans-serif;
-      transition: 0.2s;
+      transition: all 0.25s ease;
     }
 
     .language-buttons button:hover {
-      opacity: 0.85;
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
 
     .language-buttons button.active {
@@ -93,7 +98,10 @@
       color: white;
     }
 
-    /* MESSAGE */
+
+    /* =========================
+       MESSAGE
+    ========================= */
 
     .message {
       font-size: 22px;
@@ -103,102 +111,132 @@
     .message p {
       margin-bottom: 28px;
     }
-    /* MESSAGE ANIMATION */
 
-.message p {
-  opacity: 0;
-  transform: translateY(25px);
-  animation: messageAppear 0.8s ease forwards;
-}
 
-.message p:nth-child(1) {
-  animation-delay: 0.1s;
-}
+    /* =========================
+       OPENING ANIMATION
+    ========================= */
 
-.message p:nth-child(2) {
-  animation-delay: 0.2s;
-}
+    .message p {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-.message p:nth-child(3) {
-  animation-delay: 0.3s;
-}
+    .message p:nth-child(1) {
+      animation-delay: 0.1s;
+    }
 
-.message p:nth-child(4) {
-  animation-delay: 0.4s;
-}
+    .message p:nth-child(2) {
+      animation-delay: 0.2s;
+    }
 
-.message p:nth-child(5) {
-  animation-delay: 0.5s;
-}
+    .message p:nth-child(3) {
+      animation-delay: 0.3s;
+    }
 
-.message p:nth-child(6) {
-  animation-delay: 0.6s;
-}
+    .message p:nth-child(4) {
+      animation-delay: 0.4s;
+    }
 
-.message p:nth-child(7) {
-  animation-delay: 0.7s;
-}
+    .message p:nth-child(5) {
+      animation-delay: 0.5s;
+    }
 
-.message p:nth-child(8) {
-  animation-delay: 0.8s;
-}
+    .message p:nth-child(6) {
+      animation-delay: 0.6s;
+    }
 
-.message p:nth-child(9) {
-  animation-delay: 0.9s;
-}
+    .message p:nth-child(7) {
+      animation-delay: 0.7s;
+    }
 
-.message p:nth-child(10) {
-  animation-delay: 1s;
-}
+    .message p:nth-child(8) {
+      animation-delay: 0.8s;
+    }
 
-.message p:nth-child(11) {
-  animation-delay: 1.1s;
-}
+    .message p:nth-child(9) {
+      animation-delay: 0.9s;
+    }
 
-.message p:nth-child(12) {
-  animation-delay: 1.2s;
-}
+    .message p:nth-child(10) {
+      animation-delay: 1s;
+    }
 
-.message p:nth-child(13) {
-  animation-delay: 1.3s;
-}
+    .message p:nth-child(11) {
+      animation-delay: 1.1s;
+    }
 
-.message p:nth-child(14) {
-  animation-delay: 1.4s;
-}
+    .message p:nth-child(12) {
+      animation-delay: 1.2s;
+    }
 
-.message p:nth-child(15) {
-  animation-delay: 1.5s;
-}
+    .message p:nth-child(13) {
+      animation-delay: 1.3s;
+    }
 
-.message p:nth-child(16) {
-  animation-delay: 1.6s;
-}
+    .message p:nth-child(14) {
+      animation-delay: 1.4s;
+    }
 
-.message p:nth-child(17) {
-  animation-delay: 1.7s;
-}
+    .message p:nth-child(15) {
+      animation-delay: 1.5s;
+    }
 
-.message p:nth-child(18) {
-  animation-delay: 1.8s;
-}
+    .message p:nth-child(16) {
+      animation-delay: 1.6s;
+    }
+
+    .message p:nth-child(17) {
+      animation-delay: 1.7s;
+    }
+
+    .message p:nth-child(18) {
+      animation-delay: 1.8s;
+    }
+
+
+    @keyframes messageAppear {
+
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* =========================
+       LANGUAGE CHANGE ANIMATION
+    ========================= */
 
     .language-change p {
-  animation: languageFade 0.6s ease forwards;
-}
-@keyframes messageAppear {
+      animation: languageFade 0.6s ease forwards;
+    }
 
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
+    @keyframes languageFade {
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
 
-}
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* =========================
+       ENDING
+    ========================= */
 
     .ending {
       text-align: center;
@@ -207,7 +245,10 @@
       margin-top: 40px;
     }
 
-    /* BACK BUTTON */
+
+    /* =========================
+       BACK BUTTON
+    ========================= */
 
     .back-btn {
       display: block;
@@ -220,13 +261,18 @@
       border-radius: 35px;
       font-family: Arial, sans-serif;
       font-size: 16px;
+      transition: 0.25s ease;
     }
 
     .back-btn:hover {
+      transform: translateY(-2px);
       opacity: 0.9;
     }
 
-    /* HOME BUTTON */
+
+    /* =========================
+       HOME BUTTON
+    ========================= */
 
     .home-btn {
       position: fixed;
@@ -247,13 +293,19 @@
       text-decoration: none;
 
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+      transition: all 0.25s ease;
     }
 
     .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
       opacity: 0.9;
     }
 
-    /* PHONE */
+
+    /* =========================
+       PHONE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -279,26 +331,34 @@
       .home-btn {
         bottom: 20px;
       }
+
     }
+
   </style>
+
 </head>
 
 
 <body>
 
+
   <div class="message-card">
+
 
     <div class="top-line">
       A PERSONAL MESSAGE ❤️
     </div>
 
+
     <h1 id="personName">
       More Than a Mentor, A Part of My Articleship Journey
     </h1>
 
+
     <div class="subtitle" id="subtitle">
       CA Jitesh Sir ❤️
     </div>
+
 
     <div class="divider"></div>
 
@@ -307,20 +367,31 @@
 
     <div class="language-buttons">
 
-      <button id="englishBtn"
-              class="active"
-              onclick="changeLanguage('english')">
+      <button
+        id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+
         🇬🇧 English
+
       </button>
 
-      <button id="hindiBtn"
-              onclick="changeLanguage('hindi')">
+
+      <button
+        id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+
         🇮🇳 हिन्दी
+
       </button>
 
-      <button id="gujaratiBtn"
-              onclick="changeLanguage('gujarati')">
+
+      <button
+        id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+
         🇮🇳 ગુજરાતી
+
       </button>
 
     </div>
@@ -330,114 +401,149 @@
 
     <div class="message">
 
+
       <p id="greeting">
         Dear Jitesh Sir,
       </p>
+
 
       <p id="message1">
         When I think about these two years of Articleship, there are so many things that come to my mind. But one thing I will always remember is how comfortable and positive you made the office environment for us.
       </p>
 
+
       <p id="message2">
         You are one of the calmest and most respectful people I have met. I have genuinely never seen you getting angry with us. Even when something went wrong, you always handled it calmly. Your way of talking to everyone was always respectful, and that is something I have always admired about you.
       </p>
+
 
       <p id="message3">
         One thing I really liked about you was that you never made us feel like there was a big difference between a Partner and an Article. You always treated us with respect and made us feel like we were a part of the team. That comfort and trust meant a lot to me.
       </p>
 
+
       <p id="message4">
         Sir, I still remember that day when we were all in the basement for some celebration. You were there with us and suddenly asked the Articles, “Kyarek Mass Bunk karo chho ke nai?” 😂 And then you pointed towards the back door and said, “Aa pachhad no darwajo ena mate j chhe.” 😂😂
       </p>
+
 
       <p id="message5">
         That moment was so unexpected and funny. It was just a small joke, but these are exactly the kind of little moments that made our office environment so comfortable and memorable. Even today, whenever I remember that moment, I smile. 😂
       </p>
 
+
       <p id="message6">
         You always encouraged us not to compromise with our studies. You used to tell us to read and keep learning along with our work. I really appreciated that because you never wanted us to forget that Articleship was not only about completing office work, but also about becoming better professionals.
       </p>
+
 
       <p id="message7">
         I also remember the trust you gave us. You gave us freedom and never made us feel like someone was constantly watching over us. That trust made us feel responsible for our own work and also gave us confidence.
       </p>
 
+
       <p id="message8">
         And Sir, one memory which is completely different from work but very close to my heart is Miransh. ❤️🙂
       </p>
+
 
       <p id="message9">
         Whenever Miransh came to the office, he would play with me, and honestly, I really enjoyed those moments. The way he used to call my name and interact with me always made me smile. These little moments became such a sweet part of my Articleship that I know I will genuinely miss him.
       </p>
 
+
       <p id="message10">
         I still remember when I visited your home and Miransh became emotional and didn't want me to leave. 🥹 He wanted to keep playing, and honestly, even I didn't feel like leaving. That was such a small moment, but it touched my heart. I will genuinely miss Miransh too. ❤️
       </p>
+
 
       <p id="message11">
         These are the kinds of memories that make me realise that Articleship was never only about work for me. It was about the people, the relationships, the small jokes, the conversations and all these little moments that made these two years special.
       </p>
 
+
       <p id="message12">
         I have also learned a lot from you just by observing the way you handle people and situations. Whether it was dealing with work pressure, clients, or simply maintaining a positive environment in the office, there are many small things that I will carry forward with me.
       </p>
+
 
       <p id="message13">
         When I joined as an Article, I never thought that after two years I would have so many memories with the people here. But today, when I am leaving, I realise that Articleship taught me much more than just CA work.
       </p>
 
+
       <p id="message14">
         It taught me how to work with people, how to handle different situations, how to take responsibility and, most importantly, how important good people are in making a workplace feel like home.
       </p>
+
 
       <p id="message15">
         Thank you, Jitesh Sir, for trusting me, supporting me, motivating me to study, giving me opportunities to learn, and most importantly, for making these two years feel like much more than just Articleship.
       </p>
 
+
       <p id="message16">
         I will genuinely miss the office, the people, the conversations, the jokes and this whole environment. ❤️
       </p>
+
 
       <p id="message17">
         And Sir, if during these two years I ever made any mistake, said something wrong, or unintentionally hurt you in any way, I am genuinely sorry from my heart. It was never my intention to hurt you.
       </p>
 
+
       <p class="ending" id="ending">
         Thank you for everything, Sir. ❤️
       </p>
+
 
       <p id="message18">
         The Articleship may be over, but the respect, relationships and memories will always remain with me.
       </p>
 
+
       <p style="text-align: right; margin-top: 45px;">
         — Jitu Suthar
       </p>
 
+
     </div>
 
 
-    <a href="index.html" class="back-btn" id="backBtn">
+    <a
+      href="index.html"
+      class="back-btn"
+      id="backBtn">
+
       ← Back to Memories
+
     </a>
+
 
   </div>
 
 
   <!-- HOME BUTTON -->
 
-  <a href="index.html" class="home-btn">
+  <a
+    href="index.html"
+    class="home-btn">
+
     🏠 Home
+
   </a>
 
 
-  <!-- ========================= -->
-  <!-- LANGUAGE JAVASCRIPT -->
-  <!-- ========================= -->
+
+  <!-- =========================
+       LANGUAGE JAVASCRIPT
+  ========================= -->
 
   <script>
 
+
     const translations = {
+
 
       /* =======================
          ENGLISH
@@ -448,65 +554,86 @@
         greeting:
           "Dear Jitesh Sir,",
 
+
         message1:
           "When I think about these two years of Articleship, there are so many things that come to my mind. But one thing I will always remember is how comfortable and positive you made the office environment for us.",
+
 
         message2:
           "You are one of the calmest and most respectful people I have met. I have genuinely never seen you getting angry with us. Even when something went wrong, you always handled it calmly. Your way of talking to everyone was always respectful, and that is something I have always admired about you.",
 
+
         message3:
           "One thing I really liked about you was that you never made us feel like there was a big difference between a Partner and an Article. You always treated us with respect and made us feel like we were a part of the team. That comfort and trust meant a lot to me.",
+
 
         message4:
           "Sir, I still remember that day when we were all in the basement for some celebration. You were there with us and suddenly asked the Articles, “Kyarek Mass Bunk karo chho ke nai?” 😂 And then you pointed towards the back door and said, “Aa pachhad no darwajo ena mate j chhe.” 😂😂",
 
+
         message5:
           "That moment was so unexpected and funny. It was just a small joke, but these are exactly the kind of little moments that made our office environment so comfortable and memorable. Even today, whenever I remember that moment, I smile. 😂",
+
 
         message6:
           "You always encouraged us not to compromise with our studies. You used to tell us to read and keep learning along with our work. I really appreciated that because you never wanted us to forget that Articleship was not only about completing office work, but also about becoming better professionals.",
 
+
         message7:
           "I also remember the trust you gave us. You gave us freedom and never made us feel like someone was constantly watching over us. That trust made us feel responsible for our own work and also gave us confidence.",
+
 
         message8:
           "And Sir, one memory which is completely different from work but very close to my heart is Miransh. ❤️🙂",
 
+
         message9:
           "Whenever Miransh came to the office, he would play with me, and honestly, I really enjoyed those moments. The way he used to call my name and interact with me always made me smile. These little moments became such a sweet part of my Articleship that I know I will genuinely miss him.",
+
 
         message10:
           "I still remember when I visited your home and Miransh became emotional and didn't want me to leave. 🥹 He wanted to keep playing, and honestly, even I didn't feel like leaving. That was such a small moment, but it touched my heart. I will genuinely miss Miransh too. ❤️",
 
+
         message11:
           "These are the kinds of memories that make me realise that Articleship was never only about work for me. It was about the people, the relationships, the small jokes, the conversations and all these little moments that made these two years special.",
+
 
         message12:
           "I have also learned a lot from you just by observing the way you handle people and situations. Whether it was dealing with work pressure, clients, or simply maintaining a positive environment in the office, there are many small things that I will carry forward with me.",
 
+
         message13:
           "When I joined as an Article, I never thought that after two years I would have so many memories with the people here. But today, when I am leaving, I realise that Articleship taught me much more than just CA work.",
+
 
         message14:
           "It taught me how to work with people, how to handle different situations, how to take responsibility and, most importantly, how important good people are in making a workplace feel like home.",
 
+
         message15:
           "Thank you, Jitesh Sir, for trusting me, supporting me, motivating me to study, giving me opportunities to learn, and most importantly, for making these two years feel like much more than just Articleship.",
+
 
         message16:
           "I will genuinely miss the office, the people, the conversations, the jokes and this whole environment. ❤️",
 
+
         message17:
           "And Sir, if during these two years I ever made any mistake, said something wrong, or unintentionally hurt you in any way, I am genuinely sorry from my heart. It was never my intention to hurt you.",
+
 
         ending:
           "Thank you for everything, Sir. ❤️",
 
+
         message18:
           "The Articleship may be over, but the respect, relationships and memories will always remain with me.",
 
+
         back:
           "← Back to Memories"
+
       },
 
 
@@ -519,65 +646,86 @@
         greeting:
           "प्रिय जितेश सर,",
 
+
         message1:
           "जब मैं अपनी इन दो साल की Articleship के बारे में सोचता हूँ, तो मेरे मन में बहुत सारी बातें और यादें आती हैं। लेकिन एक चीज़ जो मैं हमेशा याद रखूँगा, वह है कि आपने हमारे लिए office का माहौल कितना comfortable और positive बनाया।",
+
 
         message2:
           "आप उन सबसे शांत और respectful लोगों में से एक हैं, जिनसे मैं मिला हूँ। मैंने आपको सच में कभी हमसे गुस्सा करते हुए नहीं देखा। जब भी कोई चीज़ गलत हुई, आपने हमेशा उसे शांति से handle किया। हर किसी से बात करने का आपका तरीका हमेशा respectful रहा है, और यह ऐसी चीज़ है जिसकी मैंने हमेशा दिल से respect की है।",
 
+
         message3:
           "आपके बारे में मुझे सबसे अच्छी लगने वाली बातों में से एक यह थी कि आपने हमें कभी ऐसा महसूस नहीं कराया कि Partner और Article के बीच कोई बड़ा difference है। आपने हमेशा हमें respect दिया और ऐसा feel कराया कि हम भी team का एक हिस्सा हैं। आपका वह comfort और trust मेरे लिए बहुत मायने रखता था।",
+
 
         message4:
           "सर, मुझे आज भी वह दिन याद है जब हम सब किसी celebration के लिए basement में थे। आप भी हमारे साथ थे और अचानक आपने Articles से पूछा, “Kyarek Mass Bunk karo chho ke nai?” 😂 और फिर पीछे के दरवाज़े की तरफ इशारा करके कहा, “Aa pachhad no darwajo ena mate j chhe.” 😂😂",
 
+
         message5:
           "वह moment इतना unexpected और funny था। वह सिर्फ एक छोटा सा joke था, लेकिन ऐसे ही छोटे-छोटे moments ने हमारे office environment को इतना comfortable और memorable बनाया। आज भी जब वह बात याद आती है तो चेहरे पर smile आ जाती है। 😂",
+
 
         message6:
           "आपने हमेशा हमें अपनी studies के साथ compromise न करने के लिए encourage किया। आप हमें पढ़ने और अपने काम के साथ-साथ सीखते रहने के लिए कहते थे। मुझे यह बात बहुत अच्छी लगती थी, क्योंकि आप नहीं चाहते थे कि हम Articleship को सिर्फ office का काम पूरा करने के रूप में देखें, बल्कि एक बेहतर professional बनने की journey के रूप में देखें।",
 
+
         message7:
           "मुझे आपका दिया हुआ trust भी हमेशा याद रहेगा। आपने हमें freedom दी और कभी ऐसा महसूस नहीं कराया कि कोई लगातार हमारे ऊपर नज़र रख रहा है। उस trust ने हमें अपने काम की responsibility लेने और confidence के साथ काम करने में मदद की।",
+
 
         message8:
           "और सर, काम से बिल्कुल अलग लेकिन मेरे दिल के बहुत करीब एक memory Miransh की भी है। ❤️🙂",
 
+
         message9:
           "जब भी Miransh office आता था, वह मेरे साथ खेलता था और सच कहूँ तो मुझे उसके साथ वह समय बहुत अच्छा लगता था। जिस तरह वह मेरा नाम लेकर मेरे साथ interact करता था, उससे मुझे हमेशा smile आती थी। ये छोटे-छोटे moments मेरी Articleship का इतना प्यारा हिस्सा बन गए कि मुझे पता है कि मैं उसे सच में बहुत miss करूँगा।",
+
 
         message10:
           "मुझे आज भी याद है जब मैं आपके घर आया था और Miransh emotional हो गया था और नहीं चाहता था कि मैं वहाँ से जाऊँ। 🥹 वह मेरे साथ खेलते रहना चाहता था और सच कहूँ तो मेरा भी वहाँ से जाने का मन नहीं था। वह एक छोटा सा moment था, लेकिन उसने मेरे दिल को छू लिया। मैं Miransh को भी सच में बहुत miss करूँगा। ❤️",
 
+
         message11:
           "ऐसी ही memories मुझे एहसास कराती हैं कि Articleship मेरे लिए कभी सिर्फ काम के बारे में नहीं थी। यह लोगों, relationships, छोटे jokes, conversations और उन सभी छोटे-छोटे moments के बारे में थी, जिन्होंने इन दो सालों को इतना special बनाया।",
+
 
         message12:
           "आपको देखकर और आपके काम करने के तरीके को समझकर भी मैंने बहुत कुछ सीखा है। चाहे work pressure हो, clients को handle करना हो या simply office में positive environment बनाए रखना हो, ऐसी बहुत सारी छोटी-छोटी चीज़ें हैं जिन्हें मैं अपने साथ आगे लेकर जाऊँगा।",
 
+
         message13:
           "जब मैंने Article के रूप में join किया था, तब मैंने कभी नहीं सोचा था कि दो साल बाद मेरे पास यहाँ के लोगों के साथ इतनी सारी memories होंगी। लेकिन आज जब मैं जा रहा हूँ, तो realise होता है कि Articleship ने मुझे सिर्फ CA work से कहीं ज्यादा सिखाया है।",
+
 
         message14:
           "इसने मुझे लोगों के साथ काम करना, अलग-अलग situations को handle करना, responsibility लेना और सबसे important, यह समझना सिखाया कि अच्छे लोग किसी workplace को घर जैसा बना सकते हैं।",
 
+
         message15:
           "Thank you, Jitesh Sir, मुझ पर trust करने के लिए, मुझे support करने के लिए, मुझे studies के लिए motivate करने के लिए, मुझे सीखने के opportunities देने के लिए और सबसे important, इन दो सालों को सिर्फ Articleship से कहीं ज्यादा special बनाने के लिए।",
+
 
         message16:
           "मैं सच में office, यहाँ के लोगों, conversations, jokes और इस पूरे environment को बहुत miss करूँगा। ❤️",
 
+
         message17:
           "और सर, इन दो सालों के दौरान अगर मुझसे कभी कोई mistake हुई हो, मैंने कुछ गलत कहा हो या अनजाने में आपको किसी भी तरह hurt किया हो, तो मैं दिल से sorry कहता हूँ। मेरा intention कभी भी आपको hurt करने का नहीं था।",
+
 
         ending:
           "हर चीज़ के लिए दिल से धन्यवाद, सर। ❤️",
 
+
         message18:
           "Articleship खत्म हो सकती है, लेकिन आपके लिए respect, ये relationships और ये memories हमेशा मेरे साथ रहेंगी।",
 
+
         back:
           "← यादों पर वापस जाएँ"
+
       },
 
 
@@ -590,86 +738,119 @@
         greeting:
           "પ્રિય જિતેશ સર,",
 
+
         message1:
           "જ્યારે હું મારી આ બે વર્ષની Articleship વિશે વિચારું છું, ત્યારે મારા મનમાં ઘણી બધી વાતો અને યાદો આવે છે. પરંતુ એક વાત હું હંમેશા યાદ રાખીશ કે તમે અમારા માટે officeનું વાતાવરણ કેટલું comfortable અને positive બનાવ્યું હતું.",
+
 
         message2:
           "તમે મને મળેલા સૌથી શાંત અને respectful લોકોમાંથી એક છો. મેં તમને સાચે ક્યારેય અમારી સાથે ગુસ્સો કરતા જોયા નથી. જ્યારે પણ કંઈ ખોટું થયું, ત્યારે તમે હંમેશા શાંતિથી તેને handle કર્યું. દરેક સાથે વાત કરવાની તમારી રીત હંમેશા respectful રહી છે અને આ એવી વાત છે જેની મેં હંમેશા દિલથી respect કરી છે.",
 
+
         message3:
           "તમારા વિશે મને સૌથી વધુ ગમતી વાતોમાંથી એક એ હતી કે તમે અમને ક્યારેય એવું feel નહોતું કરાવ્યું કે Partner અને Article વચ્ચે કોઈ મોટો difference છે. તમે હંમેશા અમને respect આપ્યો અને એવું feel કરાવ્યું કે અમે પણ teamનો એક ભાગ છીએ. તમારો એ comfort અને trust મારા માટે ખૂબ મહત્વનો હતો.",
+
 
         message4:
           "સર, મને આજે પણ એ દિવસ યાદ છે જ્યારે આપણે બધા કોઈ celebration માટે basementમાં હતા. તમે પણ અમારી સાથે હતા અને અચાનક તમે Articlesને પૂછ્યું, “Kyarek Mass Bunk karo chho ke nai?” 😂 અને પછી પાછળના દરવાજા તરફ ઈશારો કરીને કહ્યું, “Aa pachhad no darwajo ena mate j chhe.” 😂😂",
 
+
         message5:
           "એ moment બહુ unexpected અને funny હતો. એ માત્ર એક નાનો joke હતો, પરંતુ આવા જ નાના-નાના momentsએ અમારા officeના વાતાવરણને એટલું comfortable અને memorable બનાવ્યું. આજે પણ જ્યારે એ વાત યાદ આવે છે ત્યારે મારા ચહેરા પર smile આવી જાય છે. 😂",
+
 
         message6:
           "તમે હંમેશા અમને studies સાથે compromise ન કરવા માટે encourage કર્યા. તમે અમને વાંચવા અને કામની સાથે સાથે શીખતા રહેવા માટે કહેતા હતા. મને આ વાત ખૂબ ગમતી હતી, કારણ કે તમે નહોતું ઇચ્છતા કે આપણે Articleshipને માત્ર officeનું કામ પૂરું કરવાની journey તરીકે જોઈએ, પરંતુ એક better professional બનવાની journey તરીકે જોઈએ.",
 
+
         message7:
           "તમે અમને આપેલો trust પણ મને હંમેશા યાદ રહેશે. તમે અમને freedom આપી અને ક્યારેય એવું feel નહોતું કરાવ્યું કે કોઈ સતત આપણા પર નજર રાખી રહ્યું છે. એ trustથી અમને આપણા કામની responsibility લેવાની અને confidence સાથે કામ કરવાની હિંમત મળી.",
+
 
         message8:
           "અને સર, કામથી સાવ અલગ પરંતુ મારા દિલની ખૂબ નજીક એક memory Miranshની પણ છે. ❤️🙂",
 
+
         message9:
           "જ્યારે પણ Miransh office આવતો ત્યારે તે મારી સાથે રમતો અને સાચું કહું તો મને તેની સાથે એ સમય ખૂબ ગમતો. જે રીતે તે મારું નામ લઈને મારી સાથે વાતો કરતો અને interact કરતો, તેનાથી મને હંમેશા smile આવતી. આ નાના-નાના moments મારી Articleshipનો એટલો સુંદર ભાગ બની ગયા કે મને ખબર છે કે હું તેને ખરેખર ખૂબ miss કરીશ.",
+
 
         message10:
           "મને આજે પણ યાદ છે જ્યારે હું તમારા ઘરે આવ્યો હતો અને Miransh emotional થઈ ગયો હતો અને હું ત્યાંથી જાઉં એવું નહોતો ઇચ્છતો. 🥹 તેને મારી સાથે રમતા રહેવું હતું અને સાચું કહું તો મારું પણ ત્યાંથી જવાનું મન નહોતું. એ એક નાની moment હતી, પરંતુ તેણે મારા દિલને touch કર્યું. હું Miranshને પણ ખરેખર ખૂબ miss કરીશ. ❤️",
 
+
         message11:
           "આવી જ memories મને સમજાવે છે કે Articleship મારા માટે ક્યારેય માત્ર કામ વિશે નહોતી. એ લોકો, relationships, નાના jokes, conversations અને એવા બધા નાના-નાના moments વિશે હતી, જેણે આ બે વર્ષને એટલા special બનાવ્યા.",
+
 
         message12:
           "તમને જોઈને અને તમે જે રીતે કામ કરો છો એ જોઈને પણ મેં ઘણું શીખ્યું છે. પછી તે work pressure હોય, clientsને handle કરવાનું હોય કે simply officeમાં positive environment જાળવવાનું હોય, એવી ઘણી બધી નાની-નાની વસ્તુઓ છે જે હું મારી સાથે આગળ લઈ જઈશ.",
 
+
         message13:
           "જ્યારે મેં Article તરીકે join કર્યું હતું ત્યારે મેં ક્યારેય વિચાર્યું નહોતું કે બે વર્ષ પછી મારી પાસે અહીંના લોકો સાથે આટલી બધી memories હશે. પરંતુ આજે જ્યારે હું જઈ રહ્યો છું ત્યારે realise થાય છે કે Articleshipએ મને માત્ર CA work કરતાં ઘણું વધારે શીખવ્યું છે.",
+
 
         message14:
           "આ સમયએ મને લોકો સાથે કામ કરવું, અલગ-અલગ situationsને handle કરવી, responsibility લેવી અને સૌથી important, સારા લોકો workplaceને ઘર જેવું બનાવી શકે છે એ સમજાવ્યું.",
 
+
         message15:
           "Thank you, Jitesh Sir, મારા પર trust કરવા માટે, મને support કરવા માટે, મને studies માટે motivate કરવા માટે, મને શીખવાની opportunities આપવા માટે અને સૌથી important, આ બે વર્ષને માત્ર Articleship કરતાં ઘણું વધારે special બનાવવા માટે.",
+
 
         message16:
           "હું ખરેખર office, અહીંના લોકો, conversations, jokes અને આ આખા environmentને ખૂબ miss કરીશ. ❤️",
 
+
         message17:
           "અને સર, આ બે વર્ષ દરમિયાન મારાથી ક્યારેય કોઈ mistake થઈ હોય, મેં કંઈ ખોટું કહ્યું હોય અથવા અજાણતા તમને કોઈ પણ રીતે hurt કર્યા હોય તો હું દિલથી sorry કહું છું. મારો intention ક્યારેય તમને hurt કરવાનો નહોતો.",
+
 
         ending:
           "દરેક વસ્તુ માટે દિલથી આભાર, સર. ❤️",
 
+
         message18:
           "Articleship પૂરી થઈ શકે છે, પરંતુ તમારા માટેનો respect, આ relationships અને આ memories હંમેશા મારી સાથે રહેશે.",
 
+
         back:
           "← યાદો પર પાછા જાઓ"
+
       }
 
     };
 
 
     /* =========================
-       CHANGE LANGUAGE FUNCTION
-       ========================= */
+       CHANGE LANGUAGE
+    ========================= */
 
     function changeLanguage(language) {
-      document.querySelector(".message").classList.remove("language-change");
 
-setTimeout(() => {
-  document.querySelector(".message").classList.add("language-change");
-}, 50);
+      const messageBox =
+        document.querySelector(".message");
+
+
+      /* Restart animation */
+
+      messageBox.classList.remove("language-change");
+
+
+      void messageBox.offsetWidth;
+
 
       const text = translations[language];
+
+
+      /* Change greeting */
 
       document.getElementById("greeting").textContent =
         text.greeting;
 
+
+      /* Change all paragraphs */
 
       for (let i = 1; i <= 18; i++) {
 
@@ -679,15 +860,19 @@ setTimeout(() => {
       }
 
 
+      /* Change ending */
+
       document.getElementById("ending").textContent =
         text.ending;
 
+
+      /* Change back button */
 
       document.getElementById("backBtn").textContent =
         text.back;
 
 
-      /* Remove active status */
+      /* Remove active button */
 
       document.getElementById("englishBtn")
         .classList.remove("active");
@@ -699,7 +884,7 @@ setTimeout(() => {
         .classList.remove("active");
 
 
-      /* Add active status */
+      /* Activate selected button */
 
       if (language === "english") {
 
@@ -708,12 +893,14 @@ setTimeout(() => {
 
       }
 
+
       if (language === "hindi") {
 
         document.getElementById("hindiBtn")
           .classList.add("active");
 
       }
+
 
       if (language === "gujarati") {
 
@@ -722,9 +909,20 @@ setTimeout(() => {
 
       }
 
+
+      /* Start language animation */
+
+      setTimeout(function () {
+
+        messageBox.classList.add("language-change");
+
+      }, 20);
+
     }
 
+
   </script>
+
 
 </body>
 
