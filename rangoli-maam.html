@@ -1,173 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>CA Rangoli Ma'am ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .message p:nth-child(1) { animation-delay: 0.1s; }
+    .message p:nth-child(2) { animation-delay: 0.2s; }
+    .message p:nth-child(3) { animation-delay: 0.3s; }
+    .message p:nth-child(4) { animation-delay: 0.4s; }
+    .message p:nth-child(5) { animation-delay: 0.5s; }
+    .message p:nth-child(6) { animation-delay: 0.6s; }
+    .message p:nth-child(7) { animation-delay: 0.7s; }
+    .message p:nth-child(8) { animation-delay: 0.8s; }
+    .message p:nth-child(9) { animation-delay: 0.9s; }
+    .message p:nth-child(10) { animation-delay: 1s; }
+    .message p:nth-child(11) { animation-delay: 1.1s; }
+    .message p:nth-child(12) { animation-delay: 1.2s; }
+    .message p:nth-child(13) { animation-delay: 1.3s; }
+    .message p:nth-child(14) { animation-delay: 1.4s; }
+    .message p:nth-child(15) { animation-delay: 1.5s; }
+    .message p:nth-child(16) { animation-delay: 1.6s; }
+    .message p:nth-child(17) { animation-delay: 1.7s; }
+    .message p:nth-child(18) { animation-delay: 1.8s; }
+    .message p:nth-child(19) { animation-delay: 1.9s; }
+    .message p:nth-child(20) { animation-delay: 2s; }
+    .message p:nth-child(21) { animation-delay: 2.1s; }
+    .message p:nth-child(22) { animation-delay: 2.2s; }
+    .message p:nth-child(23) { animation-delay: 2.3s; }
+    .message p:nth-child(24) { animation-delay: 2.4s; }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            h1 {
-                font-size: 30px;
-            }
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Principal, A Guide Who Always Pushed Me Forward ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>CA Rangoli Ma'am ❤️</h1>
+    <div class="subtitle">
+      CA Rangoli Ma'am ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Rangoli Ma'am,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
+
+    <div class="message">
+
+      <p id="message1">
+        Dear Rangoli Ma’am,
+      </p>
+
+      <p id="message2">
+        Ma’am, you are my Principal because I am registered under you as an Article, but for me, your role in my Articleship has always been much more than just being my Principal. You have always guided me, supported me, and made sure that I was learning and growing throughout these two years.
+      </p>
+
+      <p id="message3">
+        Since you are an <strong>Income Tax expert</strong>, whenever we had any doubt related to Income Tax, we would come to you and ask. And there is one reply of yours that I think I will remember forever. 😂😂
+        <br><br>
+        <strong>“Section vachine aavo.”</strong> 😂
+      </p>
+
+      <p id="message4">
+        You always believed that if we learned to read the language of the <strong>Bare Act</strong>, we would not get stuck anywhere. That is why you always preferred that we first read the Income Tax section from the Bare Act, understand it, and try to interpret it ourselves. And if we had understood something incorrectly, you would then explain it to us very nicely.
+      </p>
+
+      <p id="message5">
+        That way of teaching has helped me a lot because you didn't just give us the answer — you wanted us to learn <strong>how to find the answer ourselves.</strong>
+      </p>
+
+      <p id="message6">
+        Another thing I really want to thank you for is approving my <strong>Scholarship</strong>. Because of that scholarship, we were able to receive financial assistance from the Institute on a quarterly basis. Ma’am, thank you for helping me with that. It genuinely helped us a lot.
+      </p>
+
+      <p id="message7">
+        There were also many times when some discussion was going on among the Articles and no one else was around. Even then, you would often be there with us. You supported us enough to sit with us, understand what we were discussing, explain things to us, and even tell us whether our decision was right or wrong.
+      </p>
+
+      <p id="message8">
+        During Audit season, there were also many moments when you used to take everyone's <strong>remand</strong>. 😂 Sometimes you would point out mistakes and tell us things that I still remember.
+      </p>
+
+      <p id="message9">
+        One sentence I will always remember is:
+        <br><br>
+        <strong>“Capital Gain joine nakhjo.”</strong> 😂
+        <br><br>
+        And another one:
+        <br><br>
+        <strong>“Aa set nu conceptual kone karyu?”</strong> 😂
+        <br><br>
+        And of course:
+        <br><br>
+        <strong>“Error-free joine karjo yaar, bav bhulo made chhe.”</strong> 😂
+      </p>
+
+      <p id="message10">
+        During Audit season, when many people were making mistakes in these points, you would sometimes sit everyone together and explain everything. But what I really appreciated was that if someone felt bad about something you said, you would personally meet them later and calmly explain it to them.
+      </p>
+
+      <p id="message11">
+        That showed me that behind all the strictness, you genuinely cared about whether we were learning and improving.
+      </p>
+
+      <p id="message12">
+        You also taught me <strong>Direct Tax in CA Intermediate</strong>, and you were my Principal at that time too. So from CA Intermediate to these two years of Articleship, I have had the opportunity to learn from you for quite a long time.
+      </p>
+
+      <p id="message13">
+        And Ma’am, whenever I had any doubt, no matter how many times I asked you the same thing, you always explained it to me. That patience is something I will always be thankful for.
+      </p>
+
+      <p id="message14">
+        Another thing I really appreciate is that you always personally asked us about our <strong>syllabus</strong> — how much we had completed, how much was remaining, and whether we were studying properly along with our work.
+      </p>
+
+      <p id="message15">
+        Whenever we were wasting time or doing time pass, you would remind us:
+        <br><br>
+        <strong>“Study karo, bilkul time waste nahi karo.”</strong>
+      </p>
+
+      <p id="message16">
+        You always made sure that along with Articleship work, we were also giving proper time to our studies. That balance between work and studies is something you always reminded us about.
+      </p>
+
+      <p id="message17">
+        Ma’am, these two years with you were genuinely a great experience. I have learned many things from you, not only about Income Tax or Audit, but also about how to approach a problem, how to understand things properly, and how to keep learning instead of simply looking for answers.
+      </p>
+
+      <p id="message18">
+        <strong>Thank you, Ma’am, for teaching me, guiding me, supporting me, correcting me, and always pushing me towards studying and improving. ❤️</strong>
+      </p>
+
+      <p id="message19">
+        And if during these two years I have made any mistake, said something wrong, or unintentionally hurt you because of anything, <strong>I am genuinely sorry from my heart.</strong> 🙏
+      </p>
+
+      <p id="message20">
+        I will always be thankful that you were my Principal and one of the people who guided me throughout this Articleship journey.
+      </p>
+
+      <p id="message21">
+        <strong>Thank you for everything, Rangoli Ma’am. ❤️</strong>
+      </p>
+
+      <p style="text-align: right; margin-top: 45px;">
+        — Jitu Suthar
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn" id="backBtn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "Dear Rangoli Ma’am,",
+
+        message2: "Ma’am, you are my Principal because I am registered under you as an Article, but for me, your role in my Articleship has always been much more than just being my Principal. You have always guided me, supported me, and made sure that I was learning and growing throughout these two years.",
+
+        message3: "Since you are an Income Tax expert, whenever we had any doubt related to Income Tax, we would come to you and ask. And there is one reply of yours that I think I will remember forever. 😂😂<br><br><strong>“Section vachine aavo.”</strong> 😂",
+
+        message4: "You always believed that if we learned to read the language of the Bare Act, we would not get stuck anywhere. That is why you always preferred that we first read the Income Tax section from the Bare Act, understand it, and try to interpret it ourselves. And if we had understood something incorrectly, you would then explain it to us very nicely.",
+
+        message5: "That way of teaching has helped me a lot because you didn't just give us the answer — you wanted us to learn <strong>how to find the answer ourselves.</strong>",
+
+        message6: "Another thing I really want to thank you for is approving my Scholarship. Because of that scholarship, we were able to receive financial assistance from the Institute on a quarterly basis. Ma’am, thank you for helping me with that. It genuinely helped us a lot.",
+
+        message7: "There were also many times when some discussion was going on among the Articles and no one else was around. Even then, you would often be there with us. You supported us enough to sit with us, understand what we were discussing, explain things to us, and even tell us whether our decision was right or wrong.",
+
+        message8: "During Audit season, there were also many moments when you used to take everyone's <strong>remand</strong>. 😂 Sometimes you would point out mistakes and tell us things that I still remember.",
+
+        message9: "One sentence I will always remember is:<br><br><strong>“Capital Gain joine nakhjo.”</strong> 😂<br><br>And another one:<br><br><strong>“Aa set nu conceptual kone karyu?”</strong> 😂<br><br>And of course:<br><br><strong>“Error-free joine karjo yaar, bav bhulo made chhe.”</strong> 😂",
+
+        message10: "During Audit season, when many people were making mistakes in these points, you would sometimes sit everyone together and explain everything. But what I really appreciated was that if someone felt bad about something you said, you would personally meet them later and calmly explain it to them.",
+
+        message11: "That showed me that behind all the strictness, you genuinely cared about whether we were learning and improving.",
+
+        message12: "You also taught me <strong>Direct Tax in CA Intermediate</strong>, and you were my Principal at that time too. So from CA Intermediate to these two years of Articleship, I have had the opportunity to learn from you for quite a long time.",
+
+        message13: "And Ma’am, whenever I had any doubt, no matter how many times I asked you the same thing, you always explained it to me. That patience is something I will always be thankful for.",
+
+        message14: "Another thing I really appreciate is that you always personally asked us about our <strong>syllabus</strong> — how much we had completed, how much was remaining, and whether we were studying properly along with our work.",
+
+        message15: "Whenever we were wasting time or doing time pass, you would remind us:<br><br><strong>“Study karo, bilkul time waste nahi karo.”</strong>",
+
+        message16: "You always made sure that along with Articleship work, we were also giving proper time to our studies. That balance between work and studies is something you always reminded us about.",
+
+        message17: "Ma’am, these two years with you were genuinely a great experience. I have learned many things from you, not only about Income Tax or Audit, but also about how to approach a problem, how to understand things properly, and how to keep learning instead of simply looking for answers.",
+
+        message18: "<strong>Thank you, Ma’am, for teaching me, guiding me, supporting me, correcting me, and always pushing me towards studying and improving. ❤️</strong>",
+
+        message19: "And if during these two years I have made any mistake, said something wrong, or unintentionally hurt you because of anything, <strong>I am genuinely sorry from my heart.</strong> 🙏",
+
+        message20: "I will always be thankful that you were my Principal and one of the people who guided me throughout this Articleship journey.",
+
+        message21: "<strong>Thank you for everything, Rangoli Ma’am. ❤️</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "प्रिय रंगोली मैम,",
+
+        message2: "मैम, आप मेरी Principal हैं क्योंकि मैं आपके under एक Article के रूप में registered हूँ, लेकिन मेरे लिए Articleship में आपका role सिर्फ Principal होने से कहीं ज्यादा रहा है। आपने हमेशा मुझे guide किया, support किया और यह सुनिश्चित किया कि इन दो सालों में मैं सीखता और grow करता रहूँ।",
+
+        message3: "क्योंकि आप Income Tax expert हैं, जब भी हमें Income Tax से related कोई doubt होता था, हम आपके पास आकर पूछते थे। और आपका एक reply मुझे हमेशा याद रहेगा। 😂😂<br><br><strong>“Section vachine aavo.”</strong> 😂",
+
+        message4: "आप हमेशा मानती थीं कि अगर हमें Bare Act की language पढ़ना आ जाए, तो हम कहीं भी नहीं अटकेंगे। इसलिए आप हमेशा prefer करती थीं कि हम पहले Income Tax section को Bare Act से पढ़ें, उसे समझें और खुद उसका interpretation निकालने की कोशिश करें। और अगर हमने कुछ गलत समझा हो, तो आप हमें बहुत अच्छे से समझाती थीं।",
+
+        message5: "आपके इस तरीके से सिखाने ने मेरी बहुत मदद की है क्योंकि आप सिर्फ answer नहीं देती थीं — आप चाहती थीं कि हम <strong>खुद answer ढूँढना सीखें।</strong>",
+
+        message6: "एक और चीज़ जिसके लिए मैं आपको genuinely thank you कहना चाहता हूँ, वह है मेरी Scholarship approve करना। उस scholarship की वजह से हमें Institute से quarterly financial assistance मिलती थी। Ma’am, इसके लिए thank you. इससे हमें सच में बहुत help हुई।",
+
+        message7: "कई बार Articles के बीच कोई discussion चल रहा होता था और वहाँ कोई और नहीं होता था। तब भी आप हमारे साथ होती थीं। आप हमारे साथ बैठती थीं, हमारी बात समझती थीं, हमें चीज़ें समझाती थीं और यह भी बताती थीं कि हमारा decision सही है या गलत।",
+
+        message8: "Audit season के दौरान कई बार आप सबकी <strong>remand</strong> भी लेती थीं। 😂 कई बार आप mistakes point out करती थीं और आपकी कुछ बातें मुझे आज भी याद हैं।",
+
+        message9: "एक sentence जो मुझे हमेशा याद रहेगा:<br><br><strong>“Capital Gain joine nakhjo.”</strong> 😂<br><br>और दूसरा:<br><br><strong>“Aa set nu conceptual kone karyu?”</strong> 😂<br><br>और of course:<br><br><strong>“Error-free joine karjo yaar, bav bhulo made chhe.”</strong> 😂",
+
+        message10: "Audit season में जब कई लोग इन points में mistakes करते थे, तब आप सबको साथ बैठाकर समझाती थीं। लेकिन मुझे आपकी यह बात बहुत अच्छी लगती थी कि अगर किसी को आपकी किसी बात का बुरा लग जाता था, तो आप personally उससे मिलकर बाद में calmly समझाती थीं।",
+
+        message11: "इससे मुझे समझ आया कि आपकी strictness के पीछे भी आप genuinely चाहती थीं कि हम सीखें और improve करें।",
+
+        message12: "आपने मुझे CA Intermediate में <strong>Direct Tax</strong> भी पढ़ाया था और उस समय भी आप मेरी Principal थीं। इसलिए CA Intermediate से लेकर इन दो सालों की Articleship तक मुझे आपसे काफी समय तक सीखने का मौका मिला।",
+
+        message13: "और Ma’am, जब भी मुझे कोई doubt होता था, चाहे मैंने आपको वही बात कितनी भी बार पूछी हो, आप हमेशा मुझे समझाती थीं। आपका यह patience मैं हमेशा याद रखूँगा।",
+
+        message14: "एक और चीज़ जो मुझे बहुत अच्छी लगती है वह यह है कि आप हमेशा personally हमसे हमारे <strong>syllabus</strong> के बारे में पूछती थीं — कितना complete हुआ है, कितना बाकी है और work के साथ हम properly study कर रहे हैं या नहीं।",
+
+        message15: "जब भी हम time waste या time pass करते थे, आप हमें याद दिलाती थीं:<br><br><strong>“Study karo, bilkul time waste nahi karo.”</strong>",
+
+        message16: "आप हमेशा ensure करती थीं कि Articleship work के साथ-साथ हम studies को भी proper time दें। Work और studies के बीच यह balance आप हमें हमेशा याद दिलाती थीं।",
+
+        message17: "Ma’am, आपके साथ ये दो साल genuinely बहुत अच्छा experience रहा। मैंने आपसे सिर्फ Income Tax या Audit के बारे में ही नहीं, बल्कि problem को कैसे approach करना है, चीज़ों को properly कैसे समझना है और सिर्फ answer ढूँढने के बजाय continuously सीखते कैसे रहना है, यह भी सीखा।",
+
+        message18: "<strong>Thank you Ma’am, मुझे सिखाने, guide करने, support करने, correct करने और हमेशा study और improvement की तरफ push करने के लिए। ❤️</strong>",
+
+        message19: "और अगर इन दो सालों में मुझसे कोई mistake हुई हो, मैंने कुछ गलत कहा हो या अनजाने में आपको किसी भी तरह hurt किया हो, तो <strong>मैं दिल से genuinely sorry हूँ।</strong> 🙏",
+
+        message20: "मैं हमेशा thankful रहूँगा कि आप मेरी Principal थीं और आपने मेरी Articleship journey में मुझे guide किया।",
+
+        message21: "<strong>हर चीज़ के लिए thank you, Rangoli Ma’am. ❤️</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "પ્રિય રંગોલી મેમ,",
+
+        message2: "મેમ, તમે મારા Principal છો કારણ કે હું તમારા under એક Article તરીકે registered છું, પરંતુ મારા માટે Articleship દરમિયાન તમારું role માત્ર Principal પૂરતું જ નહોતું. તમે હંમેશા મને guide કર્યો, support કર્યો અને આ બે વર્ષમાં હું શીખતો અને grow કરતો રહું એનું હંમેશા ધ્યાન રાખ્યું.",
+
+        message3: "તમે Income Tax expert છો એટલે જ્યારે પણ અમને Income Tax related કોઈ doubt આવતો ત્યારે અમે તમારી પાસે આવીને પૂછતા. અને તમારો એક reply મને હંમેશા યાદ રહેશે. 😂😂<br><br><strong>“Section vachine aavo.”</strong> 😂",
+
+        message4: "તમને હંમેશા વિશ્વાસ હતો કે જો આપણને Bare Actની language વાંચતા આવડી જાય તો આપણે ક્યાંય અટકીશું નહીં. એટલે તમે હંમેશા prefer કરતા કે પહેલા Income Taxનો section Bare Actમાંથી વાંચો, સમજો અને પોતે interpretation કાઢવાનો try કરો. અને જો અમે કંઈ ખોટું સમજ્યા હોઈએ તો તમે અમને ખૂબ સારી રીતે સમજાવી દેતા.",
+
+        message5: "તમારી આ રીતે શીખવવાની રીતથી મને ખૂબ મદદ મળી છે કારણ કે તમે માત્ર answer આપતા નહોતા — તમે ઇચ્છતા હતા કે આપણે <strong>પોતે answer શોધતા શીખીએ.</strong>",
+
+        message6: "બીજી એક વાત માટે હું તમને genuinely thank you કહેવા માંગુ છું અને એ છે મારી <strong>Scholarship</strong> approve કરવા માટે. એ scholarshipના કારણે અમને Institute પાસેથી quarterly financial assistance મળતી હતી. Ma’am, આ માટે thank you. એનાથી અમને ખરેખર ઘણી help થઈ.",
+
+        message7: "ઘણી વાર Articles વચ્ચે કોઈ discussion ચાલતો હોય અને ત્યાં બીજું કોઈ ન હોય, ત્યારે પણ તમે અમારી સાથે હોતા. તમે અમારી સાથે બેસતા, અમે શું discuss કરી રહ્યા છીએ એ સમજતા, અમને સમજાવતા અને અમારો decision સાચો છે કે ખોટો એ પણ જણાવતા.",
+
+        message8: "Audit season દરમિયાન ઘણી વાર તમે બધાની <strong>remand</strong> પણ લેતા. 😂 ઘણી વાર તમે mistakes point out કરતા અને તમારી કેટલીક વાતો મને આજે પણ યાદ છે.",
+
+        message9: "એક sentence જે મને હંમેશા યાદ રહેશે:<br><br><strong>“Capital Gain joine nakhjo.”</strong> 😂<br><br>અને બીજું:<br><br><strong>“Aa set nu conceptual kone karyu?”</strong> 😂<br><br>અને of course:<br><br><strong>“Error-free joine karjo yaar, bav bhulo made chhe.”</strong> 😂",
+
+        message10: "Audit seasonમાં જ્યારે ઘણા લોકો આ pointsમાં mistakes કરતા ત્યારે તમે બધાને સાથે બેસાડીને સમજાવતા. પરંતુ તમારી એક વાત મને ખૂબ ગમતી કે જો કોઈને તમારી કોઈ વાતનું ખોટું લાગી જાય તો તમે personally તેની સાથે મળીને પછી શાંતિથી સમજાવતા.",
+
+        message11: "એનાથી મને સમજાયું કે તમારી strictnessની પાછળ પણ તમે ખરેખર ઇચ્છતા હતા કે આપણે શીખીએ અને improve કરીએ.",
+
+        message12: "તમે મને CA Intermediateમાં <strong>Direct Tax</strong> પણ ભણાવ્યું હતું અને એ સમયે પણ તમે મારા Principal હતા. એટલે CA Intermediateથી લઈને આ બે વર્ષની Articleship સુધી મને તમારી પાસેથી લાંબા સમય સુધી શીખવાની opportunity મળી.",
+
+        message13: "અને મેમ, જ્યારે પણ મને કોઈ doubt આવતો, મેં તમને એ જ વાત કેટલી પણ વાર પૂછેલી હોય, તમે હંમેશા મને સમજાવતા. તમારો આ patience હું હંમેશા યાદ રાખીશ.",
+
+        message14: "બીજી એક વાત જે મને ખૂબ ગમે છે એ છે કે તમે હંમેશા personally અમને અમારા <strong>syllabus</strong> વિશે પૂછતા — કેટલું complete થયું, કેટલું બાકી છે અને work સાથે આપણે properly study કરીએ છીએ કે નહીં.",
+
+        message15: "જ્યારે પણ અમે time waste કે time pass કરતા ત્યારે તમે અમને યાદ અપાવતા:<br><br><strong>“Study karo, bilkul time waste nahi karo.”</strong>",
+
+        message16: "તમે હંમેશા એ ensure કરતા કે Articleship workની સાથે સાથે આપણે studiesને પણ proper time આપીએ. Work અને studies વચ્ચેનું આ balance તમે અમને હંમેશા યાદ અપાવતા.",
+
+        message17: "મેમ, તમારી સાથે આ બે વર્ષ genuinely ખૂબ સારો experience રહ્યો. મેં તમારી પાસેથી માત્ર Income Tax કે Audit વિશે જ નહીં, પરંતુ problemને કેવી રીતે approach કરવી, વસ્તુઓને properly કેવી રીતે સમજવી અને માત્ર answer શોધવાને બદલે સતત શીખતા કેવી રીતે રહેવું એ પણ શીખ્યું.",
+
+        message18: "<strong>Thank you Ma’am, મને શીખવવા, guide કરવા, support કરવા, correct કરવા અને હંમેશા study અને improvement તરફ push કરવા માટે. ❤️</strong>",
+
+        message19: "અને જો આ બે વર્ષમાં મારાથી કોઈ mistake થઈ હોય, મેં કંઈ ખોટું કહ્યું હોય અથવા અજાણતા તમને કોઈપણ રીતે hurt કર્યા હોય તો <strong>હું દિલથી genuinely sorry છું.</strong> 🙏",
+
+        message20: "હું હંમેશા thankful રહીશ કે તમે મારા Principal હતા અને મારી Articleship journey દરમિયાન તમે મને guide કર્યો.",
+
+        message21: "<strong>દરેક વસ્તુ માટે thank you, Rangoli Ma’am. ❤️</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 21; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
 
 </body>
 </html>
