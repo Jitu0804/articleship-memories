@@ -1,173 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Bhautik ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .message p:nth-child(1) { animation-delay: 0.1s; }
+    .message p:nth-child(2) { animation-delay: 0.2s; }
+    .message p:nth-child(3) { animation-delay: 0.3s; }
+    .message p:nth-child(4) { animation-delay: 0.4s; }
+    .message p:nth-child(5) { animation-delay: 0.5s; }
+    .message p:nth-child(6) { animation-delay: 0.6s; }
+    .message p:nth-child(7) { animation-delay: 0.7s; }
+    .message p:nth-child(8) { animation-delay: 0.8s; }
+    .message p:nth-child(9) { animation-delay: 0.9s; }
+    .message p:nth-child(10) { animation-delay: 1s; }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-            h1 {
-                font-size: 30px;
-            }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
+
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Colleague, A Brother ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>Bhautik ❤️</h1>
+    <div class="subtitle">
+      Bhautik ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Bhautik,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        <strong>Dear Bhautik ❤️</strong>
+      </p>
+
+      <p id="message2">
+        Bhautik, you are my brother. We joined together, and we will also say goodbye together. ❤️
+      </p>
+
+      <p id="message3">
+        I haven't even completed as many months in this office as the number of <strong>girlfriends</strong> my brother has had. 😂😂😂 But when it comes to brotherhood — <strong>jordarrrr!</strong> 😂❤️
+      </p>
+
+      <p id="message4">
+        In the whole office, you are one person I feel will stay connected with me for my <strong>entire life</strong>. Actually, we will meet even after office at the library, so I don't even need to write much for you 😂😂.
+      </p>
+
+      <p id="message5">
+        But keeping the formality aside, honestly, <strong>I have had a lot of fun with you, brother.</strong> We have done less work and more bakchodi together 😂😂, and I just want you to always stay the same and remain connected with me like this.
+      </p>
+
+      <p id="message6">
+        Your name is Bhautik, but there is <strong>nothing "Bhramam" about your work!</strong> 😂😂😂
+      </p>
+
+      <p id="message7">
+        And yes, please suggest me a <strong>good dating app</strong> 😂😂😂. Don't tell me you don't want your brother to be in a relationship too! 😂😂😂
+      </p>
+
+      <p id="message8">
+        I also can't forget our <strong>lunch-break games</strong>. Sitting together, playing games like <strong>Scribble and then Codenames</strong>, and having fun during lunch breaks — these small moments became some of the best memories of our Articleship. 😂❤️
+      </p>
+
+      <p id="message9">
+        That one day was also <strong>jordarrrr</strong> when we went to the garden after lunch, walking together, and then sat there for some time. Our lunch break officially ended at 2 PM, but we reached the office around 2:45 😂😂 and then Ma'am called us! 🤌😂 That was also one of those memories that I will always remember.
+      </p>
+
+      <p id="message10">
+        <strong>And thank you for giving me JioHotstar Premium</strong> 😂😂😂. Your contribution to my entertainment will also be remembered, brother! 😂❤️
+      </p>
+
+      <p id="message11">
+        And yes, <strong>RK Jain must be missing you!</strong> 🤣🤣🤣
+      </p>
+
+      <p id="message12">
+        Bhautik, honestly, the bond I have with you is much more than just being colleagues. We joined together, worked together, did a lot of bakchodi together, and now we will also say goodbye together. This journey will always remain special to me. ❤️
+      </p>
+
+      <p id="message13">
+        <strong>Thank you, brother, for all the fun, all the memories, and for being such a great brother to me.</strong> And if I ever made any mistake, said something wrong, or said something that hurt you during these 2 years, then <strong>dil se sorry, brother.</strong> ❤️
+      </p>
+
+      <p id="message14">
+        Office will end, but <strong>our brotherhood won't.</strong> 🤝❤️
+      </p>
+
+      <p id="message15">
+        <strong>— Jitu Suthar</strong>
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "<strong>Dear Bhautik ❤️</strong>",
+
+        message2: "Bhautik, you are my brother. We joined together, and we will also say goodbye together. ❤️",
+
+        message3: "I haven't even completed as many months in this office as the number of <strong>girlfriends</strong> my brother has had. 😂😂😂 But when it comes to brotherhood — <strong>jordarrrr!</strong> 😂❤️",
+
+        message4: "In the whole office, you are one person I feel will stay connected with me for my <strong>entire life</strong>. Actually, we will meet even after office at the library, so I don't even need to write much for you 😂😂.",
+
+        message5: "But keeping the formality aside, honestly, <strong>I have had a lot of fun with you, brother.</strong> We have done less work and more bakchodi together 😂😂, and I just want you to always stay the same and remain connected with me like this.",
+
+        message6: "Your name is Bhautik, but there is <strong>nothing \"Bhramam\" about your work!</strong> 😂😂😂",
+
+        message7: "And yes, please suggest me a <strong>good dating app</strong> 😂😂😂. Don't tell me you don't want your brother to be in a relationship too! 😂😂😂",
+
+        message8: "I also can't forget our <strong>lunch-break games</strong>. Sitting together, playing games like <strong>Scribble and then Codenames</strong>, and having fun during lunch breaks — these small moments became some of the best memories of our Articleship. 😂❤️",
+
+        message9: "That one day was also <strong>jordarrrr</strong> when we went to the garden after lunch, walking together, and then sat there for some time. Our lunch break officially ended at 2 PM, but we reached the office around 2:45 😂😂 and then Ma'am called us! 🤌😂 That was also one of those memories that I will always remember.",
+
+        message10: "<strong>And thank you for giving me JioHotstar Premium</strong> 😂😂😂. Your contribution to my entertainment will also be remembered, brother! 😂❤️",
+
+        message11: "And yes, <strong>RK Jain must be missing you!</strong> 🤣🤣🤣",
+
+        message12: "Bhautik, honestly, the bond I have with you is much more than just being colleagues. We joined together, worked together, did a lot of bakchodi together, and now we will also say goodbye together. This journey will always remain special to me. ❤️",
+
+        message13: "<strong>Thank you, brother, for all the fun, all the memories, and for being such a great brother to me.</strong> And if I ever made any mistake, said something wrong, or said something that hurt you during these 2 years, then <strong>dil se sorry, brother.</strong> ❤️",
+
+        message14: "Office will end, but <strong>our brotherhood won't.</strong> 🤝❤️",
+
+        message15: "<strong>— Jitu Suthar</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "<strong>प्रिय भौतिक ❤️</strong>",
+
+        message2: "भौतिक, तुम मेरे भाई हो। हम दोनों ने साथ में जॉइन किया था और साथ में ही विदाई भी लेंगे। ❤️",
+
+        message3: "मैंने इस ऑफिस में जितने महीने भी नहीं निकाले हैं, उससे ज्यादा तो मेरे भाई की <strong>गर्लफ्रेंड्स</strong> हैं। 😂😂😂 लेकिन भाईचारे की बात करें तो — <strong>जोरदारrrr!</strong> 😂❤️",
+
+        message4: "पूरे ऑफिस में तुम उन लोगों में से एक हो, जिनके बारे में मुझे लगता है कि तुम <strong>पूरी जिंदगी मेरे साथ जुड़े रहोगे।</strong> वैसे भी ऑफिस के बाद हम लाइब्रेरी में मिलेंगे ही, इसलिए तुम्हारे लिए ज्यादा लिखने की जरूरत भी नहीं है 😂😂।",
+
+        message5: "लेकिन औपचारिकता को एक तरफ रखकर सच कहूँ तो <strong>तुम्हारे साथ बहुत मजा आया भाई।</strong> हमने काम कम और बकचोदी ज्यादा की है 😂😂 और मैं बस यही चाहता हूँ कि तुम हमेशा ऐसे ही रहो और इसी तरह मेरे साथ जुड़े रहो।",
+
+        message6: "तुम्हारा नाम भौतिक है, लेकिन तुम्हारे काम में <strong>कुछ भी 'भ्रामक' नहीं है!</strong> 😂😂😂",
+
+        message7: "और हाँ, मेरे लिए कोई <strong>अच्छा डेटिंग ऐप</strong> भी सुझा देना 😂😂😂। ऐसा मत करना कि तुम नहीं चाहते कि तुम्हारा भाई भी रिलेशनशिप में आए! 😂😂😂",
+
+        message8: "और हमारे <strong>लंच ब्रेक के गेम्स</strong> मैं कैसे भूल सकता हूँ। साथ बैठना, <strong>स्क्रिबल और फिर कोडनेम्स</strong> खेलना और लंच ब्रेक में खूब मस्ती करना — ये छोटी-छोटी बातें मेरी आर्टिकलशिप की सबसे अच्छी यादों में शामिल हो गई हैं। 😂❤️",
+
+        message9: "वो एक दिन भी <strong>जोरदारrrr</strong> था जब हम लंच के बाद चलते-चलते गार्डन गए और वहाँ बैठ गए। हमारा लंच ब्रेक 2 बजे खत्म हो गया था, लेकिन हम लगभग 2:45 बजे ऑफिस पहुँचे 😂😂 और फिर मैम ने हमें बुलाया! 🤌😂 वो भी ऐसी यादों में से एक है जिसे मैं हमेशा याद रखूँगा।",
+
+        message10: "<strong>और जियोहॉटस्टार का प्रीमियम देने के लिए धन्यवाद</strong> 😂😂😂। मेरे मनोरंजन में तुम्हारा योगदान भी हमेशा याद रहेगा भाई! 😂❤️",
+
+        message11: "और हाँ, <strong>आर.के. जैन तुम्हें जरूर मिस कर रहे होंगे!</strong> 🤣🤣🤣",
+
+        message12: "भौतिक, सच कहूँ तो तुम्हारे साथ मेरा रिश्ता सिर्फ सहकर्मी वाला नहीं है, उससे कहीं ज्यादा है। हम साथ में जॉइन हुए, साथ में काम किया, साथ में खूब बकचोदी की और अब साथ में विदाई भी लेंगे। यह पूरी यात्रा मेरे लिए हमेशा खास रहेगी। ❤️",
+
+        message13: "<strong>भाई, सारी मस्ती, सारी यादों और मेरे लिए इतने अच्छे भाई बनने के लिए धन्यवाद।</strong> और अगर इन दो सालों में मेरी किसी गलती, किसी बात या किसी मजाक से तुम्हें बुरा लगा हो, तो <strong>दिल से सॉरी भाई।</strong> ❤️",
+
+        message14: "ऑफिस खत्म हो जाएगा, लेकिन <strong>हमारा भाईचारा खत्म नहीं होगा।</strong> 🤝❤️",
+
+        message15: "<strong>— जितु सुथार</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "<strong>પ્રિય ભૌતિક ❤️</strong>",
+
+        message2: "ભૌતિક, તું મારો ભાઈ છે. આપણે બંને સાથે જ જોડાયા હતા અને સાથે જ વિદાય પણ લઈશું. ❤️",
+
+        message3: "મેં આ ઓફિસમાં જેટલા મહિના પણ નથી કાઢ્યા, એના કરતાં વધારે તો મારા ભાઈની <strong>ગર્લફ્રેન્ડ્સ</strong> છે. 😂😂😂 પરંતુ ભાઈચારાની વાત આવે ત્યારે — <strong>જોરદારrrr!</strong> 😂❤️",
+
+        message4: "આખી ઓફિસમાં તું એવો એક ભાઈ છે જેના વિશે મને લાગે છે કે તું <strong>આખી જિંદગી મારી સાથે જોડાયેલો રહીશ.</strong> ખરેખર તો ઓફિસ પછી પણ આપણે લાઇબ્રેરીમાં મળવાના જ છીએ, એટલે તારા માટે મારે વધારે કંઈ લખવાની જરૂર પણ નથી 😂😂.",
+
+        message5: "પણ ફોર્માલિટી બાજુ પર રાખીને સાચું કહું તો <strong>તારી સાથે બહુ જ મજા આવી ભાઈ.</strong> આપણે કામ ઓછું અને બકચોદી વધારે કરી છે 😂😂 અને બસ તું હંમેશા આવો જ રહેજે અને મારી સાથે આવી જ રીતે જોડાયેલો રહેજે.",
+
+        message6: "તારું નામ ભૌતિક છે, પણ તારા કામમાં <strong>ભ્રમણ જેવું કંઈ જ નથી!</strong> 😂😂😂",
+
+        message7: "અને હા, મને કોઈ <strong>સારી Dating App</strong> પણ suggest કરજે 😂😂😂. તું એવું તો નથી ઈચ્છતો ને કે તારો ભાઈ પણ Relationship માં આવે જ નહીં! 😂😂😂",
+
+        message8: "અને આપણા <strong>લંચ બ્રેકના ગેમ્સ</strong> હું કેવી રીતે ભૂલી શકું. સાથે બેસીને <strong>Scribble અને પછી Codenames</strong> રમવા અને લંચ બ્રેકમાં ખૂબ મસ્તી કરવી — આ નાની નાની વાતો મારી આર્ટિકલશિપની સૌથી સારી યાદોમાંની એક બની ગઈ છે. 😂❤️",
+
+        message9: "એ દિવસ પણ <strong>જોરદારrrr</strong> હતો જ્યારે આપણે લંચ પછી ચાલતા ચાલતા ગાર્ડનમાં ગયા અને ત્યાં બેસી ગયા. આપણો લંચ બ્રેક 2 વાગ્યે પૂરો થઈ ગયો હતો, પરંતુ આપણે લગભગ 2:45 વાગ્યે ઓફિસ આવ્યા 😂😂 અને પછી Ma'am એ આપણને બોલાવ્યા! 🤌😂 એ પણ એવી જ એક યાદ છે જે હું હંમેશા યાદ રાખીશ.",
+
+        message10: "<strong>અને JioHotstar નું Premium આપવા માટે Thank You</strong> 😂😂😂. મારા Entertainment માં તારું contribution પણ હંમેશા યાદ રહેશે ભાઈ! 😂❤️",
+
+        message11: "અને હા, <strong>RK Jain તને ચોક્કસ મિસ કરતા હશે!</strong> 🤣🤣🤣",
+
+        message12: "ભૌતિક, સાચું કહું તો તારી સાથેનો મારો સંબંધ માત્ર Colleague જેટલો નથી, એના કરતાં ઘણો વધારે છે. આપણે સાથે જોડાયા, સાથે કામ કર્યું, સાથે ખૂબ બકચોદી કરી અને હવે સાથે જ વિદાય પણ લઈશું. આ આખી journey મારા માટે હંમેશા ખાસ રહેશે. ❤️",
+
+        message13: "<strong>ભાઈ, બધી મસ્તી, બધી યાદો અને મારા માટે આટલો સારો ભાઈ બનવા બદલ Thank You.</strong> અને જો આ બે વર્ષમાં મારી કોઈ ભૂલ, કોઈ વાત કે કોઈ મજાકથી તને ખોટું લાગ્યું હોય તો <strong>દિલથી Sorry ભાઈ.</strong> ❤️",
+
+        message14: "ઓફિસ પૂરી થઈ જશે, પરંતુ <strong>આપણો ભાઈચારો ક્યારેય પૂરો નહીં થાય.</strong> 🤝❤️",
+
+        message15: "<strong>— જિતુ સુથાર</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 15; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element && text["message" + i]) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
