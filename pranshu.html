@@ -1,173 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Pranshu ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            h1 {
-                font-size: 30px;
-            }
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Colleague, A Friend ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>Pranshu ❤️</h1>
+    <div class="subtitle">
+      Pranshu ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Pranshu,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        <strong>Dear Pranshu ❤️</strong>
+      </p>
+
+      <p id="message2">
+        It honestly feels a little strange to write this message because when I joined this office, I never thought that I would get such a good junior and such a beautiful bond during my Articleship. ❤️
+      </p>
+
+      <p id="message3">
+        You are genuinely a very good person, and our bonding was never just about work. We had so much <strong>masti, bakchodi, random conversations and fun moments</strong> together that these two years would not have been the same without you. ❤️
+      </p>
+
+      <p id="message4">
+        Whenever there was work, you were always ready to help. I can genuinely say that <strong>I got one of the best teams during my Articleship</strong> — a team that never stepped back from supporting me or getting the work done. And you were an important part of that team. ❤️
+      </p>
+
+      <p id="message5">
+        We shared so many small moments in the office which may have felt normal at that time, but now I know that these are the moments I am going to miss the most. The random talks, laughing together, helping each other with work, and all the small masti we used to do in between work — everything has become a memory now.
+      </p>
+
+      <p id="message6">
+        And one thing I want to make very clear — <strong>our relationship is not limited to the office.</strong> ❤️ Office khatam thai gayu etle apno rishto khatam thai jaay evo bilkul nathi. I genuinely want us to stay connected even after Articleship, and I hope we continue meeting, talking and making new memories together.
+      </p>
+
+      <p id="message7">
+        Thank you for doing your work, supporting me whenever I needed it, and for making these two years so much more enjoyable. ❤️ I may have been your senior at work, but honestly, I also learned many things from you.
+      </p>
+
+      <p id="message8">
+        And yes, I know I have pulled your leg, irritated you, joked around and sometimes probably crossed the line in masti 😂😂. So if I have ever said or done anything that hurt you or made you feel bad, <strong>I am genuinely sorry.</strong> My intention was never to hurt you.
+      </p>
+
+      <p id="message9">
+        Bas ek j vaat — <strong>aa bonding office sudhi limited nathi rakhvani.</strong> 😂❤️
+      </p>
+
+      <p id="message10">
+        Keep growing, keep learning, keep doing well, and whenever you learn something new, don't forget your senior! 😂😂
+      </p>
+
+      <p id="message11">
+        <strong>Thank you for being such an important part of my Articleship journey. ❤️</strong>
+      </p>
+
+      <p id="message12">
+        <strong>See you outside the office too — because this is not a goodbye, it's just a change of workplace. 🤝❤️</strong>
+      </p>
+
+      <p id="message13">
+        <strong>— Jitu Suthar</strong>
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "<strong>Dear Pranshu ❤️</strong>",
+
+        message2: "It honestly feels a little strange to write this message because when I joined this office, I never thought that I would get such a good junior and such a beautiful bond during my Articleship. ❤️",
+
+        message3: "You are genuinely a very good person, and our bonding was never just about work. We had so much <strong>masti, bakchodi, random conversations and fun moments</strong> together that these two years would not have been the same without you. ❤️",
+
+        message4: "Whenever there was work, you were always ready to help. I can genuinely say that <strong>I got one of the best teams during my Articleship</strong> — a team that never stepped back from supporting me or getting the work done. And you were an important part of that team. ❤️",
+
+        message5: "We shared so many small moments in the office which may have felt normal at that time, but now I know that these are the moments I am going to miss the most. The random talks, laughing together, helping each other with work, and all the small masti we used to do in between work — everything has become a memory now.",
+
+        message6: "And one thing I want to make very clear — <strong>our relationship is not limited to the office.</strong> ❤️ Office khatam thai gayu etle apno rishto khatam thai jaay evo bilkul nathi. I genuinely want us to stay connected even after Articleship, and I hope we continue meeting, talking and making new memories together.",
+
+        message7: "Thank you for doing your work, supporting me whenever I needed it, and for making these two years so much more enjoyable. ❤️ I may have been your senior at work, but honestly, I also learned many things from you.",
+
+        message8: "And yes, I know I have pulled your leg, irritated you, joked around and sometimes probably crossed the line in masti 😂😂. So if I have ever said or done anything that hurt you or made you feel bad, <strong>I am genuinely sorry.</strong> My intention was never to hurt you.",
+
+        message9: "Bas ek j vaat — <strong>aa bonding office sudhi limited nathi rakhvani.</strong> 😂❤️",
+
+        message10: "Keep growing, keep learning, keep doing well, and whenever you learn something new, don't forget your senior! 😂😂",
+
+        message11: "<strong>Thank you for being such an important part of my Articleship journey. ❤️</strong>",
+
+        message12: "<strong>See you outside the office too — because this is not a goodbye, it's just a change of workplace. 🤝❤️</strong>",
+
+        message13: "<strong>— Jitu Suthar</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "<strong>प्रिय प्रांशु ❤️</strong>",
+
+        message2: "यह संदेश लिखते हुए सच में थोड़ा अजीब लग रहा है, क्योंकि जब मैंने इस ऑफिस में शुरुआत की थी, तब मैंने कभी नहीं सोचा था कि मुझे अपनी आर्टिकलशिप के दौरान तुम जैसा अच्छा जूनियर और इतना खूबसूरत रिश्ता मिलेगा। ❤️",
+
+        message3: "तुम सच में बहुत अच्छे इंसान हो और हमारी बॉन्डिंग सिर्फ काम तक सीमित नहीं रही। हमने साथ में इतनी <strong>मस्ती, मजाक, बेफिजूल की बातें और अच्छे पल</strong> बिताए हैं कि तुम्हारे बिना ये दो साल बिल्कुल वैसे नहीं होते। ❤️",
+
+        message4: "जब भी काम होता था, तुम हमेशा मदद करने के लिए तैयार रहते थे। मैं सच में कह सकता हूँ कि <strong>मेरी आर्टिकलशिप के दौरान मुझे सबसे अच्छी टीम मिली</strong> — ऐसी टीम जो कभी सपोर्ट करने या काम पूरा करने से पीछे नहीं हटी। और तुम उस टीम का एक बहुत महत्वपूर्ण हिस्सा थे। ❤️",
+
+        message5: "ऑफिस में हमने इतने सारे छोटे-छोटे पल साथ बिताए, जो उस समय शायद सामान्य लगते थे, लेकिन अब समझ आता है कि इन्हीं पलों की सबसे ज्यादा याद आएगी। छोटी-छोटी बातें, साथ में हँसना, काम में एक-दूसरे की मदद करना और काम के बीच की सारी मस्ती — सब अब यादें बन गई हैं।",
+
+        message6: "और एक बात मैं बिल्कुल साफ कहना चाहता हूँ — <strong>हमारा रिश्ता सिर्फ ऑफिस तक सीमित नहीं है।</strong> ❤️ ऑफिस खत्म हो गया इसका मतलब यह बिल्कुल नहीं कि हमारा रिश्ता भी खत्म हो गया। मैं चाहता हूँ कि आर्टिकलशिप के बाद भी हम संपर्क में रहें और आगे भी मिलते रहें, बातें करते रहें और नई यादें बनाते रहें।",
+
+        message7: "जब भी मुझे जरूरत पड़ी, मेरा काम करने और मेरा साथ देने के लिए धन्यवाद। ❤️ इन दो सालों को इतना अच्छा बनाने के लिए भी धन्यवाद। मैं तुम्हारा सीनियर जरूर था, लेकिन सच कहूँ तो मैंने तुमसे भी बहुत कुछ सीखा है।",
+
+        message8: "और हाँ, मुझे पता है कि मैंने तुम्हारी टांग खींची है, तुम्हें परेशान किया है, मजाक किया है और कभी-कभी शायद मस्ती में हद भी पार कर दी होगी 😂😂। इसलिए अगर मेरी किसी बात या काम से तुम्हें कभी बुरा लगा हो, तो <strong>दिल से सॉरी।</strong> मेरा इरादा कभी तुम्हें दुख पहुँचाने का नहीं था।",
+
+        message9: "बस एक ही बात — <strong>ये बॉन्डिंग ऑफिस तक सीमित नहीं रखनी है।</strong> 😂❤️",
+
+        message10: "आगे बढ़ते रहो, सीखते रहो, अच्छा करते रहो और जब भी कुछ नया सीखो, अपने सीनियर को भूलना मत! 😂😂",
+
+        message11: "<strong>मेरी आर्टिकलशिप का इतना महत्वपूर्ण हिस्सा बनने के लिए धन्यवाद। ❤️</strong>",
+
+        message12: "<strong>ऑफिस के बाहर भी मिलते रहेंगे — क्योंकि यह गुडबाय नहीं है, बस जगह बदल रही है। 🤝❤️</strong>",
+
+        message13: "<strong>— जितु सुथार</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "<strong>પ્રિય પ્રાંશુ ❤️</strong>",
+
+        message2: "આ મેસેજ લખતી વખતે ખરેખર થોડું અજીબ લાગી રહ્યું છે, કારણ કે જ્યારે મેં આ ઓફિસમાં શરૂઆત કરી હતી ત્યારે મેં ક્યારેય વિચાર્યું નહોતું કે મારી આર્ટિકલશિપ દરમિયાન મને તારા જેવો સારો જુનિયર અને આટલો સુંદર સંબંધ મળશે. ❤️",
+
+        message3: "તું ખરેખર ખૂબ જ સારો વ્યક્તિ છે અને આપણી બોન્ડિંગ ક્યારેય માત્ર કામ પૂરતી જ નહોતી. આપણે સાથે એટલી બધી <strong>મસ્તી, બકચોડી, રેન્ડમ વાતો અને મસ્ત મોમેન્ટ્સ</strong> કર્યા છે કે તારા વગર આ બે વર્ષ આવા ન હોત. ❤️",
+
+        message4: "જ્યારે પણ કામ હોય ત્યારે તું હંમેશા મદદ કરવા માટે તૈયાર રહેતો. હું ખરેખર કહી શકું કે <strong>મારી આર્ટિકલશિપ દરમિયાન મને સૌથી બેસ્ટ ટીમ મળી હતી</strong> — એવી ટીમ જે ક્યારેય મને સપોર્ટ કરવામાં કે કામ કરવામાં પાછળ ન હટી. અને તું એ ટીમનો એક ખૂબ જ મહત્વનો ભાગ હતો. ❤️",
+
+        message5: "ઓફિસમાં આપણે ઘણી બધી નાની નાની મોમેન્ટ્સ સાથે શેર કરી છે, જે તે સમયે કદાચ સામાન્ય લાગતી હતી, પણ હવે સમજાય છે કે સૌથી વધારે આ જ મોમેન્ટ્સ યાદ આવશે. રેન્ડમ વાતો, સાથે હસવું, કામમાં એકબીજાની મદદ કરવી અને કામની વચ્ચેની બધી મસ્તી — બધું હવે યાદો બની ગયું છે.",
+
+        message6: "અને એક વાત હું એકદમ ક્લિયર કહેવા માંગુ છું — <strong>આપણો સંબંધ માત્ર ઓફિસ પૂરતો નથી.</strong> ❤️ ઓફિસ પૂરું થઈ ગયું એટલે આપણો સંબંધ પણ પૂરો થઈ જાય એવું બિલકુલ નથી. હું ઈચ્છું છું કે આર્ટિકલશિપ પછી પણ આપણે કોન્ટેક્ટમાં રહીએ અને આગળ પણ મળતા રહીએ, વાતો કરતા રહીએ અને નવી નવી યાદો બનાવતા રહીએ.",
+
+        message7: "જ્યારે પણ મને જરૂર પડી ત્યારે મારું કામ કરવામાં અને મને સપોર્ટ કરવા માટે થેન્ક યુ. ❤️ આ બે વર્ષને આટલા સારા બનાવવા માટે પણ થેન્ક યુ. હું તારો સિનિયર હતો, પણ સાચું કહું તો મેં તારી પાસેથી પણ ઘણી વસ્તુઓ શીખી છે.",
+
+        message8: "અને હા, મને ખબર છે કે મેં તારી ઘણી ખેંચી છે, તને હેરાન કર્યો છે, મજાક કરી છે અને ક્યારેક મસ્તીમાં કદાચ હદ પણ પાર કરી હશે 😂😂. એટલે જો મારી કોઈ વાત કે કામથી તને ક્યારેય ખોટું લાગ્યું હોય, તો <strong>દિલથી સોરી.</strong> તને દુઃખ પહોંચાડવાનો મારો ક્યારેય ઈરાદો નહોતો.",
+
+        message9: "બસ એક જ વાત — <strong>આ બોન્ડિંગ ઓફિસ સુધી લિમિટેડ નથી રાખવાની.</strong> 😂❤️",
+
+        message10: "આગળ વધતો રહેજે, શીખતો રહેજે, સારું કરતો રહેજે અને જ્યારે પણ કંઈ નવું શીખે ત્યારે તારા સિનિયરને ભૂલતો નહીં! 😂😂",
+
+        message11: "<strong>મારી આર્ટિકલશિપનો આટલો મહત્વનો ભાગ બનવા માટે થેન્ક યુ. ❤️</strong>",
+
+        message12: "<strong>ઓફિસની બહાર પણ મળતા રહીશું — કારણ કે આ ગુડબાય નથી, બસ વર્કપ્લેસ બદલાયું છે. 🤝❤️</strong>",
+
+        message13: "<strong>— જિતુ સુથાર</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 13; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element && text["message" + i]) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
