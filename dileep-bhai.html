@@ -1,173 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Dileep Bhai ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .message p:nth-child(1) { animation-delay: 0.1s; }
+    .message p:nth-child(2) { animation-delay: 0.2s; }
+    .message p:nth-child(3) { animation-delay: 0.3s; }
+    .message p:nth-child(4) { animation-delay: 0.4s; }
+    .message p:nth-child(5) { animation-delay: 0.5s; }
+    .message p:nth-child(6) { animation-delay: 0.6s; }
+    .message p:nth-child(7) { animation-delay: 0.7s; }
+    .message p:nth-child(8) { animation-delay: 0.8s; }
+    .message p:nth-child(9) { animation-delay: 0.9s; }
+    .message p:nth-child(10) { animation-delay: 1s; }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-            h1 {
-                font-size: 30px;
-            }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
+
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Colleague, A Brother & A Memory I’ll Always Carry ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>Dileep Bhai ❤️</h1>
+    <div class="subtitle">
+      Dileep Bhai ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Dileep Bhai,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        <strong>Dear Dileep Bhai ❤️</strong>
+      </p>
+
+      <p id="message2">
+        Dileep Bhai, you are also one of the most <strong>mast and mojila</strong> people in our office. 😂❤️ Whenever I have asked you for any kind of help, you have always helped me without thinking twice, and I genuinely appreciate that.
+      </p>
+
+      <p id="message3">
+        And yes, your <strong>chai</strong> is one of the best! ☕❤️ I am definitely going to miss your chai after my Articleship. Whenever you used to make it, it somehow made the whole office feel a little more relaxed. 😂
+      </p>
+
+      <p id="message4">
+        One thing I really like about you is that you never get angry with anyone. You always talk to everyone with a smile and keep the atmosphere light and positive. Even when there was some work pressure, your nature was always calm and friendly.
+      </p>
+
+      <p id="message5">
+        And our bonding also became quite special because many times, whenever you had to change some setting on your phone or needed help with something related to it, you would simply come to me and ask without any hesitation. 😂😂 I always liked that because it showed how comfortable our bonding had become.
+      </p>
+
+      <p id="message6">
+        Dileep Bhai, you have always been very helpful and kind towards me, and I will genuinely miss having you around in the office. ❤️
+      </p>
+
+      <p id="message7">
+        Thank you for always helping me, for your amazing chai, for all the small conversations and for being such a <strong>mast mojila manas</strong>. 😂❤️
+      </p>
+
+      <p id="message8">
+        Our Articleship may be over, but <strong>aapno rishto aavo j rehse</strong>. 💯❤️
+      </p>
+
+      <p id="message9">
+        And if I ever said something or did something that hurt you, then <strong>dil thi sorry, Bhai.</strong> ❤️
+      </p>
+
+      <p id="message10">
+        <strong>Thank you for everything, Dileep Bhai! ❤️☕😂</strong>
+      </p>
+
+      <p style="text-align: right; margin-top: 45px;">
+        <strong>— Jitu Suthar</strong>
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "<strong>Dear Dileep Bhai ❤️</strong>",
+
+        message2: "Dileep Bhai, you are also one of the most <strong>mast and mojila</strong> people in our office. 😂❤️ Whenever I have asked you for any kind of help, you have always helped me without thinking twice, and I genuinely appreciate that.",
+
+        message3: "And yes, your <strong>chai</strong> is one of the best! ☕❤️ I am definitely going to miss your chai after my Articleship. Whenever you used to make it, it somehow made the whole office feel a little more relaxed. 😂",
+
+        message4: "One thing I really like about you is that you never get angry with anyone. You always talk to everyone with a smile and keep the atmosphere light and positive. Even when there was some work pressure, your nature was always calm and friendly.",
+
+        message5: "And our bonding also became quite special because many times, whenever you had to change some setting on your phone or needed help with something related to it, you would simply come to me and ask without any hesitation. 😂😂 I always liked that because it showed how comfortable our bonding had become.",
+
+        message6: "Dileep Bhai, you have always been very helpful and kind towards me, and I will genuinely miss having you around in the office. ❤️",
+
+        message7: "Thank you for always helping me, for your amazing chai, for all the small conversations and for being such a <strong>mast mojila manas</strong>. 😂❤️",
+
+        message8: "Our Articleship may be over, but <strong>aapno rishto aavo j rehse</strong>. 💯❤️",
+
+        message9: "And if I ever said something or did something that hurt you, then <strong>dil thi sorry, Bhai.</strong> ❤️",
+
+        message10: "<strong>Thank you for everything, Dileep Bhai! ❤️☕😂</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "<strong>प्रिय दिलीप भैया ❤️</strong>",
+
+        message2: "दिलीप भैया, आप भी हमारे कार्यालय के सबसे <strong>मस्त और मौजीले</strong> लोगों में से एक हैं। 😂❤️ जब भी मैंने आपसे किसी भी तरह की मदद माँगी, आपने हर बार बिना किसी सोच-विचार के मेरी मदद की है और मैं इसके लिए आपका दिल से आभारी हूँ।",
+
+        message3: "और हाँ, आपकी <strong>चाय</strong> तो एक नंबर होती है! ☕❤️ मेरी आर्टिकलशिप खत्म होने के बाद मैं आपकी चाय को सच में बहुत याद करूँगा। जब भी आप चाय बनाते थे, तो पूरा कार्यालय थोड़ा और आरामदायक और खुशनुमा लगने लगता था। 😂",
+
+        message4: "आपकी एक बात मुझे सबसे अच्छी लगती है कि आप कभी किसी पर गुस्सा नहीं करते। आप हमेशा सबके साथ हँसकर बात करते हैं और अपने आसपास का माहौल हमेशा हल्का और खुशमिज़ाज रखते हैं। काम का दबाव होने पर भी आपका स्वभाव हमेशा शांत और मिलनसार रहता है।",
+
+        message5: "और हमारी आपस की दोस्ती भी इसलिए थोड़ी खास हो गई थी क्योंकि कई बार जब आपको अपने फ़ोन में कोई सेटिंग करनी होती थी या फ़ोन से जुड़ी कोई मदद चाहिए होती थी, तो आप बिना किसी झिझक के सीधे मेरे पास आकर पूछ लेते थे। 😂😂 मुझे यह बात हमेशा अच्छी लगती थी क्योंकि इससे पता चलता था कि हमारे बीच कितनी अच्छी समझ बन गई थी।",
+
+        message6: "दिलीप भैया, आपने हमेशा मेरे साथ बहुत अच्छा व्यवहार किया और मेरी मदद की है। सच में, मेरी आर्टिकलशिप खत्म होने के बाद मैं आपको और आपकी मौजूदगी को बहुत याद करूँगा। ❤️",
+
+        message7: "हमेशा मेरी मदद करने के लिए, आपकी शानदार चाय के लिए, हमारी छोटी-छोटी बातचीत के लिए और इतने <strong>मस्त-मौजी इंसान</strong> होने के लिए आपका बहुत-बहुत धन्यवाद। 😂❤️",
+
+        message8: "मेरी आर्टिकलशिप भले ही खत्म हो गई हो, लेकिन <strong>हमारा रिश्ता हमेशा ऐसा ही रहेगा।</strong> 💯❤️",
+
+        message9: "और अगर इन दो वर्षों में मेरी किसी बात या काम से आपको कभी बुरा लगा हो, तो <strong>दिल से माफ़ी, भैया।</strong> ❤️",
+
+        message10: "<strong>हर चीज़ के लिए धन्यवाद, दिलीप भैया! ❤️☕😂</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "<strong>પ્રિય દિલીપ ભાઈ ❤️</strong>",
+
+        message2: "દિલીપ ભાઈ, તમે પણ અમારી ઓફિસના સૌથી <strong>મસ્ત અને મોજીલા</strong> લોકોમાંથી એક છો. 😂❤️ જ્યારે પણ મેં તમારી પાસે કોઈપણ પ્રકારની મદદ માંગી છે, ત્યારે તમે હંમેશા કોઈપણ વિચાર કર્યા વગર મારી મદદ કરી છે અને એના માટે હું તમારો દિલથી આભારી છું.",
+
+        message3: "અને હા, તમારી <strong>ચા</strong> તો એક નંબર હોય છે! ☕❤️ મારી આર્ટિકલશિપ પૂરી થયા પછી હું તમારી ચાને ખરેખર ખૂબ યાદ કરીશ. જ્યારે પણ તમે ચા બનાવતા, ત્યારે આખી ઓફિસનું વાતાવરણ થોડું વધારે આરામદાયક અને ખુશનુમા બની જતું. 😂",
+
+        message4: "તમારી એક વાત મને સૌથી વધારે ગમે છે કે તમે ક્યારેય કોઈના પર ગુસ્સો નથી કરતા. તમે હંમેશા બધા સાથે હસીને વાત કરો છો અને તમારી આસપાસનું વાતાવરણ હંમેશા હળવું અને ખુશનુમા રાખો છો. કામનું દબાણ હોય ત્યારે પણ તમારો સ્વભાવ હંમેશા શાંત અને મળતાવડો રહે છે.",
+
+        message5: "અને આપણી વચ્ચેનું બંધન પણ એટલા માટે થોડું ખાસ બની ગયું હતું કારણ કે ઘણી વાર જ્યારે તમને તમારા ફોનમાં કોઈ સેટિંગ કરવાનું હોય અથવા ફોનને લગતી કોઈ મદદ જોઈતી હોય, ત્યારે તમે કોઈપણ જાતની ઝિહક વગર સીધા મારી પાસે આવીને પૂછતા. 😂😂 મને આ વાત હંમેશા ગમતી કારણ કે એ બતાવતી કે આપણી વચ્ચે કેટલી સારી સમજણ બની ગઈ હતી.",
+
+        message6: "દિલીપ ભાઈ, તમે હંમેશા મારી સાથે ખૂબ જ સારું વર્તન કર્યું છે અને મારી મદદ કરી છે. સાચું કહું તો મારી આર્ટિકલશિપ પૂરી થયા પછી હું તમને અને તમારી હાજરીને ખરેખર ખૂબ યાદ કરીશ. ❤️",
+
+        message7: "હંમેશા મારી મદદ કરવા માટે, તમારી જોરદાર ચા માટે, આપણી નાની-નાની વાતચીત માટે અને આવા <strong>મસ્ત મોજીલા માણસ</strong> હોવા માટે તમારો ખૂબ ખૂબ આભાર. 😂❤️",
+
+        message8: "મારી આર્ટિકલશિપ ભલે પૂરી થઈ ગઈ હોય, પરંતુ <strong>આપણો સંબંધ હંમેશા આવો જ રહેશે.</strong> 💯❤️",
+
+        message9: "અને જો આ બે વર્ષ દરમિયાન મારી કોઈ વાત કે કામથી તમને ક્યારેય ખોટું લાગ્યું હોય, તો <strong>દિલથી સોરી, ભાઈ.</strong> ❤️",
+
+        message10: "<strong>દરેક વસ્તુ માટે આભાર, દિલીપ ભાઈ! ❤️☕😂</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 10; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element && text["message" + i]) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
