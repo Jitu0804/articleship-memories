@@ -1,173 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Henali ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .message p:nth-child(1) { animation-delay: 0.1s; }
+    .message p:nth-child(2) { animation-delay: 0.2s; }
+    .message p:nth-child(3) { animation-delay: 0.3s; }
+    .message p:nth-child(4) { animation-delay: 0.4s; }
+    .message p:nth-child(5) { animation-delay: 0.5s; }
+    .message p:nth-child(6) { animation-delay: 0.6s; }
+    .message p:nth-child(7) { animation-delay: 0.7s; }
+    .message p:nth-child(8) { animation-delay: 0.8s; }
+    .message p:nth-child(9) { animation-delay: 0.9s; }
+    .message p:nth-child(10) { animation-delay: 1s; }
+    .message p:nth-child(11) { animation-delay: 1.1s; }
+    .message p:nth-child(12) { animation-delay: 1.2s; }
+    .message p:nth-child(13) { animation-delay: 1.3s; }
+    .message p:nth-child(14) { animation-delay: 1.4s; }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-            h1 {
-                font-size: 30px;
-            }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
+
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Colleague, A Special Friend ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>Henali ❤️</h1>
+    <div class="subtitle">
+      Henali ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Henali,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        <strong>Dear Henali ❤️</strong>
+      </p>
+
+      <p id="message2">
+        Henali, you joined just <strong>10 days before me</strong>, so I guess I should ask — <em>Kem chhe Senior?</em> 😂😂
+      </p>
+
+      <p id="message3">
+        You are Jain, but when it comes to <strong>bakchodi, you are completely Non-Jain!</strong> 😂😂 I know you don't eat non-veg, but when it comes to talking and making fun, you leave absolutely nothing behind! 😂😂
+      </p>
+
+      <p id="message4">
+        Honestly, my bond with you has become really special. In the beginning, we didn't talk that much, but slowly, as time passed, our bakchodi kept increasing 😂😂 and our bonding became better and better. And one thing I can definitely say — <strong>you have a very good heart.</strong> ❤️
+      </p>
+
+      <p id="message5">
+        You got quite a few IPOs, but somehow the <strong>party never came!</strong> 😂😂 It's okay, one day you'll give it... I am still waiting! 😂😂 Although, yes, you did take me for ice cream once, so I won't completely blame you. 😂😂
+      </p>
+
+      <p id="message6">
+        But honestly, talking to you and doing bakchodi with you is always fun. We have also spent quite a lot of time together during audits, and <strong>thank you for helping me whenever I didn't know something or needed help.</strong> ❤️
+      </p>
+
+      <p id="message7">
+        And towards the end, our leg-pulling became next level 😂😂. We both tease each other so much, but Henali, <strong>no matter how hard you try, I am never going to use any bad words for you!</strong> 😂😂😂
+      </p>
+
+      <p id="message8">
+        You often tease me by saying that <em>"We are just colleagues."</em> So let me make one thing very clear — <strong>you were never just a colleague to me.</strong> ❤️ Our friendship is much more than that, and I genuinely hope we stay connected even after Articleship, especially during our study period.
+      </p>
+
+      <p id="message9">
+        I still remember our <strong>PCIPL</strong> incident 😂😂. While coming back, I hadn't brought my bike, so we had to somehow manage three people on one bike. But you both thought I would take the bike, and since it had started raining, you ordered a raincoat thinking that you two would go together and I would take another way. 😂😂
+      </p>
+
+      <p id="message10">
+        And then, after the raincoat arrived, I said, <strong>"Arey, I am also coming with you!"</strong> 😂😂😂 That three-person bike ride became one of those memories that I will never forget. ❤️
+      </p>
+
+      <p id="message11">
+        Then we had so much fun at the <strong>National Conference</strong> too. And yes, how can I forget <strong>Taksh Galaxy</strong> — you went alone and played the games, and didn't even take me with you! 🙂🙂🙂 It's okay, I'll remember that! 😂😂
+      </p>
+
+      <p id="message12">
+        And then came our <strong>Pavagadh trip and Sindhrot trip</strong> — so many plans, so much masti, and so many memories. ❤️ And honestly, these plans were successfully possible <strong>only because of you, Henali!</strong> You took the initiative, made things happen, and gave us memories that we will always remember.
+      </p>
+
+      <p id="message13">
+        Thank you for being such a wonderful friend, for all the help, all the masti, all the trips, all the jokes and all the memories. ❤️ And if during these 2 years I ever said something that hurt you, or made you feel bad, then <strong>dil se sorry, Senior.</strong> ❤️
+      </p>
+
+      <p id="message14">
+        And whenever I teased you by taking someone else's name or pulled your leg, it was always just for fun. 🤌😂 <strong>Thank you and Sorry, Senior. 🤌❤️</strong>
+      </p>
+
+      <p id="message15">
+        <strong>You are genuinely an amazing person, Henali.</strong> Stay the same, keep smiling, keep doing bakchodi, and most importantly — <strong>don't disappear after Articleship!</strong> 😂❤️
+      </p>
+
+      <p id="message16">
+        <strong>— Jitu Suthar</strong>
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "<strong>Dear Henali ❤️</strong>",
+
+        message2: "Henali, you joined just <strong>10 days before me</strong>, so I guess I should ask — <em>Kem chhe Senior?</em> 😂😂",
+
+        message3: "You are Jain, but when it comes to <strong>bakchodi, you are completely Non-Jain!</strong> 😂😂 I know you don't eat non-veg, but when it comes to talking and making fun, you leave absolutely nothing behind! 😂😂",
+
+        message4: "Honestly, my bond with you has become really special. In the beginning, we didn't talk that much, but slowly, as time passed, our bakchodi kept increasing 😂😂 and our bonding became better and better. And one thing I can definitely say — <strong>you have a very good heart.</strong> ❤️",
+
+        message5: "You got quite a few IPOs, but somehow the <strong>party never came!</strong> 😂😂 It's okay, one day you'll give it... I am still waiting! 😂😂 Although, yes, you did take me for ice cream once, so I won't completely blame you. 😂😂",
+
+        message6: "But honestly, talking to you and doing bakchodi with you is always fun. We have also spent quite a lot of time together during audits, and <strong>thank you for helping me whenever I didn't know something or needed help.</strong> ❤️",
+
+        message7: "And towards the end, our leg-pulling became next level 😂😂. We both tease each other so much, but Henali, <strong>no matter how hard you try, I am never going to use any bad words for you!</strong> 😂😂😂",
+
+        message8: "You often tease me by saying that <em>\"We are just colleagues.\"</em> So let me make one thing very clear — <strong>you were never just a colleague to me.</strong> ❤️ Our friendship is much more than that, and I genuinely hope we stay connected even after Articleship, especially during our study period.",
+
+        message9: "I still remember our <strong>PCIPL</strong> incident 😂😂. While coming back, I hadn't brought my bike, so we had to somehow manage three people on one bike. But you both thought I would take the bike, and since it had started raining, you ordered a raincoat thinking that you two would go together and I would take another way. 😂😂",
+
+        message10: "And then, after the raincoat arrived, I said, <strong>\"Arey, I am also coming with you!\"</strong> 😂😂😂 That three-person bike ride became one of those memories that I will never forget. ❤️",
+
+        message11: "Then we had so much fun at the <strong>National Conference</strong> too. And yes, how can I forget <strong>Taksh Galaxy</strong> — you went alone and played the games, and didn't even take me with you! 🙂🙂🙂 It's okay, I'll remember that! 😂😂",
+
+        message12: "And then came our <strong>Pavagadh trip and Sindhrot trip</strong> — so many plans, so much masti, and so many memories. ❤️ And honestly, these plans were successfully possible <strong>only because of you, Henali!</strong> You took the initiative, made things happen, and gave us memories that we will always remember.",
+
+        message13: "Thank you for being such a wonderful friend, for all the help, all the masti, all the trips, all the jokes and all the memories. ❤️ And if during these 2 years I ever said something that hurt you, or made you feel bad, then <strong>dil se sorry, Senior.</strong> ❤️",
+
+        message14: "And whenever I teased you by taking someone else's name or pulled your leg, it was always just for fun. 🤌😂 <strong>Thank you and Sorry, Senior. 🤌❤️</strong>",
+
+        message15: "<strong>You are genuinely an amazing person, Henali.</strong> Stay the same, keep smiling, keep doing bakchodi, and most importantly — <strong>don't disappear after Articleship!</strong> 😂❤️",
+
+        message16: "<strong>— Jitu Suthar</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "<strong>प्रिय हेनाली ❤️</strong>",
+
+        message2: "हेनाली, तुम मुझसे सिर्फ <strong>10 दिन पहले</strong> ऑफिस जॉइन हुई थी, तो मुझे पूछना ही पड़ेगा — <em>कैम छे सीनियर?</em> 😂😂",
+
+        message3: "तुम जैन हो, लेकिन जब <strong>बकचोदी</strong> करने की बात आती है तो तुम पूरी तरह नॉन-जैन हो! 😂😂 मुझे पता है कि तुम नॉन-वेज नहीं खाती, लेकिन बात करने और मजाक करने में तुम कुछ भी बाकी नहीं रखती! 😂😂",
+
+        message4: "सच कहूँ तो तुम्हारे साथ मेरा रिश्ता बहुत खास बन गया है। शुरुआत में हम इतनी ज्यादा बातें नहीं करते थे, लेकिन जैसे-जैसे समय बीतता गया, हमारी बकचोदी बढ़ती गई 😂😂 और हमारी बॉन्डिंग भी बेहतर होती गई। और एक बात मैं जरूर कहूँगा — <strong>तुम दिल की बहुत अच्छी हो।</strong> ❤️",
+
+        message5: "तुम्हें काफी आईपीओ मिले, लेकिन पार्टी किसी तरह नहीं आई! 😂😂 कोई बात नहीं, एक दिन तो पार्टी दोगी ही... मैं अभी भी इंतजार कर रहा हूँ! 😂😂 हाँ, एक बार तुम मुझे आइसक्रीम खिलाने जरूर ले गई थी, इसलिए मैं तुम्हें पूरी तरह दोष नहीं दूँगा। 😂😂",
+
+        message6: "लेकिन सच में, तुम्हारे साथ बात करना और बकचोदी करना हमेशा मजेदार लगता है। हमने ऑडिट के दौरान भी काफी समय साथ बिताया है और <strong>जब भी मुझे कुछ नहीं आता था या मदद की जरूरत होती थी, मेरी मदद करने के लिए धन्यवाद।</strong> ❤️",
+
+        message7: "और आखिर के दिनों में हमारी टांग खिंचाई तो नेक्स्ट लेवल हो गई थी 😂😂। हम दोनों एक-दूसरे को बहुत चिढ़ाते हैं, लेकिन हेनाली, <strong>तुम कितनी भी कोशिश कर लो, मैं तुम्हारे लिए कभी भी कोई गाली या गलत शब्द इस्तेमाल नहीं करूँगा!</strong> 😂😂😂",
+
+        message8: "तुम अक्सर मुझे यह कहकर चिढ़ाती थी कि <em>\"हम तो सिर्फ सहकर्मी हैं।\"</em> तो मैं एक बात बिल्कुल साफ कर दूँ — <strong>तुम मेरे लिए कभी सिर्फ सहकर्मी नहीं रही।</strong> ❤️ हमारी दोस्ती उससे कहीं ज्यादा है और मैं सच में चाहता हूँ कि आर्टिकलशिप के बाद भी, खासकर हमारी पढ़ाई के समय, हम हमेशा संपर्क में रहें।",
+
+        message9: "मुझे हमारा <strong>पीसीआईपीएल</strong> वाला किस्सा अभी भी याद है 😂😂। वापस आते समय मैं बाइक नहीं लाया था, इसलिए हमें किसी तरह तीन लोगों को एक बाइक पर जाना था। लेकिन तुम दोनों को लगा कि मैं बाइक लेकर जाऊँगा और बारिश शुरू हो गई थी, इसलिए तुमने रेनकोट ऑर्डर किया कि तुम दोनों साथ जाओगे और मैं अलग से चला जाऊँगा। 😂😂",
+
+        message10: "और फिर रेनकोट आने के बाद मैंने कहा, <strong>\"अरे, मैं भी तुम्हारे साथ आ रहा हूँ!\"</strong> 😂😂😂 वो तीन लोगों वाली बाइक राइड मेरी ऐसी यादों में से एक बन गई जिसे मैं कभी नहीं भूलूँगा। ❤️",
+
+        message11: "फिर नेशनल कॉन्फ्रेंस में भी हमने बहुत मस्ती की। और हाँ, <strong>तक्ष गैलेक्सी</strong> कैसे भूल सकता हूँ — तुम अकेले जाकर गेम खेल आई और मुझे साथ भी नहीं ले गई! 🙂🙂🙂 कोई बात नहीं, यह बात याद रहेगी! 😂😂",
+
+        message12: "और फिर हमारी <strong>पावागढ़ ट्रिप और सिंधरोत ट्रिप</strong> — इतने सारे प्लान, इतनी सारी मस्ती और इतनी सारी यादें। ❤️ और सच में, ये सारे प्लान <strong>सिर्फ तुम्हारी वजह से सफल हो पाए, हेनाली!</strong> तुमने पहल की, सब कुछ करवाया और हमें ऐसी यादें दीं जिन्हें हम हमेशा याद रखेंगे।",
+
+        message13: "इतनी अच्छी दोस्त बनने के लिए, हर मदद के लिए, सारी मस्ती, सारी ट्रिप्स, सारे मजाक और सारी यादों के लिए धन्यवाद। ❤️ और अगर इन दो सालों में मेरी किसी बात से तुम्हें दुख हुआ हो या बुरा लगा हो, तो <strong>दिल से सॉरी, सीनियर।</strong> ❤️",
+
+        message14: "और जब भी मैंने तुम्हें किसी और का नाम लेकर चिढ़ाया या तुम्हारी टांग खींची, वो सिर्फ मजाक था। 🤌😂 <strong>थैंक यू और सॉरी, सीनियर। 🤌❤️</strong>",
+
+        message15: "<strong>तुम सच में एक बहुत अच्छी इंसान हो, हेनाली।</strong> हमेशा ऐसी ही रहना, मुस्कुराते रहना, बकचोदी करते रहना और सबसे जरूरी — <strong>आर्टिकलशिप के बाद गायब मत होना!</strong> 😂❤️",
+
+        message16: "<strong>— जितु सुथार</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "<strong>પ્રિય હેનાલી ❤️</strong>",
+
+        message2: "હેનાલી, તું મારા કરતાં ફક્ત <strong>10 દિવસ પહેલા</strong> જોડાઈ હતી, એટલે મારે તો પૂછવું જ પડે — <em>કેમ છે સિનિયર?</em> 😂😂",
+
+        message3: "તું જૈન છે, પરંતુ જ્યારે <strong>બકચોદી</strong> કરવાની વાત આવે ત્યારે તું એકદમ નોન-જૈન છે! 😂😂 મને ખબર છે કે તું નોન-વેજ નથી ખાતી, પરંતુ વાતો કરવામાં અને મજાક કરવામાં તું કંઈ બાકી રાખતી નથી! 😂😂",
+
+        message4: "સાચું કહું તો તારી સાથેનો મારો બોન્ડ ખૂબ જ ખાસ બની ગયો છે. શરૂઆતમાં આપણે એટલી બધી વાતો નહોતા કરતા, પરંતુ જેમ જેમ સમય પસાર થતો ગયો તેમ આપણી બકચોદી વધતી ગઈ 😂😂 અને આપણી બોન્ડિંગ પણ વધુ સારી થતી ગઈ. અને એક વાત હું ચોક્કસ કહીશ — <strong>તું દિલની ખૂબ જ સારી છે.</strong> ❤️",
+
+        message5: "તને ઘણા આઈપીઓ મળ્યા, પરંતુ પાર્ટી કોઈ રીતે આવી જ નહીં! 😂😂 કોઈ વાંધો નહીં, એક દિવસ તો પાર્ટી આપીશ જ... હું હજુ પણ રાહ જોઈ રહ્યો છું! 😂😂 હા, એકવાર તું મને આઈસ્ક્રીમ ખવડાવવા લઈ ગઈ હતી, એટલે હું તને સંપૂર્ણપણે દોષ નહીં આપું. 😂😂",
+
+        message6: "પરંતુ સાચું કહું તો તારી સાથે વાત કરવામાં અને બકચોદી કરવામાં હંમેશા મજા આવે છે. આપણે ઓડિટ દરમિયાન પણ ઘણો સમય સાથે રહ્યા છીએ અને <strong>જ્યારે પણ મને કંઈ નહોતું આવડતું અથવા મદદની જરૂર હતી ત્યારે મદદ કરવા બદલ થેન્ક યુ.</strong> ❤️",
+
+        message7: "અને છેલ્લે છેલ્લે તો આપણી એકબીજાની મજાક ઉડાવવી નેક્સ્ટ લેવલ થઈ ગઈ હતી 😂😂. આપણે બંને એકબીજાને ખૂબ ચીડવીએ છીએ, પરંતુ હેનાલી, <strong>તું ગમે તેટલી મહેનત કરી લે, પણ હું તને ક્યારેય કોઈ ગાળો કે ખરાબ શબ્દ નહીં બોલું!</strong> 😂😂😂",
+
+        message8: "તું ઘણી વાર મને એમ કહીને ચીડવતી કે <em>\"આપણે તો ફક્ત Colleague છીએ.\"</em> તો હું એક વાત એકદમ સ્પષ્ટ કરી દઉં — <strong>તું મારા માટે ક્યારેય ફક્ત Colleague નહોતી.</strong> ❤️ આપણી દોસ્તી એના કરતાં ઘણી વધારે છે અને હું ખરેખર ઈચ્છું છું કે Articleship પછી પણ, ખાસ કરીને આપણા Study Period દરમિયાન, આપણે હંમેશા Contact માં રહીએ.",
+
+        message9: "મને આપણો <strong>PCIPL</strong> વાળો પ્રસંગ હજુ પણ યાદ છે 😂😂. પાછા આવતી વખતે હું બાઈક લઈને આવ્યો નહોતો, એટલે આપણે somehow ત્રણ લોકો એક બાઈક પર જવાના હતા. પરંતુ તમને બંનેને લાગ્યું કે હું બાઈક લઈને જઈશ અને વરસાદ પણ શરૂ થઈ ગયો હતો, એટલે તમે Raincoat Order કર્યો કે તમે બંને સાથે જશો અને હું અલગથી જઈશ. 😂😂",
+
+        message10: "અને પછી Raincoat આવ્યા પછી મેં કહ્યું, <strong>\"અરે, હું પણ તમારી સાથે આવું છું!\"</strong> 😂😂😂 એ ત્રણ સવારી વાળી બાઈક રાઈડ મારી એવી યાદોમાંથી એક બની ગઈ જેને હું ક્યારેય નહીં ભૂલું. ❤️",
+
+        message11: "પછી National Conference માં પણ આપણે ખૂબ મસ્તી કરી હતી. અને હા, <strong>Taksh Galaxy</strong> કેવી રીતે ભૂલી શકું — તું એકલી Games રમીને આવી અને મને સાથે પણ નહોતી લઈ ગઈ! 🙂🙂🙂 ઠીક છે, આ વાત યાદ રહેશે! 😂😂",
+
+        message12: "અને પછી આપણી <strong>પાવાગઢ ટ્રિપ અને સિંધરોત ટ્રિપ</strong> — કેટલા બધા પ્લાન, કેટલી બધી મસ્તી અને કેટલી બધી યાદો. ❤️ અને સાચું કહું તો આ બધા પ્લાન <strong>ફક્ત તારી જ લીધે સફળ થઈ શક્યા, હેનાલી!</strong> તેં પહેલ કરી, બધું કરાવ્યું અને આપણને એવી યાદો આપી જે આપણે હંમેશા યાદ રાખીશું.",
+
+        message13: "આટલી સારી દોસ્ત બનવા બદલ, દરેક મદદ માટે, બધી મસ્તી, બધી ટ્રિપ્સ, બધા મજાક અને બધી યાદો માટે Thank You. ❤️ અને જો આ બે વર્ષ દરમિયાન મારી કોઈ વાતથી તને દુઃખ થયું હોય કે ખોટું લાગ્યું હોય તો <strong>દિલથી સોરી, સિનિયર.</strong> ❤️",
+
+        message14: "અને જ્યારે પણ મેં તને કોઈ બીજાના નામથી ચીડવી હોય કે તારી મજાક ઉડાવી હોય, એ ફક્ત મસ્તી હતી. 🤌😂 <strong>Thank You અને Sorry, Senior. 🤌❤️</strong>",
+
+        message15: "<strong>તું ખરેખર એક Amazing Person છે, Henali.</strong> હંમેશા આવી જ રહેજે, હસતી રહેજે, બકચોદી કરતી રહેજે અને સૌથી મહત્વનું — <strong>Articleship પછી ગાયબ ના થઈ જતી!</strong> 😂❤️",
+
+        message16: "<strong>— જિતુ સુથાર</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 16; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element && text["message" + i]) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
