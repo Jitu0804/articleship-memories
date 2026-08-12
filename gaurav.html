@@ -1,173 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Gaurav ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    .message p:nth-child(1) {
+      animation-delay: 0.1s;
+    }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+    .message p:nth-child(2) {
+      animation-delay: 0.2s;
+    }
 
-            h1 {
-                font-size: 30px;
-            }
+    .message p:nth-child(3) {
+      animation-delay: 0.3s;
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    .message p:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .message p:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .message p:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    .message p:nth-child(7) {
+      animation-delay: 0.7s;
+    }
+
+    .message p:nth-child(8) {
+      animation-delay: 0.8s;
+    }
+
+    .message p:nth-child(9) {
+      animation-delay: 0.9s;
+    }
+
+    .message p:nth-child(10) {
+      animation-delay: 1s;
+    }
+
+    .message p:nth-child(11) {
+      animation-delay: 1.1s;
+    }
+
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
+
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Colleague, A Brother & A Memory I’ll Always Carry ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>Gaurav ❤️</h1>
+    <div class="subtitle">
+      Gaurav ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Gaurav,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        <strong>Dear Gaurav ❤️</strong>
+      </p>
+
+      <p id="message2">
+        Gaurav, you and I are both Rajasthani, so maybe from the beginning our bonding was a little different. 😂❤️ More than colleagues, our relationship has always been <strong>like brothers</strong>. You are my junior, but most of the time we have been together, and the amount of masti we have done together is on another level. 😂
+      </p>
+
+      <p id="message3">
+        We even abuse each other a lot in fun, and many times I used to call you <strong>“Jadiyo”</strong> just to tease you, and you would get angry too. 😂😂 But all of that was just part of our masti. We always pulled each other’s leg, and our bakchodi in the office was something else. 😂
+      </p>
+
+      <p id="message4">
+        I want to tell you one thing — <strong>our work and our brotherhood, both are one number.</strong> ❤️ I really hope our contact always stays like this and our relationship never remains limited to the office.
+      </p>
+
+      <p id="message5">
+        Gaurav, I especially want to thank you for one thing — <strong>for teaching me how to properly use AI.</strong> Claude, ChatGPT and other AI tools, and how to use them for coding, HTML and so many other things — there were many things related to AI that you taught me which even I, being your senior, didn’t know properly. 😂 And the best part is, <strong>even this message you are reading right now has been made using HTML and JavaScript, and because of you I now actually understand how JavaScript is being used here.</strong> 😂😂 So genuinely, <strong>thank you, brother, for teaching me all these things.</strong> ❤️
+      </p>
+
+      <p id="message6">
+        And talking about GST... 😂😂 Whenever you took 2–3 days for GST work, I used to pull your leg every month saying, <strong>“You take three days for one day’s work!”</strong> 😂😂 Then you would say, <strong>“Then you do it for me!”</strong> 😂😂 But let me also say one thing — <strong>you never taught me GST, BC!</strong> 😂😂
+      </p>
+
+      <p id="message7">
+        We also went together to Ahmedabad and Bhuj for audits, and we had so much fun there. You are genuinely an amazing comedy person, so being around you is never boring.
+      </p>
+
+      <p id="message8">
+        And remember those days when all of us would sit together until <strong>1–2 AM, playing cards, talking, and enjoying Rajasthani songs and their vibes</strong>? 😂❤️ Those memories are genuinely very special. Even after sitting together for so long, we never felt like saying, “Okay, let's go home now.” The masti just kept going. 😂
+      </p>
+
+      <p id="message9">
+        Just like your work is great, <strong>being around you is equally fun.</strong> ❤️
+      </p>
+
+      <p id="message10">
+        One thing I want to say — whenever you learn something new in the future, make sure you tell me. 😂 I also want to know <strong>what new thing my junior is learning now!</strong> 😎😂
+      </p>
+
+      <p id="message11">
+        Thank you, brother, for all the masti, support, learning and this brother-like bonding. ❤️ Our <strong>brotherhood will always remain the same</strong>, and just because my Articleship is over doesn't mean our relationship is over. 💯
+        <br><br>
+        And yes, if during these 2 years I ever said something that hurt you, took any joke too far, or made any mistake, then <strong>dil se sorry, brother.</strong> ❤️
+        <br><br>
+        <strong>Let's always stay in touch, keep doing masti, and keep teaching each other new things.</strong> 🤝❤️
+        <br><br>
+        <strong>— Jitu Suthar</strong>
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "<strong>Dear Gaurav ❤️</strong>",
+
+        message2: "Gaurav, you and I are both Rajasthani, so maybe from the beginning our bonding was a little different. 😂❤️ More than colleagues, our relationship has always been <strong>like brothers</strong>. You are my junior, but most of the time we have been together, and the amount of masti we have done together is on another level. 😂",
+
+        message3: "We even abuse each other a lot in fun, and many times I used to call you <strong>“Jadiyo”</strong> just to tease you, and you would get angry too. 😂😂 But all of that was just part of our masti. We always pulled each other’s leg, and our bakchodi in the office was something else. 😂",
+
+        message4: "I want to tell you one thing — <strong>our work and our brotherhood, both are one number.</strong> ❤️ I really hope our contact always stays like this and our relationship never remains limited to the office.",
+
+        message5: "Gaurav, I especially want to thank you for one thing — <strong>for teaching me how to properly use AI.</strong> Claude, ChatGPT and other AI tools, and how to use them for coding, HTML and so many other things — there were many things related to AI that you taught me which even I, being your senior, didn’t know properly. 😂 And the best part is, <strong>even this message you are reading right now has been made using HTML and JavaScript, and because of you I now actually understand how JavaScript is being used here.</strong> 😂😂 So genuinely, <strong>thank you, brother, for teaching me all these things.</strong> ❤️",
+
+        message6: "And talking about GST... 😂😂 Whenever you took 2–3 days for GST work, I used to pull your leg every month saying, <strong>“You take three days for one day’s work!”</strong> 😂😂 Then you would say, <strong>“Then you do it for me!”</strong> 😂😂 But let me also say one thing — <strong>you never taught me GST, BC!</strong> 😂😂",
+
+        message7: "We also went together to Ahmedabad and Bhuj for audits, and we had so much fun there. You are genuinely an amazing comedy person, so being around you is never boring.",
+
+        message8: "And remember those days when all of us would sit together until <strong>1–2 AM, playing cards, talking, and enjoying Rajasthani songs and their vibes</strong>? 😂❤️ Those memories are genuinely very special. Even after sitting together for so long, we never felt like saying, “Okay, let's go home now.” The masti just kept going. 😂",
+
+        message9: "Just like your work is great, <strong>being around you is equally fun.</strong> ❤️",
+
+        message10: "One thing I want to say — whenever you learn something new in the future, make sure you tell me. 😂 I also want to know <strong>what new thing my junior is learning now!</strong> 😎😂",
+
+        message11: "Thank you, brother, for all the masti, support, learning and this brother-like bonding. ❤️ Our <strong>brotherhood will always remain the same</strong>, and just because my Articleship is over doesn't mean our relationship is over. 💯<br><br>And yes, if during these 2 years I ever said something that hurt you, took any joke too far, or made any mistake, then <strong>dil se sorry, brother.</strong> ❤️<br><br><strong>Let's always stay in touch, keep doing masti, and keep teaching each other new things.</strong> 🤝❤️<br><br><strong>— Jitu Suthar</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "<strong>प्रिय गौरव ❤️</strong>",
+
+        message2: "गौरव, हम दोनों राजस्थानी हैं, इसलिए शायद शुरुआत से ही हमारी दोस्ती थोड़ी अलग रही। 😂❤️ सहकर्मी से कहीं ज्यादा हमारा रिश्ता <strong>भाई जैसा</strong> रहा है। तुम मेरे जूनियर हो, लेकिन ज्यादातर समय हम साथ ही रहे हैं और हमने जितनी मस्ती साथ में की है, वह अपने आप में अलग ही स्तर की है। 😂",
+
+        message3: "हम दोनों मज़ाक-मज़ाक में एक-दूसरे को खूब गालियाँ भी देते हैं और कई बार मैं तुम्हें <strong>“जाड़ियो”</strong> कहकर चिढ़ाता था, जिस पर तुम गुस्सा भी हो जाते थे। 😂😂 लेकिन यह सब हमारी मस्ती का ही हिस्सा था। हम हमेशा एक-दूसरे की टांग खींचते थे और ऑफिस में हमारी मस्ती ही अलग थी। 😂",
+
+        message4: "मैं तुमसे एक बात कहना चाहता हूँ — <strong>हमारा काम और हमारा भाईचारा, दोनों एक नंबर हैं।</strong> ❤️ मैं सच में चाहता हूँ कि हमारा संपर्क हमेशा ऐसा ही बना रहे और हमारा रिश्ता सिर्फ ऑफिस तक सीमित न रहे।",
+
+        message5: "गौरव, मैं तुम्हें खास तौर पर एक चीज़ के लिए धन्यवाद कहना चाहता हूँ — <strong>मुझे कृत्रिम बुद्धिमत्ता का सही तरीके से इस्तेमाल करना सिखाने के लिए।</strong> क्लॉड, चैटजीपीटी और दूसरे कृत्रिम बुद्धिमत्ता वाले साधनों का इस्तेमाल, कोडिंग, एचटीएमएल और ऐसी बहुत सारी चीज़ों के लिए कैसे करना है — ऐसी बहुत सी चीज़ें तुमने मुझे सिखाईं जो तुम्हारा वरिष्ठ होने के बावजूद मुझे ठीक से नहीं आती थीं। 😂 और सबसे अच्छी बात यह है कि <strong>जो संदेश तुम अभी पढ़ रहे हो, वह भी एचटीएमएल और जावास्क्रिप्ट की मदद से बनाया गया है, और तुम्हारी वजह से मुझे अब वास्तव में समझ आया कि यहाँ जावास्क्रिप्ट का इस्तेमाल कैसे हो रहा है।</strong> 😂😂 तो सच में, <strong>मुझे ये सारी चीज़ें सिखाने के लिए धन्यवाद भाई।</strong> ❤️",
+
+        message6: "और अब बात करते हैं जीएसटी की... 😂😂 जब भी तुम जीएसटी के काम में 2–3 दिन लगाते थे, मैं हर महीने तुम्हारी टांग खींचता था कि <strong>“एक दिन के काम के लिए तीन दिन लगा देता है!”</strong> 😂😂 फिर तुम भी कहते थे, <strong>“तो तू करके दे ना!”</strong> 😂😂 लेकिन एक बात मैं भी कहना चाहता हूँ — <strong>तुमने मुझे जीएसटी तो सिखाया ही नहीं, भाई!</strong> 😂😂",
+
+        message7: "हम साथ में अहमदाबाद और भुज ऑडिट के लिए भी गए हैं और वहाँ भी हमने बहुत मस्ती की है। तुम सच में बहुत ही मज़ाकिया इंसान हो, इसलिए तुम्हारे साथ रहना कभी भी उबाऊ नहीं लगता।",
+
+        message8: "और याद है वो दिन जब हम सब <strong>रात के 1–2 बजे तक साथ बैठकर ताश खेलते, बातें करते और राजस्थानी गानों की धुन का आनंद लेते थे</strong>? 😂❤️ वो सारी यादें सच में बहुत खास हैं। इतने लंबे समय तक साथ बैठने के बाद भी कभी ऐसा नहीं लगा कि अब घर चलना चाहिए। मस्ती बस चलती ही रहती थी। 😂",
+
+        message9: "जितना तुम्हारा काम अच्छा है, <strong>उतना ही तुम्हारे साथ रहना भी मज़ेदार है।</strong> ❤️",
+
+        message10: "बस एक बात कहना चाहता हूँ — भविष्य में जब भी कोई नई चीज़ सीखो, तो मुझे जरूर बताना। 😂 मुझे भी पता चलना चाहिए कि <strong>मेरा जूनियर अब क्या नई चीज़ सीख रहा है!</strong> 😎😂",
+
+        message11: "मस्ती, साथ, सीखने और इस भाई जैसे रिश्ते के लिए धन्यवाद भाई। ❤️ हमारा <strong>भाईचारा हमेशा ऐसा ही रहेगा</strong>, और सिर्फ मेरी आर्टिकलशिप खत्म होने का मतलब यह बिल्कुल नहीं है कि हमारा रिश्ता भी खत्म हो गया। 💯<br><br>और हाँ, अगर इन दो वर्षों में मेरी किसी बात से तुम्हें बुरा लगा हो, मेरी कोई मस्ती ज्यादा हो गई हो या मुझसे कोई गलती हुई हो, तो <strong>दिल से सॉरी भाई।</strong> ❤️<br><br><strong>हम हमेशा संपर्क में रहें, मस्ती करते रहें और एक-दूसरे को नई-नई चीज़ें सिखाते रहें।</strong> 🤝❤️<br><br><strong>— जितु सुथार</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "<strong>પ્રિય ગૌરવ ❤️</strong>",
+
+        message2: "ગૌરવ, આપણે બંને રાજસ્થાની છીએ, એટલે કદાચ શરૂઆતથી જ આપણું બોન્ડિંગ થોડું અલગ રહ્યું છે. 😂❤️ કોલીગ કરતાં આપણો સંબંધ <strong>ભાઈ-ભાઈનો વધારે</strong> રહ્યો છે. તું મારો જુનિયર છે, પણ મોટાભાગનો સમય આપણે સાથે જ રહ્યા છીએ અને આપણે સાથે મળીને જેટલી મસ્તી કરી છે એ તો અલગ જ લેવલની છે. 😂",
+
+        message3: "આપણે મસ્તી-મસ્તીમાં એકબીજાને ગાળો પણ ખૂબ બોલીએ છીએ અને ઘણી વાર હું તને <strong>“જાડિયો”</strong> કહીને ચીડવતો હતો અને તું ગુસ્સે પણ થઈ જતો હતો. 😂😂 પણ આ બધું આપણી મસ્તીનો જ ભાગ હતો. આપણે હંમેશા એકબીજાની ખેંચતા અને ઓફિસમાં આપણી બકચોડી જ અલગ હતી. 😂",
+
+        message4: "હું તને એક વાત કહેવા માંગુ છું — <strong>આપણું કામ અને આપણો ભાઈચારો, બંને એક નંબર છે.</strong> ❤️ હું ખરેખર ઈચ્છું છું કે આપણો સંપર્ક હંમેશા આવો જ રહે અને આપણો સંબંધ ફક્ત ઓફિસ પૂરતો જ સીમિત ન રહે.",
+
+        message5: "ગૌરવ, એક વસ્તુ માટે હું તને ખાસ થેન્ક યુ કહેવા માંગુ છું — <strong>મને કૃત્રિમ બુદ્ધિમત્તાનો યોગ્ય રીતે ઉપયોગ કરવાનું શીખવવા માટે.</strong> ક્લોડ, ચેટજીપીટી અને બીજા કૃત્રિમ બુદ્ધિમત્તાના સાધનોનો ઉપયોગ, કોડિંગ, એચટીએમએલ અને આવી ઘણી બધી વસ્તુઓ માટે કેવી રીતે કરવો — એવી ઘણી બધી વસ્તુઓ તેં મને શીખવી છે જે તું મારો જુનિયર હોવા છતાં મને, તારો સિનિયર હોવા છતાં, બરાબર આવડતી નહોતી. 😂 અને સૌથી મજાની વાત એ છે કે <strong>તું અત્યારે જે મેસેજ વાંચી રહ્યો છે એ પણ એચટીએમએલ અને જાવાસ્ક્રિપ્ટની મદદથી બનાવવામાં આવ્યો છે, અને તારી જ કારણે મને હવે ખરેખર સમજાયું કે અહીં જાવાસ્ક્રિપ્ટનો ઉપયોગ કેવી રીતે થઈ રહ્યો છે.</strong> 😂😂 એટલે સાચે જ, <strong>મને આ બધી વસ્તુઓ શીખવવા માટે થેન્ક યુ ભાઈ.</strong> ❤️",
+
+        message6: "અને હવે વાત કરીએ જીએસટીની... 😂😂 જ્યારે પણ તું જીએસટીના કામમાં 2–3 દિવસ લગાવતો ત્યારે હું દર મહિને તારી ખૂબ ખેંચતો કે <strong>“એક દિવસના કામ માટે ત્રણ દિવસ લગાવે છે!”</strong> 😂😂 પછી તું પણ કહેતો, <strong>“તો તું કરી આપને!”</strong> 😂😂 પણ એક વાત હું પણ કહીશ — <strong>તેં મને જીએસટી તો શીખવ્યું જ નથી, બીસી!</strong> 😂😂",
+
+        message7: "આપણે સાથે અમદાવાદ અને ભુજ ઓડિટ માટે પણ ગયા છીએ અને ત્યાં પણ ખૂબ મસ્તી કરી છે. તું ખરેખર એક નંબરનો કોમેડી પર્સન છે, એટલે તારી સાથે રહેવામાં ક્યારેય બોરિંગ નથી લાગતું.",
+
+        message8: "અને એ દિવસો યાદ છે ને, જ્યારે આપણે બધા <strong>રાત્રે 1–2 વાગ્યા સુધી સાથે બેસીને પત્તા રમતા, ગપ્પા મારતા અને રાજસ્થાની ગીતોની વાઇબ્સ માણતા</strong>? 😂❤️ એ બધી યાદો ખરેખર ખૂબ જ ખાસ છે. આટલો લાંબો સમય સાથે બેઠા પછી પણ ક્યારેય એવું લાગતું નહોતું કે હવે ઘરે જવું જોઈએ. મસ્તી તો ચાલુ જ રહેતી. 😂",
+
+        message9: "જેટલું તારું કામ મસ્ત છે, <strong>એટલું જ તારી સાથે રહેવું પણ મસ્ત છે.</strong> ❤️",
+
+        message10: "બસ એક વાત કહેવી છે — ભવિષ્યમાં જ્યારે પણ કોઈ નવી વસ્તુ શીખે ને, તો મને જરૂર કહેજે. 😂 મારે પણ ખબર પડવી જોઈએ કે <strong>મારો જુનિયર હવે શું નવી વસ્તુ શીખી રહ્યો છે!</strong> 😎😂",
+
+        message11: "બધી મસ્તી, સપોર્ટ, શીખવવા અને આ ભાઈ જેવા બોન્ડિંગ માટે થેન્ક યુ ભાઈ. ❤️ આપણો <strong>ભાઈચારો હંમેશા આવો જ રહેશે</strong>, અને મારી આર્ટિકલશિપ પૂરી થઈ ગઈ એટલે આપણો સંબંધ પણ પૂરો થઈ ગયો એવું બિલકુલ નથી. 💯<br><br>અને હા, જો આ બે વર્ષ દરમિયાન મારી કોઈ વાતથી તને ખોટું લાગ્યું હોય, મારી કોઈ મસ્તી વધારે થઈ ગઈ હોય કે મારાથી કોઈ ભૂલ થઈ હોય, તો <strong>દિલથી સોરી ભાઈ.</strong> ❤️<br><br><strong>આપણે હંમેશા સંપર્કમાં રહીએ, મસ્તી કરતા રહીએ અને એકબીજાને નવી નવી વસ્તુઓ શીખવતા રહીએ.</strong> 🤝❤️<br><br><strong>— જિતુ સુથાર</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 11; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element && text["message" + i]) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
