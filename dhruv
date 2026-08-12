@@ -1,173 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Dhruv ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            h1 {
-                font-size: 30px;
-            }
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Colleague, A Brother ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>Dhruv ❤️</h1>
+    <div class="subtitle">
+      Dhruv ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Dhruv,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        <strong>Dear Dhruv ❤️</strong>
+      </p>
+
+      <p id="message2">
+        Dhruv, you are a genuinely good-hearted person and, more importantly, a brother to me. ❤️ Along with CA, you also have your own dream, and bhai, I genuinely pray from my heart that <strong>you turn that dream into reality one day.</strong> I know you will work hard for it, and I will always be there for you. Whenever you need me, <strong>I will always stand by your side.</strong> ❤️
+      </p>
+
+      <p id="message3">
+        Whenever I have needed you till now, you have always been there for me. And honestly, till today, you have never said anything to me that hurt me. You are a very simple person with a really good heart. ❤️
+      </p>
+
+      <p id="message4">
+        And physically fit toh tu chhe j 😂😂 — during the picnic, out of all the adventure activities, <strong>Dhruv and I were the ones who completed almost everything!</strong> 😂😂 So I think our vibes matched pretty well, and I genuinely enjoyed spending time with you, bhai. ❤️
+      </p>
+
+      <p id="message5">
+        We played games together during lunch breaks, had fun with <strong>Scribble and Codenames</strong>, and sometimes went for a walk in the garden after lunch. These small moments have now become some really special memories. ❤️ At that time, we never realised that these simple moments would one day become such memorable parts of our Articleship.
+      </p>
+
+      <p id="message6">
+        We are definitely going to <strong>stay in contact for a lifetime</strong>, so I won't write too much. 😂❤️
+      </p>
+
+      <p id="message7">
+        Just <strong>thank you, bhai</strong>, for always supporting me, helping me, and for giving me such a good bond. And if during these 2 years, I ever said or did <strong>anything at all</strong> that hurt you or made you feel bad, then <strong>I am truly sorry, bhai.</strong> ❤️
+      </p>
+
+      <p id="message8">
+        I genuinely wish the best for your dream. <strong>Complete your CA, and at the same time, achieve the dream that is close to your heart.</strong> ❤️
+      </p>
+
+      <p id="message9">
+        <strong>Our brotherhood will always remain the same. 🤝❤️</strong>
+      </p>
+
+      <p id="message10">
+        <strong>— Jitu Suthar</strong>
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "<strong>Dear Dhruv ❤️</strong>",
+
+        message2: "Dhruv, you are a genuinely good-hearted person and, more importantly, a brother to me. ❤️ Along with CA, you also have your own dream, and bhai, I genuinely pray from my heart that <strong>you turn that dream into reality one day.</strong> I know you will work hard for it, and I will always be there for you. Whenever you need me, <strong>I will always stand by your side.</strong> ❤️",
+
+        message3: "Whenever I have needed you till now, you have always been there for me. And honestly, till today, you have never said anything to me that hurt me. You are a very simple person with a really good heart. ❤️",
+
+        message4: "And physically fit toh tu chhe j 😂😂 — during the picnic, out of all the adventure activities, <strong>Dhruv and I were the ones who completed almost everything!</strong> 😂😂 So I think our vibes matched pretty well, and I genuinely enjoyed spending time with you, bhai. ❤️",
+
+        message5: "We played games together during lunch breaks, had fun with <strong>Scribble and Codenames</strong>, and sometimes went for a walk in the garden after lunch. These small moments have now become some really special memories. ❤️ At that time, we never realised that these simple moments would one day become such memorable parts of our Articleship.",
+
+        message6: "We are definitely going to <strong>stay in contact for a lifetime</strong>, so I won't write too much. 😂❤️",
+
+        message7: "Just <strong>thank you, bhai</strong>, for always supporting me, helping me, and for giving me such a good bond. And if during these 2 years, I ever said or did <strong>anything at all</strong> that hurt you or made you feel bad, then <strong>I am truly sorry, bhai.</strong> ❤️",
+
+        message8: "I genuinely wish the best for your dream. <strong>Complete your CA, and at the same time, achieve the dream that is close to your heart.</strong> ❤️",
+
+        message9: "<strong>Our brotherhood will always remain the same. 🤝❤️</strong>",
+
+        message10: "<strong>— Jitu Suthar</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "<strong>प्रिय ध्रुव ❤️</strong>",
+
+        message2: "ध्रुव, तुम दिल के बहुत अच्छे इंसान हो और सबसे बढ़कर, मेरे लिए एक भाई हो। ❤️ CA के साथ-साथ तुम्हारा अपना एक सपना भी है, और भाई, मैं दिल से प्रार्थना करता हूँ कि <strong>तुम एक दिन अपने उस सपने को हकीकत में बदलो।</strong> मुझे पता है कि तुम उसके लिए मेहनत करोगे और मैं हमेशा तुम्हारे साथ रहूँगा। जब भी तुम्हें मेरी जरूरत होगी, <strong>मैं हमेशा तुम्हारे साथ खड़ा रहूँगा।</strong> ❤️",
+
+        message3: "आज तक जब भी मुझे तुम्हारी जरूरत पड़ी है, तुम हमेशा मेरे साथ रहे हो। और सच कहूँ तो आज तक तुमने मुझसे कभी ऐसी कोई बात नहीं कही जिससे मुझे बुरा लगा हो। तुम बहुत ही सरल इंसान हो और दिल के भी बहुत अच्छे हो। ❤️",
+
+        message4: "और शारीरिक रूप से फिट तो तुम हो ही 😂😂 — पिकनिक में जितनी भी एडवेंचर एक्टिविटीज थीं, उनमें से <strong>लगभग सारी पूरी करने वाले ध्रुव और मैं ही थे!</strong> 😂😂 इसलिए मुझे लगता है कि हमारी वाइब भी काफी अच्छी मैच होती है और तुम्हारे साथ समय बिताकर सच में बहुत मजा आया, भाई। ❤️",
+
+        message5: "हमने लंच ब्रेक में साथ में गेम्स खेले, <strong>स्क्रिबल और कोडनेम्स</strong> खेले और कभी-कभी लंच के बाद गार्डन में घूमने भी गए। ये छोटी-छोटी बातें अब बहुत खास यादें बन गई हैं। ❤️ उस समय हमें पता ही नहीं था कि ये साधारण से पल एक दिन हमारी आर्टिकलशिप की इतनी खास यादें बन जाएंगे।",
+
+        message6: "हम तो <strong>पूरी जिंदगी संपर्क में रहने वाले हैं</strong>, इसलिए ज्यादा कुछ नहीं लिखूँगा। 😂❤️",
+
+        message7: "बस <strong>थैंक यू भाई</strong>, हमेशा मुझे सपोर्ट करने के लिए, मेरी मदद करने के लिए और इतना अच्छा रिश्ता देने के लिए। और अगर इन दो सालों में मैंने कभी भी ऐसी <strong>कोई भी बात</strong> कही या की हो जिससे तुम्हें बुरा लगा हो, तो <strong>दिल से सॉरी भाई।</strong> ❤️",
+
+        message8: "मैं दिल से तुम्हारे सपने के लिए शुभकामनाएँ देता हूँ। <strong>अपना CA पूरा करना और साथ ही अपने दिल के करीब उस सपने को भी जरूर हासिल करना।</strong> ❤️",
+
+        message9: "<strong>हमारा भाई-भाई का रिश्ता हमेशा ऐसा ही रहेगा। 🤝❤️</strong>",
+
+        message10: "<strong>— जितु सुथार</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "<strong>પ્રિય ધ્રુવ ❤️</strong>",
+
+        message2: "ધ્રુવ, તું દિલનો ખૂબ જ સારો માણસ છે અને સૌથી મહત્વની વાત એટલે કે તું મારા માટે એક ભાઈ છે. ❤️ CA ની સાથે તારું પોતાનું એક સપનું પણ છે, અને ભાઈ, હું દિલથી પ્રાર્થના કરું છું કે <strong>તું એક દિવસ તારા એ સપનાને હકીકતમાં બદલે.</strong> મને ખબર છે કે તું એના માટે મહેનત કરીશ અને હું હંમેશા તારી સાથે રહીશ. જ્યારે પણ તને મારી જરૂર પડશે, <strong>હું હંમેશા તારી સાથે ઊભો રહીશ.</strong> ❤️",
+
+        message3: "આજ સુધી જ્યારે પણ મને તારી જરૂર પડી છે, તું હંમેશા મારી સાથે રહ્યો છે. અને સાચું કહું તો આજ સુધી તેં મને ક્યારેય એવી કોઈ વાત નથી કહી જેનાથી મને દુઃખ થયું હોય. તું ખૂબ જ સરળ માણસ છે અને દિલનો પણ ખૂબ સારો છે. ❤️",
+
+        message4: "અને ફિઝિકલી ફિટ તો તું છે જ 😂😂 — પિકનિકમાં જેટલી પણ એડવેન્ચર એક્ટિવિટીઝ હતી, એમાંથી <strong>લગભગ બધી પૂરી કરવાવાળા ધ્રુવ અને હું જ હતા!</strong> 😂😂 એટલે મને લાગે છે કે આપણી વાઇબ પણ સારી એવી મેચ થાય છે અને તારી સાથે સમય પસાર કરવામાં ખરેખર ખૂબ મજા આવી, ભાઈ. ❤️",
+
+        message5: "આપણે લંચ બ્રેકમાં સાથે ગેમ્સ રમ્યા, <strong>સ્ક્રિબલ અને કોડનેમ્સ</strong> રમ્યા અને ઘણી વાર લંચ પછી ગાર્ડનમાં ફરવા પણ ગયા. આ નાની નાની વાતો હવે ખૂબ જ ખાસ યાદો બની ગઈ છે. ❤️ ત્યારે આપણને ખબર જ નહોતી કે આ સામાન્ય લાગતી ક્ષણો એક દિવસ આપણી આર્ટિકલશિપની આટલી ખાસ યાદો બની જશે.",
+
+        message6: "આપણે તો <strong>આખી જિંદગી કોન્ટેક્ટમાં રહીશું જ</strong>, એટલે વધારે કંઈ લખતો નથી. 😂❤️",
+
+        message7: "બસ <strong>થેન્ક યુ ભાઈ</strong>, હંમેશા મને સપોર્ટ કરવા માટે, મારી મદદ કરવા માટે અને આટલો સારો સંબંધ આપવા માટે. અને જો આ બે વર્ષમાં મેં ક્યારેય પણ એવી <strong>કોઈ પણ વાત</strong> કહી કે કરી હોય જેનાથી તને ખોટું લાગ્યું હોય, તો <strong>દિલથી સોરી ભાઈ.</strong> ❤️",
+
+        message8: "હું દિલથી તારા સપના માટે બેસ્ટ વિશિસ આપું છું. <strong>તારું CA પૂરું કરજે અને સાથે સાથે તારા દિલની નજીક રહેલા એ સપનાને પણ જરૂરથી પૂરું કરજે.</strong> ❤️",
+
+        message9: "<strong>આપણો ભાઈ-ભાઈનો સંબંધ હંમેશા આવો જ રહેશે. 🤝❤️</strong>",
+
+        message10: "<strong>— જિતુ સુથાર</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 10; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element && text["message" + i]) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
