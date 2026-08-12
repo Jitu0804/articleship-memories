@@ -1,173 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Articleship Memories ❤️</title>
+  <title>Khushi ❤️ | My Articleship Memories</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff7f0, #fdf1f7, #f3f0ff);
-            color: #40373c;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7, #f5efff);
+      color: #4a3b43;
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
 
-        .card {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
-        }
+    .message-card {
+      max-width: 700px;
+      margin: 20px auto 100px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 70, 0.12);
+    }
 
-        .top {
-            text-align: center;
-        }
+    .top-line {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #8b6d7c;
+      margin-bottom: 20px;
+    }
 
-        .small-title {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a6878;
-        }
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1.25;
+      margin: 0;
+      color: #4b3542;
+    }
 
-        h1 {
-            color: #4b3541;
-            font-size: 38px;
-            margin: 15px 0 8px;
-        }
+    .subtitle {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #8b6d7c;
+      margin-top: 12px;
+    }
 
-        .subtitle {
-            color: #8a6878;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .divider {
+      width: 95px;
+      height: 4px;
+      background: #b997a9;
+      margin: 35px auto 30px;
+    }
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #b997a7;
-            margin: 25px auto;
-        }
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
 
-        .message {
-            font-size: 18px;
-            line-height: 1.9;
-        }
+    .language-buttons button {
+      border: none;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: #eee5ea;
+      color: #5c4351;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: all 0.25s ease;
+    }
 
-        .message p {
-            margin-bottom: 22px;
-        }
+    .language-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-        .ending {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 20px;
-            color: #5a4050;
-            font-style: italic;
-        }
+    .language-buttons button.active {
+      background: #6b465c;
+      color: white;
+    }
 
-        .back-button {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 5px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: #5a4050;
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+    }
 
-        .back-button:hover {
-            opacity: 0.85;
-        }
+    .message p {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: messageAppear 0.8s ease forwards;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-            .card {
-                padding: 30px 20px;
-                margin: 15px auto;
-            }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            h1 {
-                font-size: 30px;
-            }
+    .language-change p {
+      animation: languageFade 0.6s ease forwards;
+    }
 
-            .message {
-                font-size: 17px;
-                line-height: 1.8;
-            }
-        }
-    </style>
+    @keyframes languageFade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      background: #6b465c;
+      color: white;
+      text-decoration: none;
+      border-radius: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: 0.25s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: #6b465c;
+      color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .message-card {
+        margin-top: 10px;
+        padding: 40px 30px 45px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .message {
+        font-size: 21px;
+        line-height: 1.8;
+      }
+
+      .home-btn {
+        bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
+  <div class="message-card">
 
-        <div class="top">
+    <div class="top-line">
+      A PERSONAL MESSAGE ❤️
+    </div>
 
-            <div class="small-title">
-                A Personal Message ❤️
-            </div>
+    <h1>
+      More Than a Colleague, A Friend ❤️
+    </h1>
 
-            <!-- CHANGE THE NAME HERE -->
-            <h1>Khushi ❤️</h1>
+    <div class="subtitle">
+      Khushi ❤️
+    </div>
 
-            <div class="subtitle">
-                My Articleship Memories
-            </div>
+    <div class="divider"></div>
 
-            <div class="line"></div>
+    <div class="language-buttons">
 
-        </div>
+      <button id="englishBtn"
+        class="active"
+        onclick="changeLanguage('english')">
+        🇬🇧 English
+      </button>
 
+      <button id="hindiBtn"
+        onclick="changeLanguage('hindi')">
+        🇮🇳 हिन्दी
+      </button>
 
-        <div class="message">
-
-            <!-- PUT THE PERSON'S MESSAGE HERE -->
-
-            <p>
-                Dear Khushi,
-            </p>
-
-            <p>
-                This is just a trial message for now.
-                The final message will be added here later.
-            </p>
-
-            <p>
-                Thank you for being a part of my two years of Articleship
-                and for giving me memories that I will always remember.
-            </p>
-
-        </div>
-
-
-        <div class="ending">
-            Thank you for everything. ❤️
-        </div>
-
-
-        <a href="index.html" class="back-button">
-            ← Back to Memories
-        </a>
+      <button id="gujaratiBtn"
+        onclick="changeLanguage('gujarati')">
+        🇮🇳 ગુજરાતી
+      </button>
 
     </div>
 
+    <div class="message">
+
+      <p id="message1">
+        <strong>Dear Khushi ❤️</strong>
+      </p>
+
+      <p id="message2">
+        Khushi, you are genuinely such a nice person. You are only 10 days senior to me 😂, but honestly, you have always been one of the most helpful people around me. You are the kind of person who can even leave your own work for a moment just to help someone else, and I have personally experienced that many times. ❤️
+      </p>
+
+      <p id="message3">
+        Since both of us are from the <strong>TP 13 area</strong>, I know that even after Articleship, we are definitely going to meet and stay in touch. 😎😂 And from the beginning, I have always felt very comfortable with you because both of us came from a <strong>Gujarati-medium background</strong>, so we understand each other's struggles very quickly. 😂 Sometimes without even saying much, you already understand that, <em>"Aa ne kaik kaam hase, kari aapvu joie."</em> 😂❤️
+      </p>
+
+      <p id="message4">
+        During these 2 years, whenever I needed help, you always helped me — many times even before I properly asked. You have always had that helping nature, and that is something I genuinely appreciate about you. We have also spent a lot of time together on different audits, and we have made so many good memories during those days. ❤️
+      </p>
+
+      <p id="message5">
+        And of course, our <strong>masti</strong> was always there. 😂😂 Being around you was never boring, and I am really going to miss all those random conversations and fun moments.
+      </p>
+
+      <p id="message6">
+        One serious advice before you leave — <strong>please ride your scooty a little slowly!</strong> 😂😂 You drive it like you are already late for the next audit. Please thodu speed ochhu karje, Khushi! 😂😂
+      </p>
+
+      <p id="message7">
+        I also want to say one thing from my heart. Because of that WhatsApp group message, you also ended up crying, and honestly, that day was one of the worst days of my Articleship. I never wanted to hurt you or anyone, and I am genuinely sorry, Khushi. ❤️
+      </p>
+
+      <p id="message8">
+        One more memory I will always remember is the day when we went to the garden after lunch. We were supposed to finish lunch break at 2, but we came back around <strong>2:45</strong>, and then Ma’am called us and gave us the lecture 😂🤌. At that time, it was just another fun moment, but now it has become one of those memories that I will always remember.
+      </p>
+
+      <p id="message9">
+        And the <strong>National Conference</strong> was another level of fun! 😂 We had such a great time there, and those moments are definitely going to stay with me for a long time.
+      </p>
+
+      <p id="message10">
+        Khushi, thank you for always being so helpful, understanding and supportive. ❤️ I am really happy that during these 2 years, I got a friend like you.
+      </p>
+
+      <p id="message11">
+        And if I have ever said or done anything that hurt you or made you feel bad, <strong>I am genuinely sorry.</strong> ❤️
+      </p>
+
+      <p id="message12">
+        <strong>10 days senior hoy toh senior rehje, pan have office pachhi pan friendship aavi j rehvi joie! 😂❤️</strong>
+      </p>
+
+      <p id="message13">
+        <strong>TP 13 ma toh malta j rahishu. 😎🤝</strong>
+      </p>
+
+      <p id="message14">
+        <strong>— Jitu Suthar</strong>
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Back to Memories
+    </a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    🏠 Home
+  </a>
+
+
+  <script>
+
+    const translations = {
+
+      english: {
+
+        message1: "<strong>Dear Khushi ❤️</strong>",
+
+        message2: "Khushi, you are genuinely such a nice person. You are only 10 days senior to me 😂, but honestly, you have always been one of the most helpful people around me. You are the kind of person who can even leave your own work for a moment just to help someone else, and I have personally experienced that many times. ❤️",
+
+        message3: "Since both of us are from the <strong>TP 13 area</strong>, I know that even after Articleship, we are definitely going to meet and stay in touch. 😎😂 And from the beginning, I have always felt very comfortable with you because both of us came from a <strong>Gujarati-medium background</strong>, so we understand each other's struggles very quickly. 😂 Sometimes without even saying much, you already understand that, <em>\"Aa ne kaik kaam hase, kari aapvu joie.\"</em> 😂❤️",
+
+        message4: "During these 2 years, whenever I needed help, you always helped me — many times even before I properly asked. You have always had that helping nature, and that is something I genuinely appreciate about you. We have also spent a lot of time together on different audits, and we have made so many good memories during those days. ❤️",
+
+        message5: "And of course, our <strong>masti</strong> was always there. 😂😂 Being around you was never boring, and I am really going to miss all those random conversations and fun moments.",
+
+        message6: "One serious advice before you leave — <strong>please ride your scooty a little slowly!</strong> 😂😂 You drive it like you are already late for the next audit. Please thodu speed ochhu karje, Khushi! 😂😂",
+
+        message7: "I also want to say one thing from my heart. Because of that WhatsApp group message, you also ended up crying, and honestly, that day was one of the worst days of my Articleship. I never wanted to hurt you or anyone, and I am genuinely sorry, Khushi. ❤️",
+
+        message8: "One more memory I will always remember is the day when we went to the garden after lunch. We were supposed to finish lunch break at 2, but we came back around <strong>2:45</strong>, and then Ma’am called us and gave us the lecture 😂🤌. At that time, it was just another fun moment, but now it has become one of those memories that I will always remember.",
+
+        message9: "And the <strong>National Conference</strong> was another level of fun! 😂 We had such a great time there, and those moments are definitely going to stay with me for a long time.",
+
+        message10: "Khushi, thank you for always being so helpful, understanding and supportive. ❤️ I am really happy that during these 2 years, I got a friend like you.",
+
+        message11: "And if I have ever said or done anything that hurt you or made you feel bad, <strong>I am genuinely sorry.</strong> ❤️",
+
+        message12: "<strong>10 days senior hoy toh senior rehje, pan have office pachhi pan friendship aavi j rehvi joie! 😂❤️</strong>",
+
+        message13: "<strong>TP 13 ma toh malta j rahishu. 😎🤝</strong>",
+
+        message14: "<strong>— Jitu Suthar</strong>"
+      },
+
+
+      hindi: {
+
+        message1: "<strong>प्रिय खुशी ❤️</strong>",
+
+        message2: "खुशी, तुम सच में बहुत अच्छी इंसान हो। तुम मुझसे सिर्फ 10 दिन सीनियर हो 😂, लेकिन सच कहूँ तो तुम हमेशा मेरे आसपास के सबसे मददगार लोगों में से एक रही हो। तुम ऐसी इंसान हो जो अपना काम थोड़ी देर के लिए छोड़कर भी किसी दूसरे की मदद करने चली जाती हो, और मैंने यह कई बार खुद अनुभव किया है। ❤️",
+
+        message3: "क्योंकि हम दोनों <strong>TP 13 एरिया</strong> से हैं, इसलिए मुझे पता है कि आर्टिकलशिप के बाद भी हम जरूर मिलते रहेंगे और संपर्क में रहेंगे। 😎😂 और शुरुआत से ही मैं तुम्हारे साथ काफी सहज रहा हूँ क्योंकि हम दोनों <strong>गुजराती माध्यम</strong> से आए हैं, इसलिए एक-दूसरे की परेशानियाँ बहुत जल्दी समझ जाते हैं। 😂 कई बार कुछ कहने की जरूरत भी नहीं पड़ती और तुम्हें पहले ही समझ आ जाता है कि, <em>\"इसे कोई काम होगा, कर देना चाहिए।\"</em> 😂❤️",
+
+        message4: "इन दो सालों में जब भी मुझे तुम्हारी मदद की जरूरत पड़ी, तुमने हमेशा मेरी मदद की — कई बार तो मेरे ठीक से पूछने से पहले ही। तुम्हारा यह मदद करने वाला स्वभाव मुझे सच में बहुत पसंद है। हमने अलग-अलग ऑडिट में भी साथ काफी समय बिताया है और उन दिनों की बहुत सारी अच्छी यादें बनाई हैं। ❤️",
+
+        message5: "और हमारी <strong>मस्ती</strong> तो हमेशा चलती ही रहती थी। 😂😂 तुम्हारे साथ रहना कभी बोरिंग नहीं रहा और मुझे हमारी वो सारी छोटी-छोटी बातें और मस्ती बहुत याद आएगी।",
+
+        message6: "जाने से पहले एक जरूरी सलाह — <strong>अपनी स्कूटी थोड़ी धीरे चलाया करो!</strong> 😂😂 तुम ऐसे चलाती हो जैसे अगले ऑडिट के लिए पहले ही लेट हो गई हो। थोड़ा स्पीड कम कर लेना, खुशी! 😂😂",
+
+        message7: "एक बात मैं दिल से कहना चाहता हूँ। उस व्हाट्सऐप ग्रुप वाले मैसेज की वजह से तुम्हें भी रोना पड़ा था, और सच कहूँ तो वह दिन मेरी आर्टिकलशिप के सबसे खराब दिनों में से एक था। मेरा कभी भी तुम्हें या किसी और को दुख पहुँचाने का इरादा नहीं था। मुझे सच में बहुत अफसोस है, खुशी। ❤️",
+
+        message8: "एक और याद जो मुझे हमेशा याद रहेगी, वह दिन जब हम लंच के बाद चलते-चलते गार्डन गए थे। हमारा लंच ब्रेक 2 बजे खत्म होना था, लेकिन हम करीब <strong>2:45</strong> बजे वापस आए और फिर मैडम ने हमें बुलाकर लेक्चर दिया था 😂🤌। उस समय वह बस एक और मजेदार पल था, लेकिन अब वह मेरी खास यादों में से एक बन गया है।",
+
+        message9: "और <strong>नेशनल कॉन्फ्रेंस</strong> में तो अलग ही लेवल की मस्ती हुई थी! 😂 हमने वहाँ बहुत मजा किया और वहाँ के वो पल भी हमेशा याद रहेंगे।",
+
+        message10: "खुशी, हमेशा इतनी मददगार, समझदार और सपोर्टिव रहने के लिए थैंक यू। ❤️ मुझे सच में खुशी है कि इन दो सालों में मुझे तुम्हारे जैसी दोस्त मिली।",
+
+        message11: "और अगर मैंने कभी कुछ ऐसा कहा या किया हो जिससे तुम्हें बुरा लगा हो या तुम्हें दुख हुआ हो, तो <strong>दिल से सॉरी।</strong> ❤️",
+
+        message12: "<strong>10 दिन सीनियर हो तो सीनियर ही रहना, लेकिन अब ऑफिस के बाद भी हमारी दोस्ती ऐसी ही रहनी चाहिए! 😂❤️</strong>",
+
+        message13: "<strong>TP 13 में तो मिलते ही रहेंगे। 😎🤝</strong>",
+
+        message14: "<strong>— जितु सुथार</strong>"
+      },
+
+
+      gujarati: {
+
+        message1: "<strong>પ્રિય ખુશી ❤️</strong>",
+
+        message2: "ખુશી, તું ખરેખર ખૂબ જ સારી વ્યક્તિ છે. તું મારાથી ફક્ત 10 દિવસ સિનિયર છે 😂, પણ સાચું કહું તો તું હંમેશા મારી આસપાસના સૌથી મદદગાર લોકોમાંથી એક રહી છે. તું એવી વ્યક્તિ છે જે પોતાનું કામ થોડા સમય માટે બાજુ પર મૂકીને પણ બીજાની મદદ કરવા જતી રહે છે, અને મેં આ વાત ઘણી વખત જાતે અનુભવી છે. ❤️",
+
+        message3: "આપણે બંને <strong>TP 13 એરિયા</strong>ના છીએ, એટલે મને ખબર છે કે આર્ટિકલશિપ પછી પણ આપણે ચોક્કસ મળતા રહીશું અને કોન્ટેક્ટમાં રહીશું. 😎😂 અને શરૂઆતથી જ હું તારી સાથે ખૂબ જ કમ્ફર્ટેબલ રહ્યો છું કારણ કે આપણે બંને <strong>ગુજરાતી માધ્યમ</strong>માંથી આવ્યા છીએ, એટલે એકબીજાની તકલીફો ખૂબ જલ્દી સમજી જઈએ છીએ. 😂 ઘણી વાર કંઈ કહેવાની જરૂર પણ નથી પડતી અને તને પહેલેથી જ સમજાઈ જાય છે કે, <em>\"આને કંઈક કામ હશે, કરી આપવું જોઈએ.\"</em> 😂❤️",
+
+        message4: "આ બે વર્ષમાં જ્યારે પણ મને તારી મદદની જરૂર પડી છે, તેં હંમેશા મારી મદદ કરી છે — ઘણી વાર તો મેં બરાબર પૂછ્યું પણ ન હોય એ પહેલાં જ. તારો આ મદદ કરવાનો સ્વભાવ મને ખરેખર ખૂબ ગમે છે. આપણે અલગ અલગ ઓડિટમાં પણ સાથે ઘણો સમય વિતાવ્યો છે અને એ દિવસોની ઘણી બધી સારી યાદો બનાવી છે. ❤️",
+
+        message5: "અને આપણી <strong>મસ્તી</strong> તો હંમેશા ચાલતી જ હતી. 😂😂 તારી સાથે રહેવામાં ક્યારેય બોરિંગ લાગ્યું નથી અને આપણી એ બધી નાની નાની વાતો અને મસ્તી મને ખરેખર ખૂબ યાદ આવશે.",
+
+        message6: "જતા પહેલા એક જરૂરી સલાહ — <strong>સ્કૂટી થોડી ધીમે ચલાવવાનું રાખજે!</strong> 😂😂 તું એવી રીતે ચલાવે છે જાણે આગામી ઓડિટ માટે પહેલેથી જ લેટ થઈ ગઈ હોય. થોડી સ્પીડ ઓછી કરજે, ખુશી! 😂😂",
+
+        message7: "એક વાત હું દિલથી કહેવા માંગુ છું. એ WhatsApp ગ્રુપના મેસેજના કારણે તારે પણ રડવું પડ્યું હતું, અને સાચું કહું તો એ દિવસ મારી આર્ટિકલશિપના સૌથી ખરાબ દિવસોમાંનો એક હતો. તને કે કોઈને પણ દુઃખ પહોંચાડવાનો મારો ક્યારેય ઈરાદો નહોતો. મને સાચે જ ખૂબ અફસોસ છે, ખુશી. ❤️",
+
+        message8: "એક બીજી યાદ જે મને હંમેશા યાદ રહેશે એ દિવસ જ્યારે આપણે લંચ પછી ચાલતા ચાલતા ગાર્ડનમાં ગયા હતા. આપણો લંચ બ્રેક 2 વાગ્યે પૂરો થવાનો હતો, પણ આપણે લગભગ <strong>2:45</strong> વાગ્યે પાછા આવ્યા અને પછી મેમે આપણને બોલાવીને લેક્ચર આપ્યો હતો 😂🤌. ત્યારે એ બસ એક મસ્ત મોમેન્ટ હતો, પણ હવે એ મારી ખાસ યાદોમાંથી એક બની ગયો છે.",
+
+        message9: "અને <strong>નેશનલ કોન્ફરન્સ</strong>માં તો અલગ જ લેવલની મસ્તી કરી હતી! 😂 ત્યાં આપણે ખૂબ જલ્સો કર્યો હતો અને એ સમયની એ બધી મોમેન્ટ્સ પણ હંમેશા યાદ રહેશે.",
+
+        message10: "ખુશી, હંમેશા આટલી મદદગાર, સમજદાર અને સપોર્ટિવ રહેવા માટે થેન્ક યુ. ❤️ મને ખરેખર ખુશી છે કે આ બે વર્ષમાં મને તારા જેવી એક સારી ફ્રેન્ડ મળી.",
+
+        message11: "અને જો મેં ક્યારેય એવું કંઈ કહ્યું કે કર્યું હોય જેનાથી તને ખોટું લાગ્યું હોય કે દુઃખ થયું હોય, તો <strong>દિલથી સોરી.</strong> ❤️",
+
+        message12: "<strong>10 દિવસ સિનિયર હોય તો સિનિયર જ રહેજે, પણ હવે ઓફિસ પછી પણ આપણી ફ્રેન્ડશિપ આવી જ રહેવી જોઈએ! 😂❤️</strong>",
+
+        message13: "<strong>TP 13 માં તો મળતા જ રહીશું. 😎🤝</strong>",
+
+        message14: "<strong>— જિતુ સુથાર</strong>"
+      }
+
+    };
+
+
+    function changeLanguage(language) {
+
+      const messageBox = document.querySelector(".message");
+
+      messageBox.classList.remove("language-change");
+
+      void messageBox.offsetWidth;
+
+      const text = translations[language];
+
+      for (let i = 1; i <= 14; i++) {
+
+        const element = document.getElementById("message" + i);
+
+        if (element && text["message" + i]) {
+          element.innerHTML = text["message" + i];
+        }
+
+      }
+
+      document.getElementById("englishBtn").classList.remove("active");
+      document.getElementById("hindiBtn").classList.remove("active");
+      document.getElementById("gujaratiBtn").classList.remove("active");
+
+      if (language === "english") {
+        document.getElementById("englishBtn").classList.add("active");
+      }
+
+      if (language === "hindi") {
+        document.getElementById("hindiBtn").classList.add("active");
+      }
+
+      if (language === "gujarati") {
+        document.getElementById("gujaratiBtn").classList.add("active");
+      }
+
+      setTimeout(function () {
+        messageBox.classList.add("language-change");
+      }, 20);
+    }
+
+  </script>
+
 </body>
+
 </html>
