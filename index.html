@@ -10,6 +10,7 @@
     <title>My Articleship Memories ❤️</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -102,7 +103,8 @@
             background: #704f63;
         }
 
-        /* Memories */
+
+        /* Memories Section */
 
         #memories {
             margin-top: 30px;
@@ -124,10 +126,13 @@
             font-size: 17px;
         }
 
+
+        /* Personal Name Card */
+
         .memory-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             max-width: 850px;
             margin: 35px auto 0;
             padding: 0 10px;
@@ -135,22 +140,39 @@
 
         .memory-card {
             display: block;
-            padding: 20px 16px;
-            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            padding: 25px 20px;
+            border-radius: 22px;
             background: #5a4050;
             color: white;
             text-decoration: none;
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
             box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
             transition: 0.25s ease;
         }
 
         .memory-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             background: #704f63;
         }
+
+
+        /* Private Message Notice */
+
+        .private-note {
+            max-width: 650px;
+            margin: 30px auto 0;
+            padding: 18px 20px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.65);
+            color: #6f6268;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
 
         .ending {
             margin-top: 45px;
@@ -163,6 +185,7 @@
             margin-top: 15px;
             font-size: 24px;
         }
+
 
         /* Mobile */
 
@@ -193,17 +216,19 @@
             }
 
             .memory-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
+                width: 100%;
                 padding: 0 5px;
             }
 
             .memory-card {
                 width: 100%;
-                padding: 18px 14px;
+                padding: 20px 14px;
+                font-size: 18px;
             }
         }
+
     </style>
+
 </head>
 
 
@@ -217,7 +242,9 @@
 
             <div class="hero-content">
 
-                <div class="heart">❤️</div>
+                <div class="heart">
+                    ❤️
+                </div>
 
                 <h1>
                     My Articleship Memories
@@ -253,7 +280,7 @@
 
                     <p>
                         So before moving ahead, I wanted to take
-                        a moment to say something to each one of you.
+                        a moment to say something to you.
                     </p>
 
                     <a href="#memories" class="open-button">
@@ -267,27 +294,31 @@
         </section>
 
 
-        <!-- MY MEMORIES SECTION -->
+        <!-- PERSONAL MEMORY SECTION -->
 
         <section id="memories">
 
             <h2>
-                My Memories ❤️
+                A Message For You ❤️
             </h2>
 
-            <p class="memory-intro">
-                A small message for everyone who made
-                my Articleship special.
+            <p class="memory-intro" id="memoryIntro">
+                Your personal memory is waiting for you below.
             </p>
 
 
-            <div class="memory-grid">
+            <div class="memory-grid" id="memoryGrid">
 
-                <!-- Trial message -->
+                <!-- JavaScript will place the correct person's name here -->
 
-                <a href="jitesh-sir.html" class="memory-card">
-                    ❤️ CA Jitesh Sir
-                </a>
+            </div>
+
+
+            <div class="private-note">
+
+                🔐 This QR code is specially made for you.
+                <br>
+                Your name is shown here specifically for your personal message.
 
             </div>
 
@@ -313,10 +344,245 @@
     </div>
 
 
-    <!-- JavaScript -->
+    <script>
 
-    <script src="script.js"></script>
-<a href="index.html" class="home-button">🏠 Home</a>
+        /*
+        =====================================================
+        PERSONAL QR SYSTEM
+        =====================================================
+
+        Example:
+
+        ?person=dhruv
+
+        ?person=henali
+
+        ?person=shweni
+
+        The same home page will then show only
+        that person's name.
+        =====================================================
+        */
+
+
+        const people = {
+
+            "barkha-maam": {
+                name: "CA Barkha Ma'am ❤️",
+                page: "barkha-maam.html"
+            },
+
+            "bhautik": {
+                name: "Bhautik ❤️",
+                page: "bhautik.html"
+            },
+
+            "bhavesh-bhai": {
+                name: "Bhavesh Bhai ❤️",
+                page: "bhavesh-bhai.html"
+            },
+
+            "dhruv": {
+                name: "Dhruv ❤️",
+                page: "dhruv.html"
+            },
+
+            "dhruvesh-bhai": {
+                name: "Dhruvesh Bhai ❤️",
+                page: "dhruvesh-bhai.html"
+            },
+
+            "dileep-bhai": {
+                name: "Dileep Bhai ❤️",
+                page: "dileep-bhai.html"
+            },
+
+            "gaurav": {
+                name: "Gaurav ❤️",
+                page: "gaurav.html"
+            },
+
+            "henali": {
+                name: "Henali ❤️",
+                page: "henali.html"
+            },
+
+            "hetvi": {
+                name: "Hetvi ❤️",
+                page: "hetvi.html"
+            },
+
+            "jitesh-sir": {
+                name: "CA Jitesh Sir ❤️",
+                page: "jitesh-sir.html"
+            },
+
+            "khushi": {
+                name: "Khushi ❤️",
+                page: "khushi.html"
+            },
+
+            "krupali": {
+                name: "Krupali ❤️",
+                page: "krupali.html"
+            },
+
+            "neha-maam": {
+                name: "CA Neha Ma'am ❤️",
+                page: "neha-maam.html"
+            },
+
+            "parth": {
+                name: "Parth ❤️",
+                page: "parth.html"
+            },
+
+            "prachi-di": {
+                name: "Prachi Di ❤️",
+                page: "prachi-di.html"
+            },
+
+            "prakash-sir": {
+                name: "CA Prakash Sir ❤️",
+                page: "prakash-sir.html"
+            },
+
+            "pranjal": {
+                name: "Pranjal ❤️",
+                page: "pranjal.html"
+            },
+
+            "pranshu": {
+                name: "Pranshu ❤️",
+                page: "pranshu.html"
+            },
+
+            "rangoli-maam": {
+                name: "CA Rangoli Ma'am ❤️",
+                page: "rangoli-maam.html"
+            },
+
+            "rashmika-di": {
+                name: "Rashmika Di ❤️",
+                page: "rashmika-di.html"
+            },
+
+            "richa": {
+                name: "Richa ❤️",
+                page: "richa.html"
+            },
+
+            "sachin-bhai": {
+                name: "Sachin Bhai ❤️",
+                page: "sachin-bhai.html"
+            },
+
+            "shweni": {
+                name: "Shweni ❤️",
+                page: "shweni.html"
+            },
+
+            "vivek-bhai": {
+                name: "Vivek Bhai ❤️",
+                page: "vivek-bhai.html"
+            },
+
+            "vrunda": {
+                name: "Vrunda ❤️",
+                page: "vrunda.html"
+            }
+
+        };
+
+
+        /*
+        =====================================================
+        READ PERSON FROM QR URL
+        =====================================================
+        */
+
+        const params = new URLSearchParams(window.location.search);
+
+        const personKey = params.get("person");
+
+        const memoryGrid = document.getElementById("memoryGrid");
+
+        const memoryIntro = document.getElementById("memoryIntro");
+
+
+        /*
+        =====================================================
+        SHOW ONLY THE PERSON WHOSE QR WAS SCANNED
+        =====================================================
+        */
+
+        if (personKey && people[personKey]) {
+
+            const person = people[personKey];
+
+
+            const card = document.createElement("a");
+
+            card.href = person.page;
+
+            card.className = "memory-card";
+
+            card.textContent = "❤️ " + person.name;
+
+
+            memoryGrid.appendChild(card);
+
+
+            memoryIntro.textContent =
+                "This message is specially written for you. ❤️";
+
+
+        } else {
+
+
+            /*
+            =================================================
+            IF SOMEONE OPENS THE WEBSITE WITHOUT A QR
+            =================================================
+            */
+
+            const message = document.createElement("div");
+
+            message.className = "private-note";
+
+            message.innerHTML =
+                "Please open this page using your personal QR code ❤️";
+
+
+            memoryGrid.appendChild(message);
+
+
+            memoryIntro.textContent =
+                "Each person has a separate QR code for their personal memory.";
+
+
+        }
+
+
+        /*
+        =====================================================
+        AUTOMATIC SCROLL BEHAVIOUR
+        =====================================================
+
+        When the person scans their QR code, they first see
+        the beautiful home page.
+
+        They can then scroll down normally.
+
+        We intentionally DO NOT automatically open the
+        personal message.
+        =====================================================
+        */
+
+
+    </script>
+
+
 </body>
 
 </html>
