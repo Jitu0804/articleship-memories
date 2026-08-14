@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -20,19 +20,19 @@
 
         body {
             margin: 0;
-            font-family: Georgia, "Noto Serif Devanagari", "Times New Roman", serif;
-            background: linear-gradient(135deg, #fff8f5, #f9eef3);
+            font-family: Georgia, "Noto Serif Devanagari", "Noto Serif Gujarati", "Times New Roman", serif;
+            background: linear-gradient(135deg, #fff8f5, #f8eef2);
             color: #4b3541;
         }
 
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
             margin: auto;
             padding: 25px 20px 70px;
         }
 
-        /* Header */
+        /* HERO */
 
         .hero {
             min-height: 75vh;
@@ -44,7 +44,7 @@
 
         .hero-content {
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
             padding: 50px 20px;
         }
 
@@ -55,23 +55,23 @@
 
         h1 {
             margin: 0;
-            font-size: clamp(34px, 7vw, 62px);
+            font-size: clamp(35px, 7vw, 62px);
             line-height: 1.25;
-            color: #563c4a;
+            color: #4b3541;
         }
 
         .subtitle {
             margin-top: 22px;
-            font-size: 19px;
+            font-size: clamp(17px, 3vw, 21px);
             line-height: 1.8;
-            color: #806d76;
+            color: #75656d;
         }
 
         .divider {
-            width: 100px;
+            width: 110px;
             height: 2px;
-            background: #8a6878;
-            margin: 28px auto;
+            background: #967587;
+            margin: 30px auto;
             position: relative;
         }
 
@@ -81,15 +81,49 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            background: #fff7f6;
+            background: #faf0f2;
             padding: 0 10px;
             font-size: 18px;
         }
 
-        /* Message Card */
+        /* LANGUAGE BUTTONS */
+
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .language-buttons button {
+            border: none;
+            padding: 12px 23px;
+            border-radius: 25px;
+            background: #5a4050;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: 0.25s ease;
+            box-shadow: 0 5px 15px rgba(90, 64, 80, 0.15);
+        }
+
+        .language-buttons button:hover {
+            transform: translateY(-2px);
+            background: #704f63;
+        }
+
+        .language-buttons button.active {
+            background: #8b6378;
+            transform: translateY(-2px);
+        }
+
+        /* MESSAGE */
 
         .message-card {
-            background: rgba(255, 255, 255, 0.72);
+            background: rgba(255, 255, 255, 0.78);
             border-radius: 28px;
             padding: 45px 42px;
             box-shadow: 0 12px 35px rgba(90, 64, 80, 0.10);
@@ -98,7 +132,7 @@
 
         .message-card h2 {
             text-align: center;
-            font-size: 30px;
+            font-size: 31px;
             margin: 0 0 35px;
             color: #563c4a;
         }
@@ -151,7 +185,7 @@
         }
 
         .love {
-            font-size: 27px !important;
+            font-size: 28px !important;
             color: #7a4058 !important;
             font-weight: bold;
         }
@@ -168,7 +202,7 @@
             margin-top: 15px;
         }
 
-        /* Mobile */
+        /* MOBILE */
 
         @media (max-width: 600px) {
 
@@ -178,7 +212,7 @@
 
             .hero {
                 min-height: auto;
-                padding: 45px 0 40px;
+                padding: 45px 0 35px;
             }
 
             .hero-content {
@@ -190,11 +224,20 @@
             }
 
             h1 {
-                font-size: 38px;
+                font-size: 37px;
             }
 
             .subtitle {
                 font-size: 17px;
+            }
+
+            .language-buttons {
+                gap: 9px;
+            }
+
+            .language-buttons button {
+                padding: 10px 16px;
+                font-size: 14px;
             }
 
             .message-card {
@@ -225,303 +268,298 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- HEADER -->
+    <!-- HERO -->
 
-        <section class="hero">
+    <section class="hero">
 
-            <div class="hero-content">
+        <div class="hero-content">
 
-                <div class="heart">
-                    ❤️
-                </div>
+            <div class="heart">
+                ❤️
+            </div>
 
-                <h1>
-                    Gudiya Ji,<br>
-                    Bas Aap Aisi Hi Rehna ❤️
-                </h1>
+            <h1>
+                Gudiya Ji,<br>
+                Bas Aap Aisi Hi Rehna ❤️
+            </h1>
 
-                <div class="divider"></div>
+            <div class="divider"></div>
 
-                <div class="subtitle">
-                    कुछ बातें शायद हर बार कह नहीं पाता...<br>
-                    इसलिए आज दिल से लिख रहा हूँ। ❤️
-                </div>
+            <div class="subtitle" id="heroSubtitle">
+                Some things I may not say every time...<br>
+                So today, I am writing them straight from my heart. ❤️
+            </div>
+
+            <!-- LANGUAGE BUTTONS -->
+
+            <div class="language-buttons">
+
+                <button id="btnEnglish"
+                        class="active"
+                        onclick="changeLanguage('english')">
+                    🇬🇧 English
+                </button>
+
+                <button id="btnHindi"
+                        onclick="changeLanguage('hindi')">
+                    🇮🇳 हिंदी
+                </button>
+
+                <button id="btnGujarati"
+                        onclick="changeLanguage('gujarati')">
+                    ગુજરાતી ❤️
+                </button>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- PERSONAL MESSAGE -->
+    <!-- MESSAGE -->
 
-        <section class="message-card">
+    <section class="message-card">
 
-            <h2>
-                Gudiya Ji ❤️
-            </h2>
-
-
-            <p>
-                सबसे पहले मैं आपको धन्यवाद कहना चाहता हूँ कि आपने मुझे अपना समझा
-                और मुझे समझा। ❤️
-            </p>
+        <h2 id="messageTitle">
+            Gudiya Ji ❤️
+        </h2>
 
 
-            <p>
-                मैं आपकी ज़्यादा तारीफ़ नहीं करता हूँ, लेकिन आप दिल की बहुत अच्छी हो
-                ❤️❤️ सच में। आप बहुत शांत हो, समझदार हो और प्यारी भी हो 😙।
-            </p>
+        <!-- ================= ENGLISH ================= -->
 
+        <div id="englishMessage">
 
             <p>
-                मैंने पहले भी एक बात आपको बताई थी कि जब हमारी सगाई की बात चल रही थी,
-                तब मैं बहुत ज़्यादा परेशान था। क्योंकि मुझे ऐसा ही लगता था कि कोई भी
-                आएगी तो सिरदर्द ही करेगी 😐😐। इसलिए मैंने पहले से ही ज़्यादा बातचीत
-                न करना सही समझा था।
+                First of all, I want to thank you for accepting me as your own
+                and for understanding me. ❤️
             </p>
-
 
             <p>
-                मैंने घर में मम्मी को भी बोल दिया था कि शादी से पहले मैं बिल्कुल बात
-                नहीं करूँगा। क्योंकि गुढ़िया, हर इंसान अपनी ज़िंदगी में खुद ही व्यस्त
-                और परेशान होता है। और उस परेशान ज़िंदगी में अगर कोई आकर ये कहे कि
-                तुम ऐसे दिखते हो, तुम्हारी height ज़्यादा है, तुम अच्छे नहीं दिखते,
-                तो परेशानियाँ और भी बढ़ जाती हैं।
+                I don’t praise you that much, but you are genuinely a very good
+                person from the heart. ❤️❤️ Really. You are very calm,
+                understanding, and cute too 😙.
             </p>
-
 
             <p>
-                तो मुझे पहले से ऐसी कोई परेशानी नहीं चाहिए थी। मैं अच्छा दिखूँ या ना
-                दिखूँ, मुझे उससे कोई फर्क नहीं पड़ता।
+                I had told you before that when our engagement talks were going on,
+                I was actually very परेशान. Because I used to feel that whoever
+                comes into my life will only become a headache 😐😐. That’s why
+                I had already decided that it would be better not to talk much
+                beforehand.
             </p>
-
 
             <p>
-                लेकिन जब आपसे बात हुई, काफी समय तक एक दोस्त की तरह बात हुई…
-                और हम तो अब भी एक दोस्त की तरह ही बात करते हैं। लेकिन आपने कभी भी
-                मेरी परेशानी को बढ़ाया नहीं है।
+                I had even told Mummy at home that I wouldn’t talk at all before
+                marriage. Because, Gudiya, every person is already busy and
+                dealing with their own problems in life. And in that already
+                stressful life, if someone comes and starts saying things like,
+                “You look like this,” “Your height is too much,” “You don’t look
+                good,” then those problems become twice as much.
             </p>
-
 
             <p>
-                मेरे बिना कहे ही आप bye बोल देते हो अगर मेरी पढ़ाई बाकी हो।
-                अभी ही 3-4 दिन से office के काम की वजह से हमारी बात नहीं हो पाती,
-                फिर भी आप समझते हो। और रात को मैं 11 बजे भी message करूँ तो आप
-                अच्छे से बात करते हो!!! ❤️
+                I didn’t want that kind of परेशानी in my life beforehand.
+                Whether I look good or not, honestly, I don’t really care.
             </p>
-
 
             <p>
-                ऐसा बिल्कुल भी नहीं बोल रहा कि आप कभी गुस्सा ही ना करो 😂😂😂।
+                But then I started talking to you. For quite some time, we talked
+                like friends… and even now, we still talk like friends. But you
+                have never increased my परेशानी.
             </p>
 
+            <p>
+                If I still have studies left, you say bye yourself without me
+                even asking. Even these last 3–4 days, because of my office work,
+                we haven’t been able to talk much, but you still understand.
+                And even if I message you at 11 at night, you still talk to me
+                properly!!! ❤️
+            </p>
+
+            <p>
+                I am definitely not saying that you should never get angry 😂😂😂.
+            </p>
 
             <p class="special">
-                आप बिल्कुल गुस्सा कर सकते हो, ये तो आपका
-                <strong>जन्मसिद्ध अधिकार</strong> है, Madam Ji 😂❤️।
+                You have every right to get angry. That is your
+                <strong>Janmsidh Adhikar</strong>, Madam Ji 😂❤️.
             </p>
-
 
             <p>
-                लेकिन जब मुझे आपका साथ चाहिए होता है, तब आप मेरे साथ रहते हो। ❤️
+                But whenever I need your support, you are there for me. ❤️
             </p>
-
 
             <p>
-                आपको गुस्सा भी बहुत बार आता है, तो मुझे उससे भी कोई तकलीफ़ नहीं है।
-                क्योंकि जब आप मेरी 1 बात मानते हो, तो मुझे आपकी 10 बातें मानना
-                पसंद है। 😂❤️
+                You get angry quite often too, but honestly, even that doesn’t
+                bother me. Because when you listen to one thing I say, I am happy
+                to listen to ten things you say. 😂❤️
             </p>
-
 
             <p class="quote">
-                लेकिन movie तो मैं देखूँगा ही 😂😂😂।
+                But I am still going to watch my movies 😂😂😂.
             </p>
-
 
             <p>
-                सच में, आपसे मिलकर और आपके साथ रहकर बहुत अच्छा लगता है। ❤️
+                Honestly, I really like meeting you and spending time with you. ❤️
             </p>
-
 
             <p>
-                और ये message भी मैं रात के 2 बजे लिख रहा हूँ, जबकि आपने कहा था
-                कि 12 बजे सो जाना 😂😂।
+                And I am writing this message at 2 AM, even though you told me
+                to sleep by 12 😂😂.
             </p>
-
 
             <p class="marwari">
-                गुस्सा कर लेना, लेकिन Message toh maar Gudiya vaste hi likhto ni ❤️😙।
+                Message toh maar Gudiya vaste hi likhto ni ❤️😙.
             </p>
-
 
             <p>
-                माने बोहत बार इच्छा हुवे कि आपसे बात करूँ और मैं केऊ भी हूँ call करो। ❤️
+                Many times I feel like talking to you and just calling you,
+                no matter where I am or what I am doing. ❤️
             </p>
-
 
             <p>
-                मुझे नहीं पता, Gudiya, आगे जाकर क्या होगा हमारे रिश्ते का।
-                लेकिन जो भी होगा, बेहतर ही होगा। ❤️❤️
+                I don’t know what will happen to our relationship in the future,
+                Gudiya. But whatever happens, I believe it will be for the better.
+                ❤️❤️
             </p>
-
 
             <p>
-                मेरी हमेशा कोशिश रहेगी कि आपको खुश रखूँ। ❤️
+                I will always try my best to keep you happy. ❤️
             </p>
-
 
             <p class="special">
-                सिर्फ मम्मी-पापा को संभाल लेना। 💞🙂
+                Bas mummy-papa ko sambhal lena. 💞🙂
             </p>
-
 
             <p>
-                मेरी पूरी हिम्मत वहीं आकर टूट जाती है कि आप और मम्मी-पापा कैसे रहेंगे।
+                My courage completely breaks down when I think about how you and
+                Mummy-Papa will be.
             </p>
-
 
             <p>
-                Gudiya, मैं आपके लिए पूरी दुनिया से लड़ सकता हूँ,
-                लेकिन मम्मी-पापा से नहीं। 🙂🙂
+                Gudiya, I can fight the whole world for you, but I cannot fight
+                Mummy-Papa. 🙂🙂
             </p>
-
 
             <p>
-                आशा करूँ कि आप समझो। ❤️❤️
+                I hope you understand. ❤️❤️
             </p>
-
 
             <p>
-                और Guddu, आप बिल्कुल भी tension मत लिया करो।
-                मैं हमेशा आपके साथ हूँ। ❤️
+                And Guddu, please never take too much tension. I am always with you. ❤️
             </p>
-
 
             <p>
-                कोई भी परेशानी हो, माने केइजो। 💪❤️
+                If you ever have any problem, <strong>mane keijo</strong>. 💪❤️
             </p>
-
 
             <p class="quote">
-                पर बिल्कुल भी रोवणो कोन, ठीक है!! 😂❤️
+                But bilkul bhi rovno kon, okay!! 😂❤️
             </p>
-
 
             <p>
-                और माने एक बात याद आई…
+                And I just remembered one thing…
             </p>
-
 
             <p>
-                जब आपरा भाई केहवता कि
-                <strong>“Jitu eya jitu biya…”</strong>
-                तब मैं कहयो आपको कि
-                <strong>“आपने किकर लागे…”</strong>
+                When your brother used to say,
+                <strong>“Jitu eya jitu biya…”</strong>,
+                I had asked you,
+                <strong>“Aapne kikr laage…”</strong>
             </p>
-
 
             <p>
-                और आपरो जवाब हो—
+                And your answer was:
             </p>
-
 
             <p class="marwari">
                 <strong>“Aapre hate mare rehvno hai biyare nhi.”</strong>
             </p>
 
-
             <p>
-                मतलब हाँची में, माने बहुत चोखो लाग्यो कि आप मारी इतनी side ली।
-                🥹🥹🥹
+                Honestly, I really loved that you took my side like that. 🥹🥹🥹
             </p>
-
 
             <p class="special">
-                आपने सच में दिल जीत लिया। ❤️
+                You truly won my heart that day. ❤️
             </p>
-
 
             <p>
-                मैं हमेशा आपरो आभारी रेऊँ। 🫡🫡🫡
+                I will always be grateful to you for that. 🫡🫡🫡
             </p>
-
 
             <p class="special">
-                बस हमेशा मारे हाते एया ही रेई। 🥹❤️
+                Bas hamesha mare hate eya hi rei. 🥹❤️
             </p>
-
 
             <p>
-                और खुदरी तबीयत रो ध्यान रख्या कर Guddu। ❤️
+                And please take care of your health too, Guddu. ❤️
             </p>
-
 
             <p>
-                Time से जिम्या कर, आराम कर्या कर।
+                Eat on time, get proper rest, and take care of yourself.
             </p>
-
 
             <p>
-                और तू Mast रेई जण तू मारे माथे री massage कर सके नी…
+                And just stay Mast… because then you can give me a head massage too,
+                right?
             </p>
-
 
             <p class="marwari">
-                <strong>“Reel में बतावतो ज्या”</strong> 😄😄😂
+                <strong>“Reel mein batavto jya.”</strong> 😄😄😂
             </p>
-
 
             <p>
-                और हाँ…
+                And yes…
             </p>
-
 
             <p>
-                आपने मुझे अभी तक नहीं बताया कि आप
-                <strong>Serial कौन-सी देखो</strong> 🤨🤨🤨।
-                अब ये भी बताना पड़ेगा Madam Ji। 😂❤️
+                You still haven’t told me which <strong>serial you watch</strong>
+                🤨🤨🤨.
+                Now you have to tell me that too, Madam Ji. 😂❤️
             </p>
-
 
             <p>
-                बस इतना ही कहना था…
+                That’s all I wanted to say…
             </p>
-
 
             <p>
-                शायद मैं आपको हर बार बता नहीं पाता, लेकिन
-                <strong>आप मेरे लिए बहुत मायने रखती हो।</strong> ❤️
+                Maybe I don’t tell you every time, but
+                <strong>you really mean a lot to me.</strong> ❤️
             </p>
-
 
             <p>
-                हमारी बातें, हमारी छोटी-छोटी लड़ाइयाँ, आपका गुस्सा,
-                आपका मुझे समझना और बिना कुछ कहे मेरा साथ देना—
-                ये सब मेरे लिए बहुत खास है। 🥹❤️
+                Our conversations, our little fights, your anger, the way you
+                understand me, and the way you stand by me without me even having
+                to say anything—everything is very special to me. 🥹❤️
             </p>
-
 
             <p>
-                आगे क्या होगा, वो तो समय बताएगा…
+                I don’t know what the future holds. That’s something only time
+                will tell…
             </p>
-
 
             <p>
-                लेकिन आज के लिए इतना जरूर कह सकता हूँ कि
-                <strong>आप मेरी ज़िंदगी में आईं, ये मेरे लिए बहुत अच्छी बात है।</strong> ❤️
+                But today, I can definitely say one thing:
             </p>
 
+            <p class="special">
+                <strong>
+                    You coming into my life is something I am really grateful for. ❤️
+                </strong>
+            </p>
 
             <p>
-                बस ऐसे ही मेरा साथ देते रहना, मुझे समझते रहना और कभी-कभी गुस्सा
-                भी करती रहना… क्योंकि वो भी तो आपका जन्मसिद्ध अधिकार है। 😂❤️
+                Just keep supporting me like this, keep understanding me, and
+                sometimes keep getting angry with me too…
             </p>
 
-
-            <!-- FINAL -->
+            <p>
+                Because that is your <strong>Janmsidh Adhikar</strong> after all. 😂❤️
+            </p>
 
             <div class="final-message">
 
@@ -529,35 +567,534 @@
                     Love you, Gudiya Ji. ❤️😙
                 </p>
 
-                <p>
-                    हमेशा खुश रहना। ❤️
-                </p>
-
-                <div class="footer-heart">
-                    ❤️
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-
-            <p>
-                कुछ रिश्ते शब्दों से नहीं,<br>
-                समझने और साथ देने से खास बनते हैं। ❤️
-            </p>
-
-            <div class="footer-heart">
-                🥹❤️
             </div>
 
         </div>
 
+
+        <!-- ================= HINDI ================= -->
+
+        <div id="hindiMessage" style="display:none;">
+
+            <p>
+                सबसे पहले मैं आपको धन्यवाद कहना चाहता हूँ कि आपने मुझे अपना समझा और मुझे समझा। ❤️
+            </p>
+
+            <p>
+                मैं आपकी ज़्यादा तारीफ़ नहीं करता हूँ, लेकिन आप दिल की बहुत अच्छी हो ❤️❤️ सच में।
+                आप बहुत शांत हो, समझदार हो और प्यारी भी हो 😙।
+            </p>
+
+            <p>
+                मैंने पहले भी एक बात आपको बताई थी कि जब हमारी सगाई की बात चल रही थी,
+                तब मैं बहुत ज़्यादा परेशान था। क्योंकि मुझे ऐसा ही लगता था कि कोई भी आएगी
+                तो सिरदर्द ही करेगी 😐😐। इसलिए मैंने पहले से ही ज़्यादा बातचीत न करना
+                सही समझा था।
+            </p>
+
+            <p>
+                मैंने घर में मम्मी को भी बोल दिया था कि शादी से पहले मैं बिल्कुल बात नहीं करूँगा।
+                क्योंकि गुढ़िया, हर इंसान अपनी ज़िंदगी में खुद ही व्यस्त और परेशान होता है।
+                और उस परेशान ज़िंदगी में अगर कोई आकर ये कहे कि तुम ऐसे दिखते हो,
+                तुम्हारी height ज़्यादा है, तुम अच्छे नहीं दिखते, तो परेशानियाँ और भी बढ़ जाती हैं।
+            </p>
+
+            <p>
+                तो मुझे पहले से ऐसी कोई परेशानी नहीं चाहिए थी। मैं अच्छा दिखूँ या ना दिखूँ,
+                मुझे उससे कोई फर्क नहीं पड़ता।
+            </p>
+
+            <p>
+                लेकिन जब आपसे बात हुई, काफी समय तक एक दोस्त की तरह बात हुई…
+                और हम तो अब भी एक दोस्त की तरह ही बात करते हैं। लेकिन आपने कभी भी मेरी
+                परेशानी को बढ़ाया नहीं है।
+            </p>
+
+            <p>
+                मेरे बिना कहे ही आप bye बोल देते हो अगर मेरी पढ़ाई बाकी हो।
+                अभी ही 3-4 दिन से office के काम की वजह से हमारी बात नहीं हो पाती,
+                फिर भी आप समझते हो। और रात को मैं 11 बजे भी message करूँ तो आप अच्छे से
+                बात करते हो!!! ❤️
+            </p>
+
+            <p>
+                ऐसा बिल्कुल भी नहीं बोल रहा कि आप कभी गुस्सा ही ना करो 😂😂😂।
+            </p>
+
+            <p class="special">
+                आप बिल्कुल गुस्सा कर सकते हो, ये तो आपका
+                <strong>जन्मसिद्ध अधिकार</strong> है, Madam Ji 😂❤️।
+            </p>
+
+            <p>
+                लेकिन जब मुझे आपका साथ चाहिए होता है, तब आप मेरे साथ रहते हो। ❤️
+            </p>
+
+            <p>
+                आपको गुस्सा भी बहुत बार आता है, तो मुझे उससे भी कोई तकलीफ़ नहीं है।
+                क्योंकि जब आप मेरी 1 बात मानते हो, तो मुझे आपकी 10 बातें मानना पसंद है। 😂❤️
+            </p>
+
+            <p class="quote">
+                लेकिन movie तो मैं देखूँगा ही 😂😂😂।
+            </p>
+
+            <p>
+                सच में, आपसे मिलकर और आपके साथ रहकर बहुत अच्छा लगता है। ❤️
+            </p>
+
+            <p>
+                और ये message भी मैं रात के 2 बजे लिख रहा हूँ, जबकि आपने कहा था कि 12 बजे सो जाना 😂😂।
+            </p>
+
+            <p class="marwari">
+                गुस्सा कर लेना, लेकिन Message toh maar Gudiya vaste hi likhto ni ❤️😙।
+            </p>
+
+            <p>
+                माने बोहत बार इच्छा हुवे कि आपसे बात करूँ और मैं केऊ भी हूँ call करो। ❤️
+            </p>
+
+            <p>
+                मुझे नहीं पता, Gudiya, आगे जाकर क्या होगा हमारे रिश्ते का।
+                लेकिन जो भी होगा, बेहतर ही होगा। ❤️❤️
+            </p>
+
+            <p>
+                मेरी हमेशा कोशिश रहेगी कि आपको खुश रखूँ। ❤️
+            </p>
+
+            <p class="special">
+                सिर्फ मम्मी-पापा को संभाल लेना। 💞🙂
+            </p>
+
+            <p>
+                मेरी पूरी हिम्मत वहीं आकर टूट जाती है कि आप और मम्मी-पापा कैसे रहेंगे।
+            </p>
+
+            <p>
+                Gudiya, मैं आपके लिए पूरी दुनिया से लड़ सकता हूँ, लेकिन मम्मी-पापा से नहीं। 🙂🙂
+            </p>
+
+            <p>
+                आशा करूँ कि आप समझो। ❤️❤️
+            </p>
+
+            <p>
+                और Guddu, आप बिल्कुल भी tension मत लिया करो। मैं हमेशा आपके साथ हूँ। ❤️
+            </p>
+
+            <p>
+                कोई भी परेशानी हो, <strong>माने केइजो</strong>। 💪❤️
+            </p>
+
+            <p class="quote">
+                पर बिल्कुल भी रोवणो कोन, ठीक है!! 😂❤️
+            </p>
+
+            <p>
+                और माने एक बात याद आई…
+            </p>
+
+            <p>
+                जब आपरा भाई केहवता कि <strong>“Jitu eya jitu biya…”</strong>
+                तब मैं कहयो आपको कि <strong>“आपने किकर लागे…”</strong>
+            </p>
+
+            <p>
+                और आपरो जवाब हो—
+            </p>
+
+            <p class="marwari">
+                <strong>“Aapre hate mare rehvno hai biyare nhi.”</strong>
+            </p>
+
+            <p>
+                मतलब हाँची में, माने बहुत चोखो लाग्यो कि आप मारी इतनी side ली। 🥹🥹🥹
+            </p>
+
+            <p class="special">
+                आपने सच में दिल जीत लिया। ❤️
+            </p>
+
+            <p>
+                मैं हमेशा आपरो आभारी रेऊँ। 🫡🫡🫡
+            </p>
+
+            <p class="special">
+                बस हमेशा मारे हाते एया ही रेई। 🥹❤️
+            </p>
+
+            <p>
+                और खुदरी तबीयत रो ध्यान रख्या कर Guddu। ❤️
+            </p>
+
+            <p>
+                Time से जिम्या कर, आराम कर्या कर।
+            </p>
+
+            <p>
+                और तू Mast रेई जण तू मारे माथे री massage कर सके नी…
+            </p>
+
+            <p class="marwari">
+                <strong>“Reel में बतावतो ज्या”</strong> 😄😄😂
+            </p>
+
+            <p>
+                और हाँ…
+            </p>
+
+            <p>
+                आपने मुझे अभी तक नहीं बताया कि आप <strong>Serial कौन-सी देखो</strong> 🤨🤨🤨।
+                अब ये भी बताना पड़ेगा Madam Ji। 😂❤️
+            </p>
+
+            <p>
+                बस इतना ही कहना था…
+            </p>
+
+            <p>
+                शायद मैं आपको हर बार बता नहीं पाता, लेकिन
+                <strong>आप मेरे लिए बहुत मायने रखती हो।</strong> ❤️
+            </p>
+
+            <p>
+                हमारी बातें, हमारी छोटी-छोटी लड़ाइयाँ, आपका गुस्सा,
+                आपका मुझे समझना और बिना कुछ कहे मेरा साथ देना—ये सब मेरे लिए बहुत खास है। 🥹❤️
+            </p>
+
+            <p>
+                आगे क्या होगा, वो तो समय बताएगा…
+            </p>
+
+            <p>
+                लेकिन आज के लिए इतना जरूर कह सकता हूँ कि
+                <strong>आप मेरी ज़िंदगी में आईं, ये मेरे लिए बहुत अच्छी बात है।</strong> ❤️
+            </p>
+
+            <p>
+                बस ऐसे ही मेरा साथ देते रहना, मुझे समझते रहना और कभी-कभी गुस्सा भी करती रहना…
+                क्योंकि वो भी तो आपका जन्मसिद्ध अधिकार है। 😂❤️
+            </p>
+
+            <div class="final-message">
+
+                <p class="love">
+                    Love you, Gudiya Ji. ❤️😙
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= GUJARATI ================= -->
+
+        <div id="gujaratiMessage" style="display:none;">
+
+            <p>
+                સૌથી પહેલા હું તમને Thank You કહેવા માંગુ છું કે તમે મને પોતાનો માન્યો
+                અને મને સમજ્યો. ❤️
+            </p>
+
+            <p>
+                હું તમારી વધારે તારીફ નથી કરતો, પણ તમે દિલથી ખરેખર બહુ જ સારી વ્યક્તિ છો.
+                ❤️❤️ સાચે જ. તમે બહુ શાંત છો, સમજદાર છો અને બહુ પ્યારી પણ છો 😙.
+            </p>
+
+            <p>
+                મેં તમને પહેલા પણ એક વાત કહી હતી કે જ્યારે આપણી સગાઈની વાત ચાલતી હતી
+                ત્યારે હું ખરેખર બહુ જ પરેશાન હતો. કારણ કે મને એવું લાગતું હતું કે મારી
+                જિંદગીમાં જે પણ આવશે એ બસ માથાનો દુખાવો જ બનશે 😐😐. એટલે મેં પહેલેથી જ
+                નક્કી કરી લીધું હતું કે વધારે વાત ન કરવી એ જ સારું રહેશે.
+            </p>
+
+            <p>
+                મેં ઘરે મમ્મીને પણ કહી દીધું હતું કે લગ્ન પહેલાં હું બિલકુલ વાત નહીં કરું.
+                કારણ કે Gudiya, દરેક વ્યક્તિ પોતાની જિંદગીમાં પહેલેથી જ વ્યસ્ત હોય છે અને
+                પોતાની સમસ્યાઓ સાથે પોતે જ લડી રહ્યો હોય છે. અને એવી પહેલેથી જ પરેશાન
+                જિંદગીમાં જો કોઈ આવીને કહે કે, “તમે આવા દેખાઓ છો”, “તમારી height વધારે છે”,
+                “તમે સારા નથી લાગતા”, તો એ પરેશાનીઓ બમણી થઈ જાય.
+            </p>
+
+            <p>
+                મારે પહેલેથી જ આવી કોઈ પરેશાની મારી જિંદગીમાં નથી જોઈતી.
+                હું સારો દેખાઉં કે ના દેખાઉં, સાચું કહું તો મને એનાથી કોઈ ફરક નથી પડતો.
+            </p>
+
+            <p>
+                પણ પછી તમારી સાથે વાત શરૂ થઈ. લાંબા સમય સુધી આપણે મિત્રો જેવા વાત કરતા રહ્યા…
+                અને આજે પણ આપણે એક મિત્રની જેમ જ વાત કરીએ છીએ. પરંતુ તમે ક્યારેય મારી
+                પરેશાની વધારી નથી.
+            </p>
+
+            <p>
+                મારે ભણવાનું બાકી હોય તો હું કહું એ પહેલાં જ તમે જાતે Bye કહી દો છો.
+                હમણાં છેલ્લા 3-4 દિવસથી officeના કામના કારણે આપણી વધારે વાત નથી થઈ શકતી,
+                છતાં તમે સમજો છો. અને રાત્રે 11 વાગ્યે પણ હું તમને message કરું તો તમે
+                મારી સાથે સરસ રીતે વાત કરો છો!!! ❤️
+            </p>
+
+            <p>
+                હું એવું બિલકુલ નથી કહેતો કે તમે ક્યારેય ગુસ્સો જ ના કરો 😂😂😂.
+            </p>
+
+            <p class="special">
+                તમને ગુસ્સો કરવાનો પૂરો અધિકાર છે. એ તો તમારો
+                <strong>જન્મસિદ્ધ અધિકાર</strong> છે, Madam Ji 😂❤️.
+            </p>
+
+            <p>
+                પણ જ્યારે પણ મને તમારા સાથની જરૂર પડે છે, ત્યારે તમે મારી સાથે રહો છો. ❤️
+            </p>
+
+            <p>
+                તમને ઘણી વાર ગુસ્સો પણ આવે છે, પણ સાચું કહું તો મને એનાથી પણ કોઈ તકલીફ નથી.
+                કારણ કે તમે મારી એક વાત માનો છો તો મને તમારી દસ વાતો માનવી પણ ગમે છે. 😂❤️
+            </p>
+
+            <p class="quote">
+                પણ Movie તો હું જોઈશ જ 😂😂😂.
+            </p>
+
+            <p>
+                સાચું કહું તો તમારી સાથે મળીને અને તમારી સાથે સમય પસાર કરીને મને ખરેખર
+                બહુ સારું લાગે છે. ❤️
+            </p>
+
+            <p>
+                અને આ message પણ હું રાત્રે 2 વાગ્યે લખી રહ્યો છું, જ્યારે તમે મને
+                12 વાગ્યે સૂઈ જવાનું કહ્યું હતું 😂😂.
+            </p>
+
+            <p class="marwari">
+                Message toh maar Gudiya vaste hi likhto ni ❤️😙.
+            </p>
+
+            <p>
+                ઘણી વાર એવું થાય છે કે તમારાથી વાત કરવાની ઈચ્છા થાય અને બસ તમને call
+                કરી દઉં, હું જ્યાં પણ હોઉં કે જે પણ કરતો હોઉં. ❤️
+            </p>
+
+            <p>
+                મને નથી ખબર Gudiya, આગળ જઈને આપણા સંબંધનું શું થશે. પરંતુ જે પણ થશે,
+                સારું જ થશે એવું મને લાગે છે. ❤️❤️
+            </p>
+
+            <p>
+                મારી હંમેશા એવી જ કોશિશ રહેશે કે તમને ખુશ રાખું. ❤️
+            </p>
+
+            <p class="special">
+                Bas mummy-papa ko sambhal lena. 💞🙂
+            </p>
+
+            <p>
+                જ્યારે હું વિચારું છું કે તમે અને મમ્મી-પપ્પા કેવી રીતે રહેશો,
+                ત્યારે મારી આખી હિંમત તૂટી જાય છે.
+            </p>
+
+            <p>
+                Gudiya, હું તમારા માટે આખી દુનિયા સામે લડી શકું છું,
+                પરંતુ મમ્મી-પપ્પા સામે નહીં. 🙂🙂
+            </p>
+
+            <p>
+                આશા રાખું છું કે તમે મને સમજશો. ❤️❤️
+            </p>
+
+            <p>
+                અને Guddu, તમે બિલકુલ પણ tension ના લીધા કરો. હું હંમેશા તમારી સાથે છું. ❤️
+            </p>
+
+            <p>
+                કોઈ પણ તકલીફ હોય તો <strong>mane keijo</strong>. 💪❤️
+            </p>
+
+            <p class="quote">
+                પણ બિલકુલ પણ rovno kon, okay!! 😂❤️
+            </p>
+
+            <p>
+                અને મને એક વાત યાદ આવી…
+            </p>
+
+            <p>
+                જ્યારે તમારા ભાઈ કહેતા હતા,
+                <strong>“Jitu eya jitu biya…”</strong>,
+                ત્યારે મેં તમને પૂછ્યું હતું,
+                <strong>“Aapne kikr laage…”</strong>
+            </p>
+
+            <p>
+                અને તમારો જવાબ હતો:
+            </p>
+
+            <p class="marwari">
+                <strong>“Aapre hate mare rehvno hai biyare nhi.”</strong>
+            </p>
+
+            <p>
+                સાચું કહું તો તમે મારી એ રીતે side લીધી એ વાત મને દિલથી બહુ ગમી હતી. 🥹🥹🥹
+            </p>
+
+            <p class="special">
+                તમે એ દિવસે ખરેખર મારું દિલ જીતી લીધું હતું. ❤️
+            </p>
+
+            <p>
+                એના માટે હું હંમેશા તમારો આભારી રહીશ. 🫡🫡🫡
+            </p>
+
+            <p class="special">
+                Bas hamesha mare hate eya hi rei. 🥹❤️
+            </p>
+
+            <p>
+                અને Guddu, તમે તમારી તબિયતનું પણ ધ્યાન રાખજો. ❤️
+            </p>
+
+            <p>
+                Time પર જમજો, સરસ રીતે આરામ કરજો અને તમારી જાતનું ધ્યાન રાખજો.
+            </p>
+
+            <p>
+                અને બસ હંમેશા Mast રહેજો… કારણ કે પછી તમે મને head massage પણ આપી શકો ને?
+            </p>
+
+            <p class="marwari">
+                <strong>“Reel mein batavto jya.”</strong> 😄😄😂
+            </p>
+
+            <p>
+                અને હા…
+            </p>
+
+            <p>
+                તમે મને હજુ સુધી એ નથી જણાવ્યું કે તમે <strong>કઈ serial જુઓ છો</strong>
+                🤨🤨🤨. હવે એ પણ જણાવવું પડશે Madam Ji. 😂❤️
+            </p>
+
+            <p>
+                બસ આટલું જ કહેવું હતું…
+            </p>
+
+            <p>
+                કદાચ હું તમને દરેક વખતે કહી નથી શકતો, પરંતુ
+                <strong>તમે મારા માટે ખરેખર બહુ મહત્વ ધરાવો છો.</strong> ❤️
+            </p>
+
+            <p>
+                આપણી વાતો, આપણી નાની-નાની લડાઈઓ, તમારો ગુસ્સો,
+                તમે મને જે રીતે સમજો છો અને કંઈ કહ્યા વગર જે રીતે મારી સાથે ઊભા રહો છો—
+                આ બધું મારા માટે બહુ ખાસ છે. 🥹❤️
+            </p>
+
+            <p>
+                આગળનું ભવિષ્ય શું હશે એ તો સમય જ કહેશે…
+            </p>
+
+            <p>
+                પરંતુ આજે હું ચોક્કસ એક વાત કહી શકું છું:
+            </p>
+
+            <p class="special">
+                <strong>
+                    તમે મારી જિંદગીમાં આવ્યા, એ વાત માટે હું ખરેખર ખૂબ જ આભારી છું. ❤️
+                </strong>
+            </p>
+
+            <p>
+                બસ આવી જ રીતે મારો સાથ આપતા રહેજો, મને સમજતા રહેજો અને ક્યારેક
+                મારી ઉપર ગુસ્સો પણ કરતા રહેજો…
+            </p>
+
+            <p>
+                કારણ કે એ પણ તો તમારો <strong>જન્મસિદ્ધ અધિકાર</strong> છે. 😂❤️
+            </p>
+
+            <div class="final-message">
+
+                <p class="love">
+                    Love you, Gudiya Ji. ❤️😙
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <p>
+            Some relationships become special not because of words,<br>
+            but because of understanding, care and being there. ❤️
+        </p>
+
+        <div class="footer-heart">
+            🥹❤️
+        </div>
+
     </div>
+
+</div>
+
+
+<!-- LANGUAGE SWITCHING -->
+
+<script>
+
+    function changeLanguage(language) {
+
+        const english = document.getElementById("englishMessage");
+        const hindi = document.getElementById("hindiMessage");
+        const gujarati = document.getElementById("gujaratiMessage");
+
+        const btnEnglish = document.getElementById("btnEnglish");
+        const btnHindi = document.getElementById("btnHindi");
+        const btnGujarati = document.getElementById("btnGujarati");
+
+        english.style.display = "none";
+        hindi.style.display = "none";
+        gujarati.style.display = "none";
+
+        btnEnglish.classList.remove("active");
+        btnHindi.classList.remove("active");
+        btnGujarati.classList.remove("active");
+
+        if (language === "english") {
+
+            english.style.display = "block";
+            btnEnglish.classList.add("active");
+
+        }
+
+        else if (language === "hindi") {
+
+            hindi.style.display = "block";
+            btnHindi.classList.add("active");
+
+        }
+
+        else if (language === "gujarati") {
+
+            gujarati.style.display = "block";
+            btnGujarati.classList.add("active");
+
+        }
+
+        window.scrollTo({
+            top: document.querySelector(".message-card").offsetTop - 20,
+            behavior: "smooth"
+        });
+    }
+
+</script>
 
 </body>
 
